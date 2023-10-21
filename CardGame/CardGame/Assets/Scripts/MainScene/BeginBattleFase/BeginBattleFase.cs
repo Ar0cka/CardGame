@@ -7,16 +7,25 @@ using UnityEngine.SceneManagement;
 public class BeginBattleFase : MonoBehaviour
 {
     [SerializeField] private string nameScene;
-    private EnemyTransitController _enemyTransitController;
+    [SerializeField] private GameObject enemyHero;
+    private EnemyTransit _monsterTransit;
+    private Monsters _monsters;
 
     private void Start()
     {
-        _enemyTransitController = GetComponent<EnemyTransitController>();
+        _monsters = GetComponent<Monsters>();
+        _monsterTransit = FindObjectOfType<EnemyTransit>();
     }
 
     public void BeginBattle()
     {
-        _enemyTransitController.SaveMonsterData();
+        DontDestroyOnLoad(_monsterTransit);
+        
+        _monsterTransit._enemyList.Clear();
+        _monsterTransit._enemyList = _monsters._monstersList;
+        
+        _monsters.SaveMonsterData();
+        
         SceneManager.LoadScene(nameScene);
     }
 }

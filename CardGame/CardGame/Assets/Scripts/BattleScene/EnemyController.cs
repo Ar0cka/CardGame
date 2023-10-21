@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class EnemyController : MonoBehaviour, IEnemyController
 {
-    [SerializeField] private List<EnemyInfo> enemyInfo;
-    private EnemyTransitController _enemyTransitController;
+    private List<EnemyInfo> enemyInfo;
+    private SpriteRenderer _spriteRenderer;
+    private EnemyTransit _monstersTransit;
 
     #region MonstersParametrs
     
@@ -15,22 +16,27 @@ public class EnemyController : MonoBehaviour, IEnemyController
 
     private Sprite _monsterSprite;
     #endregion
-
-    
     private void Awake()
     {
-        _enemyTransitController.GetComponent<EnemyTransitController>();
-        enemyInfo = _enemyTransitController.LoadMonsterData();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _monstersTransit = FindObjectOfType<EnemyTransit>();
+        enemyInfo = _monstersTransit.LoadMonsterData();
         for (int i = 0; i < enemyInfo.Count; i++)
         {
-            _name = enemyInfo[i]._name;
-            _maxHitPoints = enemyInfo[i]._hp;
-            _damage = enemyInfo[i]._damage;
-            _defense = enemyInfo[i]._defense;
-            _monsterSprite = enemyInfo[i]._monsterSprite;
+            _name = enemyInfo[i].nameEnemy;
+            _maxHitPoints = enemyInfo[i].hp;
+            _damage = enemyInfo[i].damage;
+            _defense = enemyInfo[i].defense;
+            _monsterSprite = enemyInfo[i].monsterSprite;
         }
-        
         _currentHitPoints = _maxHitPoints;
+        LoadSpriteMonster();
+    }
+
+    private void LoadSpriteMonster()
+    {
+        if (_spriteRenderer != null)
+            _spriteRenderer.sprite = _monsterSprite;
     }
 
     public int AttackPlayer(int hpPlayer)
