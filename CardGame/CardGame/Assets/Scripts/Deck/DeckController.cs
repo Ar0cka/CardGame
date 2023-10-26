@@ -1,23 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DeckController : MonoBehaviour
 {
-    [SerializeField] List<CardPrefab> _startCards;
-    private TextMeshPro _amountCard;
+    #region SerializeListCards
+
+    [SerializeField] private List<CardPrefab> _cardsInDeck;
+    [SerializeField] private List<CardPrefab> _trashCards;
+    [SerializeField] private HandCards _handCards;
+    
+    #endregion
+
+    #region UI
+
+    [SerializeField] private TextMeshProUGUI _amountDeckCard; 
+    [SerializeField] private TextMeshProUGUI _amountTrashCard;
+    
+    #endregion
+    
     private void Awake()
     {
-        _amountCard = GetComponentInChildren<TextMeshPro>();
-        foreach (var card in _startCards)
-        {
-            DrawCard();
-        }
+        _handCards.DrawNextCard(_cardsInDeck);
+        _amountDeckCard.text = _cardsInDeck.Count.ToString( );
     }
 
-    private void DrawCard()
+    public void TakeCardInHand()
     {
+        _handCards.DrawNextCard(_cardsInDeck);
+        _amountDeckCard.text = _cardsInDeck.Count.ToString();
+    }
 
+    public void DiscardCards()
+    {
+        _handCards.Discard(_trashCards);
+        _amountTrashCard.text = _trashCards.Count.ToString();
+    }
+    
+    public void ReturnCardInDeck()
+    {
+        _cardsInDeck = _trashCards;
+        _trashCards.Clear();
+        _amountDeckCard.text = _cardsInDeck.Count.ToString();
     }
 }

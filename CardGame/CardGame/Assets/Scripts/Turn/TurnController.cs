@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TurnController : MonoBehaviour, ITurn
 {
     [SerializeField] private Button endTurnButton;
+    [SerializeField] private TextMeshProUGUI turnUI;
+    private EnemyController _enemyController;
 
     #region parametrs
     private bool _isTurnPlayer;
     private bool _isTurnEnemy;
 
-    private int _turn;
+    private int _turn = 1;
     #endregion
 
     #region ITurnParametrs
@@ -23,16 +26,18 @@ public class TurnController : MonoBehaviour, ITurn
 
     private void Awake()
     {
+        _enemyController = FindObjectOfType<EnemyController>();
+        
+        endTurnButton.onClick.AddListener(OnClickButtonEndTurn);
+
+        turnUI.text = _turn.ToString();
+
         _isTurnPlayer = true;
         _isTurnEnemy = false;
     }
     private void Update()
     {
-        if (_isTurnPlayer && !_isTurnEnemy)
-        {
-            TurnPlayer();
-        }
-        else if (_isTurnEnemy && !_isTurnPlayer) 
+        if (_isTurnEnemy) 
         {
             TurnEnemy();
         }
@@ -40,10 +45,17 @@ public class TurnController : MonoBehaviour, ITurn
     public void TurnPlayer()
     {
         _turn++;
+        turnUI.text = _turn.ToString();
     }
 
-    public void TurnEnemy(){
-        
+    public void TurnEnemy()
+    {
+        _enemyController.AttackPlayer();
+        #region ChangeTurn
+        _isTurnEnemy = false;
+        _isTurnPlayer = true;
+        #endregion
+        TurnPlayer();
     }
 
     private void OnClickButtonEndTurn()

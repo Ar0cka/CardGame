@@ -2,24 +2,46 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class EnemyController : MonoBehaviour, IEnemyController
+public class EnemyController : MonoBehaviour
 {
+    #region EnemyRegion
+    
     private List<EnemyInfo> enemyInfo;
     private SpriteRenderer _spriteRenderer;
     private EnemyTransit _monstersTransit;
+    
+    #endregion
+
+    #region Components
+
+    private PlayerBattleScene _playerBattleScene;
+    private EnemyAndPlayerUI _enemyAndPlayerUI;
+
+    #endregion
 
     #region MonstersParametrs
     
     private string _name;
-    private int _damage, _maxHitPoints, _currentHitPoints, 
+    private int _damage, _maxHitPoints,
         _defense;
 
     private Sprite _monsterSprite;
     #endregion
+
+    public int _currentHitPoints;
     private void Awake()
     {
+        #region SerilizeComponent
+
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _monstersTransit = FindObjectOfType<EnemyTransit>();
+        _playerBattleScene = FindObjectOfType<PlayerBattleScene>();
+        _enemyAndPlayerUI = FindObjectOfType<EnemyAndPlayerUI>();
+
+        #endregion
+
+        #region LoadMonster
+
         enemyInfo = _monstersTransit.LoadMonsterData();
         for (int i = 0; i < enemyInfo.Count; i++)
         {
@@ -31,6 +53,10 @@ public class EnemyController : MonoBehaviour, IEnemyController
         }
         _currentHitPoints = _maxHitPoints;
         LoadSpriteMonster();
+
+        #endregion
+
+        _enemyAndPlayerUI.UpgradeUIEnemy();
     }
 
     private void LoadSpriteMonster()
@@ -39,10 +65,10 @@ public class EnemyController : MonoBehaviour, IEnemyController
             _spriteRenderer.sprite = _monsterSprite;
     }
 
-    public int AttackPlayer(int hpPlayer)
+    public void AttackPlayer()
     {
-        hpPlayer -= _damage;
-        return hpPlayer;
+        _playerBattleScene.hitHero(_damage);
+        _enemyAndPlayerUI.UpgradeUiPlayer();
     }
 
     public int AttackEnemy(int damageHero)
@@ -51,8 +77,8 @@ public class EnemyController : MonoBehaviour, IEnemyController
         return _currentHitPoints;
     }
 
-    public int Defense(int defense)
+    public void DefenseEnemy()
     {
-        return 0;
+        _currentHitPoints += _defense;
     }
 }
