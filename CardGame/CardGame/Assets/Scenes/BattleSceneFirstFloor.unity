@@ -589,7 +589,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170355972
 GameObject:
@@ -644,6 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpBarPlayer: {fileID: 27255032}
   hpBarEnemy: {fileID: 1298740426}
+  _enemyController: {fileID: 1673763972}
 --- !u!1 &202366671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1087,9 @@ MonoBehaviour:
   - {fileID: 607128850502955106, guid: e83c03661c6c8a044a3a490fa4ffcf90, type: 3}
   - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
   - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
+  - {fileID: 607128850502955106, guid: e83c03661c6c8a044a3a490fa4ffcf90, type: 3}
   _trashCards: []
+  _initializeObject: {fileID: 1434429735}
   _handCards: {fileID: 1434429734}
   _amountDeckCard: {fileID: 920344900}
   _amountTrashCard: {fileID: 1658232235}
@@ -1185,7 +1188,7 @@ RectTransform:
   - {fileID: 407329596}
   - {fileID: 170355973}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1470,7 +1473,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1298740424
 GameObject:
@@ -1617,8 +1620,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1343841188}
   - component: {fileID: 1343841187}
+  - component: {fileID: 1343841189}
   m_Layer: 0
-  m_Name: SceneTurnManager
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1638,6 +1642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endTurnButton: {fileID: 620064198}
   turnUI: {fileID: 3625620}
+  _enemyController: {fileID: 1673763972}
 --- !u!4 &1343841188
 Transform:
   m_ObjectHideFlags: 0
@@ -1651,8 +1656,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1343841189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343841186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7c3c4212b83f14e98091f40b9df2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deckController: {fileID: 679914810}
+  _enemyController: {fileID: 1673763972}
+  _enemyAndPlayerUI: {fileID: 170355974}
+  _turnController: {fileID: 1343841187}
 --- !u!1 &1434429729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1687,7 @@ GameObject:
   - component: {fileID: 1434429732}
   - component: {fileID: 1434429731}
   - component: {fileID: 1434429734}
+  - component: {fileID: 1434429735}
   m_Layer: 5
   m_Name: Hand
   m_TagString: Untagged
@@ -1770,7 +1792,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deckController: {fileID: 679914810}
+  _initializeObject: {fileID: 1434429735}
   handTransform: {fileID: 1434429730}
+--- !u!114 &1434429735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434429729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb65807f14d4c9fad79971fc419b958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deckController: {fileID: 679914810}
 --- !u!1 &1658232233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1986,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1673763975
 SpriteRenderer:

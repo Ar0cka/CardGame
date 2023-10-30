@@ -29,7 +29,8 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     public int _currentHitPoints;
-    private void Awake()
+
+    public void InitializeEnemyController()
     {
         #region SerilizeComponent
 
@@ -58,7 +59,7 @@ public class EnemyController : MonoBehaviour
 
         _enemyAndPlayerUI.UpgradeUIEnemy();
     }
-
+    
     private void LoadSpriteMonster()
     {
         if (_spriteRenderer != null)

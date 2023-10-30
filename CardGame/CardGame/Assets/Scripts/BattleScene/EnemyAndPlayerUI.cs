@@ -8,9 +8,9 @@ public class EnemyAndPlayerUI : MonoBehaviour
      [SerializeField] private TextMeshProUGUI hpBarEnemy;
 
      private PlayerBattleScene _playerBattleScene;
-     private EnemyController _enemyController;
+     [SerializeField] private EnemyController _enemyController;
 
-     private void Awake()
+     public void InitializeUI()
      {
           _playerBattleScene = FindObjectOfType<PlayerBattleScene>();
           _enemyController = FindObjectOfType<EnemyController>();

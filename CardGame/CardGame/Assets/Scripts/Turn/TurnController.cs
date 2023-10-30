@@ -8,7 +8,7 @@ public class TurnController : MonoBehaviour, ITurn
 {
     [SerializeField] private Button endTurnButton;
     [SerializeField] private TextMeshProUGUI turnUI;
-    private EnemyController _enemyController;
+    [SerializeField] private EnemyController _enemyController;
 
     #region parametrs
     private bool _isTurnPlayer;
@@ -24,10 +24,8 @@ public class TurnController : MonoBehaviour, ITurn
     public int turn => turn;
     #endregion
 
-    private void Awake()
+    public void InitializeTurnConttoller()
     {
-        _enemyController = FindObjectOfType<EnemyController>();
-        
         endTurnButton.onClick.AddListener(OnClickButtonEndTurn);
 
         turnUI.text = _turn.ToString();
