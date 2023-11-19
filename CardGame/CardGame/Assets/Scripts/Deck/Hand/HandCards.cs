@@ -1,106 +1,95 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.VFX;
-using Random = UnityEngine.Random;
 
+#region summary
+// Данный скрипт отвечает за работу карт в руке
+// 1. Метод для взятия карт в руку
+// 2. Метод для дискарда карт
+// 3. Метод для визуализации добора и сброса карт
+//
+//
+//
+#endregion
 public class HandCards : MonoBehaviour
 {
-    #region SerilizeParametrs
+    [SerializeField] private DeckController _deckController;
+    [SerializeField] private InitializeObjectToPool _initializeObject;
+    
+    private List<CardPrefab> _cardInHand = new List<CardPrefab>();
+    private List<GameObject> _objectPool = new List<GameObject>();
+    private List<Animator> _animators = new List<Animator>();
 
-    [Header("Deck")] [SerializeField] private DeckController _deckController; // ссылка на колоду карт
+    private int maxSizeHand = 5;
 
-    [SerializeField] private InitializeObjectToPool _initializeObject; // ссылка на пул объектов
-
-    private List<CardPrefab> cardInHand = new List<CardPrefab>(); // лист хранящий карты, которые находятся в руке
-    private List<GameObject> _objectInHand = new List<GameObject>();
-    public Transform handTransform; // местоположения хранения карт
-
-    private int maxHandSize = 5; // максимальная велечина объектов
-
-    [Header("Animator")] private Animator animatorDrawCard; // анимацаия добора кар
-
-    #endregion
-
-    public void DrawNextCard(List<CardPrefab> _cardsInDeck, List<int> _allIndexCard,
-        List<int> _allIndexObject) // взятие карт
+    public void DrawCard(List<CardPrefab> _deckList)
     {
-        if (cardInHand.Count != maxHandSize) // условие для добора где происходит проверка есть ли в колоде карты и не заполнена ли рука
+        StartCoroutine(DrawNextCard(_deckList));
+    }
+    
+    private IEnumerator DrawNextCard(List<CardPrefab> _deckList)
+    {
+        int i = 0;
+        while(_cardInHand.Count < maxSizeHand)
         {
-            if (_cardsInDeck.Count != 0)
+            if (_deckList.Count != 0)
             {
-                #region CreateObjectInHand
+                CardPrefab card = _deckList[0];
+                _cardInHand.Add(card);
                 
-                CardPrefab drawCard = _cardsInDeck[_allIndexCard[0]]; // взятия из листа нужной карты
+                _objectPool.Add(_initializeObject.GetObjectFromPool(i));
+                
+                _animators.Add(_objectPool[i].GetComponentInChildren<Animator>());
+                
+                _deckList.RemoveAt(0);
+                
+                VisualDrawCard(i);
 
-                cardInHand.Add(drawCard); // добавление в руку
+                yield return new WaitForSeconds(0.5f);
 
-                _objectInHand.Add(_initializeObject.GetObjectFromPool(_allIndexObject[0])); // взятие объекта из пула
-
-                _cardsInDeck.RemoveAt(_allIndexCard[0]); // удаление карты из колоды
-                _allIndexCard.RemoveAt(0); // удаление индекса карты
-                _allIndexObject.RemoveAt(0); // удаление индекса объекта
-
-                #endregion
-
-                VisualDrawCardInHand(); //визуализация добора
-
-                _deckController.UpdateIndex();
+                i++;
+                
+                _deckController.UpdateUIDeck(_deckList);
             }
             else
-                _deckController.ReturnCardInDeck(); // если не выполнено хоть одно условие, то пересобираем колоду
-
-            StartCoroutine(DelayedDrawNextCard(_cardsInDeck, _allIndexCard,
-                _allIndexObject)); // корутина, чтобы анимация добора успела проиграться
+                _deckController.ReturnDeck();
         }
     }
 
-    private IEnumerator DelayedDrawNextCard(List<CardPrefab> _cardPrefabs, List<int> _allIndex, List<int> _allIndexObj)
+    public void DiscardCard(List<CardPrefab> _discardDeck)
     {
-        yield return new WaitForSeconds(0.1f); // длительность добора 1 карты
-        DrawNextCard(_cardPrefabs, _allIndex, _allIndexObj); // перевызов метода после взятия карты
+        StartCoroutine(Discard(_discardDeck));
     }
-
-    public void Discard(List<CardPrefab> _trashCards) // сброс карты с руки
+    
+    private IEnumerator Discard(List<CardPrefab> _discardDeck)
     {
-        while (cardInHand.Count != 0)
+        for (int i = _cardInHand.Count - 1; i >= 0; i--)
         {
-            CardPrefab card = cardInHand[0]; // приравневание элемента к CardPrefab
-            _trashCards.Add(card); // добавление карты в стопку сброса
-            cardInHand.RemoveAt(0); // удаление карты из руки
+            CardPrefab card = _cardInHand[i];
             
-            _initializeObject.ReturnGameObjectToPool(_objectInHand[0]);
+            _discardDeck.Add(card);
             
-            VisualDiscardCardFromHand();
+            VisualDiscardCard(i);
+            
+            yield return new WaitForSeconds(0.5f);
+            
+            _initializeObject.ReturnObjectInPool(_objectPool[i]);
+            
+            _cardInHand.RemoveAt(i);
+            _objectPool.RemoveAt(i);
+            _animators.RemoveAt(i);
+            
+            _deckController.UpdateUIDiscardDeck(_discardDeck);
         }
     }
 
-    private void VisualDiscardCardFromHand()
+    private void VisualDrawCard(int index)
     {
-        animatorDrawCard = GetComponentInChildren<Animator>();
-        try
-        {
-            animatorDrawCard.SetBool("IsDiscard", true);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("No find");
-        }
-        
+        _animators[index].SetTrigger("IsDraw");
     }
 
-    private void VisualDrawCardInHand()
+    private void VisualDiscardCard(int index)
     {
-        animatorDrawCard = GetComponentInChildren<Animator>();
-        
-        try
-        {
-            animatorDrawCard.SetBool("IsDraw", true);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("No find");
-        }
+        _animators[index].SetTrigger("IsDiscard");
     }
 }

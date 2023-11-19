@@ -10,10 +10,13 @@ public class EnemyData
     public Sprite spriteMonster;
 }
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Monsters : MonoBehaviour
 {
     [SerializeField] private List<EnemyInfo> monsterList;
     public List<EnemyInfo> _monstersList => monsterList;
+
+
     public void SaveMonsterData()
     {
         for (int i = 0; i < _monstersList.Count; i++)

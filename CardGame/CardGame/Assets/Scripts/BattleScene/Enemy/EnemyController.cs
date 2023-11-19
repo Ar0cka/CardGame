@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,8 +29,12 @@ public class EnemyController : MonoBehaviour
 
     public int _currentHitPoints;
 
+    private Animator _animator;
+
     public void InitializeEnemyController()
     {
+        _animator = GetComponent<Animator>();
+        
         #region SerilizeComponent
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -68,10 +71,17 @@ public class EnemyController : MonoBehaviour
 
     public void AttackPlayer()
     {
+        _animator.SetTrigger("IsAttack");
+        StartDelayAttackEnemy();
+        
         _playerBattleScene.hitHero(_damage);
         _enemyAndPlayerUI.UpgradeUiPlayer();
     }
-
+    private IEnumerator StartDelayAttackEnemy()
+    {
+        yield return new WaitForSeconds(3);
+    }
+    
     public int AttackEnemy(int damageHero)
     {
         _currentHitPoints -= damageHero;

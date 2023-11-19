@@ -15,7 +15,7 @@ public class EnemyTransit : MonoBehaviour
             if (!string.IsNullOrEmpty(jsonData))
             {
                 EnemyData enemyData = JsonUtility.FromJson<EnemyData>(jsonData);
-                EnemyInfo loadedMonster = new EnemyInfo();
+                EnemyInfo loadedMonster =  ScriptableObject.CreateInstance<EnemyInfo>();
                 loadedMonster.nameEnemy = enemyData.name;
                 loadedMonster.hp = enemyData.hp;
                 loadedMonster.damage = enemyData.damage;

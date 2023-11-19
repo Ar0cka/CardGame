@@ -1,104 +1,97 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Random = System.Random;
+
+#region summary
+// 1. Реализовать Deck
+// 2. Реализовать DiscardDeck
+// 3. Подключить UI элементы к Deck
+// 4. Сделать Shuffle колоды
+// 5. Сделать возврат колоды, когда Deck.Count = 0
+// 6. Сделать метод, который будет инициализроваться при заходе на сцену, в него будет входить Добор и создание объектов на сцене
+#endregion
 
 public class DeckController : MonoBehaviour
 {
-    #region SerializeListCards
+   private static Random rng = new Random();
+   
+   [SerializeField] private HandCards _handCards;
+   [SerializeField] private InitializeObjectToPool _initializeObject;
+   
+   #region InitializeListDeckAndUI
 
-    [SerializeField] private List<CardPrefab> _cardsInDeck;
-    [SerializeField] private List<CardPrefab> _trashCards;
-    [SerializeField] private InitializeObjectToPool _initializeObject;
+   [SerializeField] private List<CardPrefab> _deckList;
+   [SerializeField] private List<CardPrefab> _discardDeckList;
+
+   [SerializeField] private TextMeshProUGUI amountDeck, amountDiscardDeck;
+   #endregion
     
-    [SerializeField] private HandCards _handCards;
-    
-    #endregion
+   public void Initialize() // метод в которой будет происходить первичная инициализация
+   {
+      CreateObject();
+      TakeCardFromDeck();
+      UpdateUIDeck(_deckList);
+      UpdateUIDiscardDeck(_discardDeckList);
+   }
 
-    #region UI
+   private void CreateObject()
+   {
+      for (int i = 0; i < _deckList.Count; i++)
+      {
+         Debug.Log("Begin Create");
+         _initializeObject.CreateNewObjectToPool(_deckList[i]);
+      }
+      ShuffleDeckAndPool(_deckList, _initializeObject.pool);
+   }
 
-    [SerializeField] private TextMeshProUGUI _amountDeckCard; 
-    [SerializeField] private TextMeshProUGUI _amountTrashCard;
-    
-    #endregion
-    
-    private List<int> _allIndexDeck = new List<int>();
-    private List<int> _allIndexObject = new List<int>();
+   public void TakeCardFromDeck()
+   {
+      _handCards.DrawCard(_deckList);
+   }
 
-    public void Initialize()
-    {
-        ImportPoolFromDeck();
-        
-        TakeCardInHand();
-    }
-    
-    public void TakeCardInHand()
-    {
-        _handCards.DrawNextCard(_cardsInDeck, _allIndexDeck, _allIndexObject);
-        _amountDeckCard.text = _cardsInDeck.Count.ToString();
-    }
+   public void UpdateUIDeck(List<CardPrefab> _deckList)
+   {
+      amountDeck.text = _deckList.Count.ToString();
+   }
+   
+   public void UpdateUIDiscardDeck(List<CardPrefab> _discardList)
+   {
+      amountDiscardDeck.text = _discardList.Count.ToString();
+   }
+   
+   public void DiscardCardFromHandToDiscardDeck()
+   {
+      _handCards.DiscardCard(_discardDeckList);
+   }
 
-    public void DiscardCards()
-    {
-        _handCards.Discard(_trashCards);
-        _amountTrashCard.text = _trashCards.Count.ToString();
-    }
-    
-    public void ReturnCardInDeck()
-    {
-        _cardsInDeck = _trashCards;
-        
-        _trashCards.Clear();
-        
-        _amountDeckCard.text = _cardsInDeck.Count.ToString();
-        
-        UpdateDeck();
-    }
+   public void ReturnDeck()
+   {
+      for (int i = _discardDeckList.Count - 1; i >= 0; i--)
+      {
+         CardPrefab card = _discardDeckList[i];
+         _deckList.Add(card);
+         _discardDeckList.RemoveAt(i);
+         UpdateUIDiscardDeck(_discardDeckList);
+         UpdateUIDeck(_deckList);
+      }
+      ShuffleDeckAndPool(_deckList, _initializeObject.pool);
+   }
+   
+   public void ShuffleDeckAndPool<T1, T2>(List<T1> deck, List<T2> objectPool)
+   {
+      int _deckCount = deck.Count;
+      for (int i = _deckCount - 1; i > 0; i--)
+      {
+         int j = rng.Next(0, i + 1);
+         T1 tempCard = deck[i];
+         deck[i] = deck[j];
 
-    private void ImportPoolFromDeck()
-    {
-        ShuffleList(_cardsInDeck);
-        for (int i = 0; i < _cardsInDeck.Count; i++)
-        {
-            CardPrefab drawCard = _cardsInDeck[i];
-            _initializeObject.CreateNewObjectToPoll(drawCard, _handCards.handTransform);
-            _allIndexDeck.Add(i);
-            _allIndexObject.Add(i);
-        }
-    }
+         T2 tempObject = objectPool[i];
+         objectPool[i] = objectPool[j];
 
-    public void UpdateDeck()
-    { 
-        ShuffleList(_cardsInDeck);
-        for (int i = 0; i < _cardsInDeck.Count; i++)
-        {
-           _allIndexDeck.Add(i);
-           _allIndexObject.Add(i);
-        }
-        _initializeObject.ShufflePool();
-    }
-
-    public void UpdateIndex()
-    {
-        _allIndexDeck.Clear();
-        for (int i = 0; i < _cardsInDeck.Count; i++)
-        {
-            _allIndexDeck.Add(i);
-        }
-      
-    }
-
-    public void ShuffleList<T>(List<T> DeckList)
-    {
-        int listCount = DeckList.Count;
-        System.Random rng = new System.Random();
-        while (listCount > 1)
-        {
-            listCount--;
-            int randomIndex = rng.Next(listCount + 1);
-            T value = DeckList[randomIndex];
-            DeckList[randomIndex] = DeckList[listCount];
-            DeckList[listCount] = value;
-        }
-    }
+         deck[j] = tempCard;
+         objectPool[j] = tempObject;
+      }
+   }
 }

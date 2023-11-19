@@ -1,60 +1,51 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+#region summary
+// Пул объектов - выполняет функцию базы данных для объектов во время боя
+// 1. Создание объектов в пуле
+// 2. Взятие неактивных объектов по индексу
+// 3. Возврат обьъектов в пул
+// 4. Shuffle пул в зависимости от деки
+//
+//
+//
+//
+//
+#endregion
 public class InitializeObjectToPool : MonoBehaviour
 {
+    [SerializeField] private Transform handTransform;
+    public List<GameObject> pool = new List<GameObject>(); 
     private GameObject card;
-
-    #region SerializeLists
-
-    [SerializeField] private DeckController _deckController;
+    private int maxSizePool = 10;
     
-    private List<GameObject> pool = new List<GameObject>();
-
-    #endregion
-    
-    #region SizePool
-
-    private int _maxPoolSize = 10;
-    public int maxPoolSize => _maxPoolSize;
-
-    #endregion 
-    
-    public void CreateNewObjectToPoll(CardPrefab cards, Transform transformHand)
+    public void CreateNewObjectToPool(CardPrefab cardPref)
     {
-        if (pool.Count < maxPoolSize)
+        if (pool.Count < maxSizePool)
         {
-            card = Instantiate(cards.gameObject, transformHand); 
+            card = Instantiate(cardPref.gameObject, handTransform);
             card.SetActive(false);
             pool.Add(card);
         }
-        
-    }// метод для создания нового объекта в пуле
+    }
 
     public GameObject GetObjectFromPool(int index)
     {
         if (pool != null)
-        { 
+        {
             card = pool[index];
             card.SetActive(true);
             return card;
         }
         else
             return null;
-    } // взятие объекта из пула
-
-    public void ReturnGameObjectToPool(GameObject obj)
+    }
+    public void ReturnObjectInPool(GameObject obj)
     {
         obj.SetActive(false);
-    } // возвращение олбъекта в пул
-
-    public void ToExpandPoolSize() // увелечение максимального размера пула
-    {
-        _maxPoolSize++;
     }
 
-    public void ShufflePool()
-    {
-        _deckController.ShuffleList(pool);
-    }
+ 
+
 }
