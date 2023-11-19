@@ -8,7 +8,7 @@ public class CardPrefab : MonoBehaviour
     [SerializeField] private Image _iconCard;
     [SerializeField] private CardInfo _cardInfo;
 
-    private void Start()
+    private void Awake()
     {
         if (_cardInfo != null)
         _iconCard.sprite = _cardInfo.iconCard;
