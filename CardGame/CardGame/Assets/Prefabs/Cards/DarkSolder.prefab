@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5290215275279516511}
   - component: {fileID: 570762295}
   - component: {fileID: 7113120657774953990}
-  m_Layer: 5
-  m_Name: KillHitCard
+  m_Layer: 2
+  m_Name: DarkSolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe36614767a2b4046b821b98d2b92bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueID: 
   _iconCard: {fileID: 6951324898934110733}
   _cardInfo: {fileID: 11400000, guid: ca6c22cbcc2b3ea48b346d28ec48ab60, type: 2}
 --- !u!114 &7113120657774953990
@@ -65,7 +66,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _handTransform: {fileID: 0}
 --- !u!1 &5290215275573792041
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 5290215275573792042}
   - component: {fileID: 5290215275573792043}
   - component: {fileID: 5290215275573792045}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: OutLineCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 2441305537291544433}
   - component: {fileID: 2621020759428314666}
   - component: {fileID: 6951324898934110733}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IconCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}

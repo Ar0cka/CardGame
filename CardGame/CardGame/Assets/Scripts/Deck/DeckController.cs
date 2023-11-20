@@ -39,7 +39,6 @@ public class DeckController : MonoBehaviour
    {
       for (int i = 0; i < _deckList.Count; i++)
       {
-         Debug.Log("Begin Create");
          _initializeObject.CreateNewObjectToPool(_deckList[i]);
       }
       ShuffleDeckAndPool(_deckList, _initializeObject.pool);
