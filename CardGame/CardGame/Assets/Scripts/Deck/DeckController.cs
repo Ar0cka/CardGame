@@ -65,6 +65,11 @@ public class DeckController : MonoBehaviour
       _handCards.DiscardCard(_discardDeckList);
    }
 
+   public void DiscardCardFromBattleZone(CardPrefab cardPrefab)
+   {
+      _discardDeckList.Add(cardPrefab);
+   }
+
    public void ReturnDeck()
    {
       for (int i = _discardDeckList.Count - 1; i >= 0; i--)

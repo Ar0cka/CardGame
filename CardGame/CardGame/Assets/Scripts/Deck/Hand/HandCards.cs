@@ -83,6 +83,12 @@ public class HandCards : MonoBehaviour
         }
     }
 
+    public void DropCardFromHand(string uniqueID)
+    {
+        int index = _cardInHand.FindIndex(card => card.uniqueID == uniqueID);
+        _cardInHand.RemoveAt(index);
+    }
+
     private void VisualDrawCard(int index)
     {
         _animators[index].SetTrigger("IsDraw");
