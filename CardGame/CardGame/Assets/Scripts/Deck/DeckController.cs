@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using Random = System.Random;
@@ -30,6 +31,8 @@ public class DeckController : MonoBehaviour
    public void Initialize() // метод в которой будет происходить первичная инициализация
    {
       CreateObject();
+      _deckList.Clear();
+      _deckList.AddRange(_initializeObject.pool.Select(obj => obj.GetComponent<CardPrefab>()));
       TakeCardFromDeck();
       UpdateUIDeck(_deckList);
       UpdateUIDiscardDeck(_discardDeckList);

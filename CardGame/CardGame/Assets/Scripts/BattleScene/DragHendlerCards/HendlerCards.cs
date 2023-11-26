@@ -1,18 +1,20 @@
 using System;
-using UnityEditor.Experimental.GraphView;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.XR;
 
 
 public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private Transform _handTransform;
     private RectTransform _rectTransform;
     private Canvas _canvas;
     private CardPrefab cardPrefab;
 
-    private RaycastHit2D hit;
-    private Camera _camera;
+    private string zoneTag;
+
+    private DropCardInPanel _dropCard;
+    private InitializeObjectToPool _objectToPool;
     
     private void Awake()
     {
@@ -20,16 +22,32 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
 
-        _handTransform = GetComponentInParent<Transform>();
-        _camera = Camera.main;
+        _dropCard = FindObjectOfType<DropCardInPanel>();
+        _objectToPool = FindObjectOfType<InitializeObjectToPool>();
+    }
+
+    private void Update()
+    {
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        pointerEventData.position = Input.mousePosition;
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerEventData, results);
+
+        foreach (RaycastResult result in results)
+        {
+            // Проверяем слой объекта
+            if (result.gameObject.layer == LayerMask.NameToLayer("BattleZoneLayer"))
+            {
+                zoneTag = result.gameObject.tag;
+                break; 
+            }
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        hit = Physics2D.Raycast(_camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,
-            LayerMask.GetMask("BattleZoneLayer"));
-        
-        Debug.DrawRay(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward * 10f, Color.red, 1f);
+        transform.SetParent(_dropCard._hendlerZone.transform);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -39,9 +57,8 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (hit.collider != null)
+        if (zoneTag != null)
         {
-            string zoneTag = hit.collider.tag;
             var typeCard = cardPrefab._cardInfo.type;
             
              switch (zoneTag)
@@ -49,47 +66,43 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                  case "MiliArmy":
                      if (typeCard == CardInfo.TypeCard.AttackHuman || typeCard == CardInfo.TypeCard.DefenseBuild)
                      {
-                         // Обработка для карт с типом AttackHuman и DefenseBuild в зоне MiliArmy
-                         Debug.Log("Dropped AttackHuman or DefenseBuild in MiliArmy");
+                         _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
+                         transform.SetParent(_dropCard.miliArmyZone.transform);
                      }
                      else
                      {
-                         _rectTransform.anchoredPosition = _handTransform.position;
-                         Debug.Log("Invalid card type for MiliArmy");
+                         transform.SetParent(_objectToPool.handTransform.transform);
                      }
                      break;
             
                  case "RangeSolder":
                      if (typeCard == CardInfo.TypeCard.AttackRangeHuman)
                      {
-                         // Обработка для карт с типом AttackRangeHuman в зоне RangeSolder
-                         Debug.Log("Dropped AttackRangeHuman in RangeSolder");
+                         _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
+                         transform.SetParent(_dropCard.rangeArmyZone.transform);
                      }
                      else
                      {
-                         _rectTransform.anchoredPosition = _handTransform.position;
-                         Debug.Log("Invalid card type for RangeSolder");
+                         transform.SetParent(_objectToPool.handTransform.transform);
                      }
                      break;
             
                  case "RangeBuild":
                      if (typeCard == CardInfo.TypeCard.AttackRangeBuild || typeCard == CardInfo.TypeCard.AuxiliaryBuild)
                      { 
-                         // Обработка для карт с типом AttackRangeBuild и AuxiliaryBuild в зоне RangeBuild
-                         Debug.Log("Dropped AttackRangeBuild or AuxiliaryBuild in RangeBuild");
+                         _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
+                         transform.SetParent(_dropCard.rangeBuildZone.transform);
                      }
                      else
                      {
-                         _rectTransform.anchoredPosition = _handTransform.position;
-                         Debug.Log("Invalid card type for RangeBuild");
+                         transform.SetParent(_objectToPool.handTransform.transform);
                      } 
                      break;
              }
         }
         else
         {
-            _rectTransform.anchoredPosition = _handTransform.position;
-            Debug.Log("HitColider = null");
+            transform.SetParent(_objectToPool.handTransform.transform);
         }
     }
 }

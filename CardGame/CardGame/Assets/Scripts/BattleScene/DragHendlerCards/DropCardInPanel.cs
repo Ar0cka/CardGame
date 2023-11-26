@@ -5,26 +5,47 @@ using UnityEngine.PlayerLoop;
 
 public class DropCardInPanel : MonoBehaviour
 {
-    private List<CardPrefab> _cardsInBattleZone = new List<CardPrefab>();
+    private List<CardPrefab> _cardsInMilyArmyZone = new List<CardPrefab>();
+    private List<CardPrefab> _cardsInRangeHumanZone = new List<CardPrefab>();
+    private List<CardPrefab> _cardsInRangeBuildZone = new List<CardPrefab>();
     private List<GameObject> _objectInBattleZone = new List<GameObject>();
     [SerializeField] private DeckController _deckController;
-    [SerializeField] private Transform _positionBattelZone;
+    [SerializeField] private HandCards _handCards;
 
-    public void DropNewCardInPanel(CardPrefab cardPrefab)
+    public RectTransform miliArmyZone;
+    public RectTransform rangeArmyZone;
+    public RectTransform rangeBuildZone;
+    public GameObject _hendlerZone;
+    
+    public void DropNewCardInPanel(CardPrefab cardPrefab, string zoneTag)
     {
-        _cardsInBattleZone.Add(cardPrefab);
-        var card = Instantiate(cardPrefab.gameObject, _positionBattelZone);
-        _objectInBattleZone.Add(card);
+        switch (zoneTag)
+        {
+            case "MiliArmy":
+                _cardsInMilyArmyZone.Add(cardPrefab);
+                break;
+            
+            case "RangeSolder":
+                _cardsInRangeHumanZone.Add(cardPrefab);
+                break;
+            
+            case "RangeBuild":
+                _cardsInRangeBuildZone.Add(cardPrefab);
+                break;
+        }
+      
+    
+        _handCards.DropCardFromHand(cardPrefab.uniqueID);
     }
 
     public void RemoveCardFromBattleZone(string uniqueID)
     {
-        int index = _cardsInBattleZone.FindIndex(card => card.uniqueID == uniqueID);
+        int index = _cardsInMilyArmyZone.FindIndex(card => card.uniqueID == uniqueID);
 
         if (index >= 0)
         {
-            _deckController.DiscardCardFromBattleZone(_cardsInBattleZone[index]);
-            _cardsInBattleZone.RemoveAt(index);
+            _deckController.DiscardCardFromBattleZone(_cardsInMilyArmyZone[index]);
+            _cardsInMilyArmyZone.RemoveAt(index);
             Destroy(_objectInBattleZone[index]);
             _objectInBattleZone.RemoveAt(index);
         }

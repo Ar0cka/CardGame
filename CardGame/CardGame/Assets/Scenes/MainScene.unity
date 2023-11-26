@@ -267,6 +267,8 @@ MonoBehaviour:
   _movePlayer: {fileID: 773904515}
   _monsterSprite: {fileID: 140274317}
   _playerRenderer: {fileID: 1105639661}
+  _colliderEnemy: {fileID: 140274319}
+  _coliderPlayer: {fileID: 773904516}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

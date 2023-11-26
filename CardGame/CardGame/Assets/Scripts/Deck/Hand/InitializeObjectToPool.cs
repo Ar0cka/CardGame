@@ -15,7 +15,7 @@ using UnityEngine;
 #endregion
 public class InitializeObjectToPool : MonoBehaviour
 {
-    [SerializeField] private Transform handTransform;
+    [SerializeField] public RectTransform handTransform;
     public List<GameObject> pool = new List<GameObject>(); 
     private GameObject card;
     private int maxSizePool = 10;
@@ -29,7 +29,7 @@ public class InitializeObjectToPool : MonoBehaviour
             pool.Add(card);
         }
     }
-
+    
     public GameObject GetObjectFromPool(int index)
     {
         if (pool != null)
@@ -45,7 +45,4 @@ public class InitializeObjectToPool : MonoBehaviour
     {
         obj.SetActive(false);
     }
-
- 
-
 }

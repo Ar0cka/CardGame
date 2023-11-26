@@ -11,10 +11,13 @@ public class CardPrefab : MonoBehaviour
     [SerializeField] private Image _iconCard;
     [SerializeField] public CardInfo _cardInfo;
 
-    private void Awake()
+    private void Start()
     {
         uniqueID = Guid.NewGuid().ToString();
-        
+    }
+
+    private void Awake()
+    {
         if (_cardInfo != null)
         _iconCard.sprite = _cardInfo.iconCard;
     }

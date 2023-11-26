@@ -6,13 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/HitCard.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/HitCard.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/KillHitCard.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/KillHitCard.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerCards.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/DeckController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/HandCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/HandCards.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/InitializeObjectToPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/InitializeObjectToPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainScene/BeginBattleFase/BeginBattleFase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainScene/BeginBattleFase/BeginBattleFase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -27,6 +30,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/ITurn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/Raycasters/Physics2DRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -93,10 +97,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14788">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="14788" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -121,7 +125,22 @@
       <workItem from="1700454821870" duration="1128000" />
       <workItem from="1700471129876" duration="2001000" />
       <workItem from="1700486740533" duration="1625000" />
-      <workItem from="1700493458632" duration="1993000" />
+      <workItem from="1700493458632" duration="3321000" />
+      <workItem from="1700542122715" duration="2838000" />
+      <workItem from="1700549237435" duration="152000" />
+      <workItem from="1700552600916" duration="2610000" />
+      <workItem from="1700561937440" duration="757000" />
+      <workItem from="1700630996094" duration="173000" />
+      <workItem from="1700635350697" duration="1194000" />
+      <workItem from="1700644707676" duration="4732000" />
+      <workItem from="1700673475592" duration="213000" />
+      <workItem from="1700683387787" duration="1255000" />
+      <workItem from="1700729284799" duration="7207000" />
+      <workItem from="1700812147366" duration="1550000" />
+      <workItem from="1700842069332" duration="10876000" />
+      <workItem from="1700923901998" duration="1025000" />
+      <workItem from="1700927913732" duration="2481000" />
+      <workItem from="1700986547173" duration="1307000" />
     </task>
     <servers />
   </component>
@@ -137,17 +156,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerCards.cs</url>
-          <line>34</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\DragHendlerCards\HendlerCards.cs" initialLine="33" containingFunctionPresentation="Method 'OnEndDrag'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs</url>
+          <line>15</line>
+          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\Deck\CardPrefab.cs" initialLine="15" containingFunctionPresentation="Method 'Start'">
             <startOffsets>
-              <option value="897" />
+              <option value="325" />
             </startOffsets>
             <endOffsets>
-              <option value="1051" />
+              <option value="362" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

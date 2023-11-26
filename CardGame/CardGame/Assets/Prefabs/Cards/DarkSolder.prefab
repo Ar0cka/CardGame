@@ -66,6 +66,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dropCard: {fileID: 0}
+  _miliArmyZone: {fileID: 0}
+  _rangeSolderZone: {fileID: 0}
+  _rangeBuildZone: {fileID: 0}
 --- !u!1 &5290215275573792041
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ TagManager:
   - RangeSolder
   - MiliArmy
   - BattleZone
+  - enemy
   layers:
   - Default
   - TransparentFX
