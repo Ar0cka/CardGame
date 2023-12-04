@@ -15,13 +15,15 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     private DropCardInPanel _dropCard;
     private InitializeObjectToPool _objectToPool;
+    private HendlerCards _hendlerCards;
     
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
-
+        _hendlerCards = GetComponent<HendlerCards>();
+        
         _dropCard = FindObjectOfType<DropCardInPanel>();
         _objectToPool = FindObjectOfType<InitializeObjectToPool>();
     }
@@ -67,6 +69,7 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                      if (typeCard == CardInfo.TypeCard.AttackHuman || typeCard == CardInfo.TypeCard.DefenseBuild)
                      {
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
+                         _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.miliArmyZone.transform);
                      }
                      else
@@ -79,6 +82,7 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                      if (typeCard == CardInfo.TypeCard.AttackRangeHuman)
                      {
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
+                         _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.rangeArmyZone.transform);
                      }
                      else
@@ -91,6 +95,7 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                      if (typeCard == CardInfo.TypeCard.AttackRangeBuild || typeCard == CardInfo.TypeCard.AuxiliaryBuild)
                      { 
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
+                         _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.rangeBuildZone.transform);
                      }
                      else

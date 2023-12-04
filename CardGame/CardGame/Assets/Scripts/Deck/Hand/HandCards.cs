@@ -23,8 +23,9 @@ public class HandCards : MonoBehaviour
 
     private int maxSizeHand = 5;
     
-    public void DrawCard(List<CardPrefab> _deckList)
+    public void DrawCard(List<CardPrefab> _deckList, List<CardPrefab> _discardList)
     {
+        if (_deckList.Count > 0 || _discardList.Count > 0)
         StartCoroutine(DrawNextCard(_deckList));
     }
     
@@ -59,6 +60,7 @@ public class HandCards : MonoBehaviour
 
     public void DiscardCard(List<CardPrefab> _discardDeck)
     {
+        if (_cardInHand.Count > 0)
         StartCoroutine(Discard(_discardDeck));
     }
     
@@ -77,17 +79,21 @@ public class HandCards : MonoBehaviour
             _initializeObject.ReturnObjectInPool(_objectPool[i]);
             
             _cardInHand.RemoveAt(i);
-            _objectPool.RemoveAt(i);
+            _objectPool.RemoveAt(i);    
             _animators.RemoveAt(i);
             
             _deckController.UpdateUIDiscardDeck(_discardDeck);
         }
     }
 
-    public void DropCardFromHand(string uniqueID)
+    public void DropCardFromHand(CardPrefab cardPrefab, string uniqueID)
     {
         int index = _cardInHand.FindIndex(card => card.uniqueID == uniqueID);
-        _cardInHand.RemoveAt(index);
+         _cardInHand.RemoveAt(index);
+        
+        GameObject cardObject = cardPrefab.gameObject;
+        int indexObject = _objectPool.FindIndex(obj => obj == cardObject);
+        _objectPool.RemoveAt(indexObject);
     }
 
     private void VisualDrawCard(int index)

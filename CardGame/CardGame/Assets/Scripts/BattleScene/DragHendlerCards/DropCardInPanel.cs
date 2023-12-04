@@ -11,7 +11,8 @@ public class DropCardInPanel : MonoBehaviour
     private List<GameObject> _objectInBattleZone = new List<GameObject>();
     [SerializeField] private DeckController _deckController;
     [SerializeField] private HandCards _handCards;
-
+    [SerializeField] private InitializeObjectToPool _initializeObject;
+    
     public RectTransform miliArmyZone;
     public RectTransform rangeArmyZone;
     public RectTransform rangeBuildZone;
@@ -19,23 +20,27 @@ public class DropCardInPanel : MonoBehaviour
     
     public void DropNewCardInPanel(CardPrefab cardPrefab, string zoneTag)
     {
+        
         switch (zoneTag)
         {
             case "MiliArmy":
                 _cardsInMilyArmyZone.Add(cardPrefab);
+                _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
+                _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
                 break;
             
             case "RangeSolder":
                 _cardsInRangeHumanZone.Add(cardPrefab);
+                _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
+                _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
                 break;
             
             case "RangeBuild":
                 _cardsInRangeBuildZone.Add(cardPrefab);
+                _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
+                _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
                 break;
         }
-      
-    
-        _handCards.DropCardFromHand(cardPrefab.uniqueID);
     }
 
     public void RemoveCardFromBattleZone(string uniqueID)
@@ -46,8 +51,7 @@ public class DropCardInPanel : MonoBehaviour
         {
             _deckController.DiscardCardFromBattleZone(_cardsInMilyArmyZone[index]);
             _cardsInMilyArmyZone.RemoveAt(index);
-            Destroy(_objectInBattleZone[index]);
             _objectInBattleZone.RemoveAt(index);
-        }
+        }                                                           
     }
 }

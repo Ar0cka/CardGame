@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 #region summary
 // Пул объектов - выполняет функцию базы данных для объектов во время боя
@@ -16,25 +17,26 @@ using UnityEngine;
 public class InitializeObjectToPool : MonoBehaviour
 {
     [SerializeField] public RectTransform handTransform;
-    public List<GameObject> pool = new List<GameObject>(); 
+    public List<GameObject> poolHands = new List<GameObject>();
+    [FormerlySerializedAs("poolBattelAZone")] public List<GameObject> poolBattelZone;
     private GameObject card;
     private int maxSizePool = 10;
     
     public void CreateNewObjectToPool(CardPrefab cardPref)
     {
-        if (pool.Count < maxSizePool)
+        if (poolHands.Count < maxSizePool)
         {
             card = Instantiate(cardPref.gameObject, handTransform);
             card.SetActive(false);
-            pool.Add(card);
+            poolHands.Add(card);
         }
     }
     
     public GameObject GetObjectFromPool(int index)
     {
-        if (pool != null)
+        if (poolHands != null)
         {
-            card = pool[index];
+            card = poolHands[index];
             card.SetActive(true);
             return card;
         }
@@ -44,5 +46,28 @@ public class InitializeObjectToPool : MonoBehaviour
     public void ReturnObjectInPool(GameObject obj)
     {
         obj.SetActive(false);
+    }
+
+    public void CreateObjectToBattelZonePool(CardPrefab _cardPrefab)
+    {
+        GameObject cardObject = _cardPrefab.gameObject;
+        int index = poolHands.FindIndex(obj => obj == cardObject);
+        
+        if (index != -1)
+        {
+            poolBattelZone.Add(poolHands[index]);
+            poolHands.RemoveAt(index);
+        }
+    }
+    public void ReturnObjectToHandPool(CardPrefab cardPrefab)
+    {
+        GameObject cardObject = cardPrefab.gameObject;
+        int index = poolBattelZone.FindIndex(obj => obj == cardObject);
+
+        if (index != -1)
+        {
+            poolHands.Add(poolBattelZone[index]);
+            poolBattelZone.RemoveAt(index);
+        }
     }
 }

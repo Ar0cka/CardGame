@@ -1744,6 +1744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deckController: {fileID: 679914810}
   _handCards: {fileID: 1434429734}
+  _initializeObject: {fileID: 1434429735}
   miliArmyZone: {fileID: 1223471715}
   rangeArmyZone: {fileID: 914539283}
   rangeBuildZone: {fileID: 1629708151}
@@ -2278,7 +2279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTransform: {fileID: 1434429730}
-  pool: []
+  poolHands: []
+  poolBattelZone: []
 --- !u!1 &1595897130
 GameObject:
   m_ObjectHideFlags: 0

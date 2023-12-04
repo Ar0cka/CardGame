@@ -24,7 +24,7 @@ public class DeckController : MonoBehaviour
 
    [SerializeField] private List<CardPrefab> _deckList;
    [SerializeField] private List<CardPrefab> _discardDeckList;
-
+   
    [SerializeField] private TextMeshProUGUI amountDeck, amountDiscardDeck;
    #endregion
     
@@ -32,7 +32,7 @@ public class DeckController : MonoBehaviour
    {
       CreateObject();
       _deckList.Clear();
-      _deckList.AddRange(_initializeObject.pool.Select(obj => obj.GetComponent<CardPrefab>()));
+      _deckList.AddRange(_initializeObject.poolHands.Select(obj => obj.GetComponent<CardPrefab>()));
       TakeCardFromDeck();
       UpdateUIDeck(_deckList);
       UpdateUIDiscardDeck(_discardDeckList);
@@ -40,16 +40,17 @@ public class DeckController : MonoBehaviour
 
    private void CreateObject()
    {
+    
       for (int i = 0; i < _deckList.Count; i++)
       {
          _initializeObject.CreateNewObjectToPool(_deckList[i]);
       }
-      ShuffleDeckAndPool(_deckList, _initializeObject.pool);
+      ShuffleDeckAndPool(_deckList, _initializeObject.poolHands);
    }
 
    public void TakeCardFromDeck()
    {
-      _handCards.DrawCard(_deckList);
+      _handCards.DrawCard(_deckList, _discardDeckList);
    }
 
    public void UpdateUIDeck(List<CardPrefab> _deckList)
@@ -82,7 +83,7 @@ public class DeckController : MonoBehaviour
          UpdateUIDiscardDeck(_discardDeckList);
          UpdateUIDeck(_deckList);
       }
-      ShuffleDeckAndPool(_deckList, _initializeObject.pool);
+      ShuffleDeckAndPool(_deckList, _initializeObject.poolHands);
    }
    
    public void ShuffleDeckAndPool<T1, T2>(List<T1> deck, List<T2> objectPool)

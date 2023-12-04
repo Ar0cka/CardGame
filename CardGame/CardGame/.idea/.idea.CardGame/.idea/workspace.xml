@@ -6,17 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerCards.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/DeckController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/HandCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/HandCards.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/InitializeObjectToPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/InitializeObjectToPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainScene/BeginBattleFase/BeginBattleFase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainScene/BeginBattleFase/BeginBattleFase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Move/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Move/PlayerMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +29,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a7a68d74033849c295a86e87bd1510c33d400/87/66751fdd/IBeginDragHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a7a68d74033849c295a86e87bd1510c33d400/b0/54c1d736/IEventSystemHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/ITurn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/Raycasters/Physics2DRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
@@ -46,12 +49,13 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.49532712&quot;,
     &quot;git-widget-placeholder&quot;: &quot;DrugAndDropCardsInBattle&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -64,7 +68,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/Build\CardGame.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build/CardGame.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="E:\Unity\CardGameMain\CardGame\CardGame\Build" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -72,7 +76,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\UnitHub\Unity\2021.3.28f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="E:\UnitHub\Unity\2021.3.33f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath E:\Unity\CardGameMain\CardGame\CardGame -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\Unity\CardGameMain\CardGame\CardGame" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -80,7 +84,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\UnitHub\Unity\2021.3.28f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="E:\UnitHub\Unity\2021.3.33f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath E:\Unity\CardGameMain\CardGame\CardGame -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\Unity\CardGameMain\CardGame\CardGame" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -140,7 +144,21 @@
       <workItem from="1700842069332" duration="10876000" />
       <workItem from="1700923901998" duration="1025000" />
       <workItem from="1700927913732" duration="2481000" />
-      <workItem from="1700986547173" duration="1307000" />
+      <workItem from="1700986547173" duration="3141000" />
+      <workItem from="1700991740895" duration="2416000" />
+      <workItem from="1701022470201" duration="964000" />
+      <workItem from="1701185118980" duration="2005000" />
+      <workItem from="1701197531750" duration="3005000" />
+      <workItem from="1701317235108" duration="273000" />
+      <workItem from="1701317548273" duration="1835000" />
+      <workItem from="1701351840720" duration="1714000" />
+      <workItem from="1701450228883" duration="3923000" />
+      <workItem from="1701547630991" duration="1788000" />
+      <workItem from="1701576061818" duration="8569000" />
+      <workItem from="1701594506102" duration="619000" />
+      <workItem from="1701680482919" duration="1134000" />
+      <workItem from="1701686961035" duration="629000" />
+      <workItem from="1701730720875" duration="48000" />
     </task>
     <servers />
   </component>
@@ -156,17 +174,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs</url>
-          <line>15</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\Deck\CardPrefab.cs" initialLine="15" containingFunctionPresentation="Method 'Start'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Deck/Hand/HandCards.cs</url>
+          <line>33</line>
+          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\Deck\Hand\HandCards.cs" initialLine="33" containingFunctionPresentation="Method 'DrawNextCard'">
             <startOffsets>
-              <option value="325" />
+              <option value="1010" />
             </startOffsets>
             <endOffsets>
-              <option value="362" />
+              <option value="1020" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
