@@ -19,6 +19,7 @@ public class DeckController : MonoBehaviour
    
    [SerializeField] private HandCards _handCards;
    [SerializeField] private InitializeObjectToPool _initializeObject;
+   [SerializeField] private TurnController _turnController;
    
    #region InitializeListDeckAndUI
 
@@ -33,7 +34,7 @@ public class DeckController : MonoBehaviour
       CreateObject();
       _deckList.Clear();
       _deckList.AddRange(_initializeObject.poolHands.Select(obj => obj.GetComponent<CardPrefab>()));
-      TakeCardFromDeck();
+      _turnController.TurnPlayerBegin();
       UpdateUIDeck(_deckList);
       UpdateUIDiscardDeck(_discardDeckList);
    }

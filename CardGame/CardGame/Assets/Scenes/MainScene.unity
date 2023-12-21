@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mana: 3
-  _health: 85
+  _health: 10
   currentHp: 0
 --- !u!4 &773904513
 Transform:

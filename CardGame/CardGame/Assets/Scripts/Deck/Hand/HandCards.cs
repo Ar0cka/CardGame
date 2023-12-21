@@ -25,14 +25,14 @@ public class HandCards : MonoBehaviour
     
     public void DrawCard(List<CardPrefab> _deckList, List<CardPrefab> _discardList)
     {
-        if (_deckList.Count > 0 || _discardList.Count > 0)
-        StartCoroutine(DrawNextCard(_deckList));
+        if (_deckList.Count > 0 || _discardList.Count > 0)  
+        StartCoroutine(DrawNextCard(_deckList, _discardList));
     }
     
-    private IEnumerator DrawNextCard(List<CardPrefab> _deckList)
+    private IEnumerator DrawNextCard(List<CardPrefab> _deckList, List<CardPrefab> _discardList)
     {
         int i = 0;
-        while(_cardInHand.Count < maxSizeHand)
+        while(_cardInHand.Count < maxSizeHand && (_deckList.Count != 0 || _discardList.Count != 0))
         {
             if (_deckList.Count != 0)
             {
