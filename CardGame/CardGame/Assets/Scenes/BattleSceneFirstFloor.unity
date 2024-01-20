@@ -3197,6 +3197,7 @@ GameObject:
   - component: {fileID: 1629708152}
   - component: {fileID: 1629708154}
   - component: {fileID: 1629708155}
+  - component: {fileID: 1629708156}
   m_Layer: 3
   m_Name: RangeBuild
   m_TagString: RangeBuild
@@ -3314,6 +3315,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1629708156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629708150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299bf030c77dd5d438d1160b89564302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manaBuilds:
+  - {fileID: 7572587704688605338, guid: d6dd31b5054dbb4498567de158a44bf3, type: 3}
+  - {fileID: 2666386241227845301, guid: d3fb1f5ebb7c7874e85dcfb08430071e, type: 3}
+  _poolManaBuilds: []
+  _zonePosition: {fileID: 1629708151}
 --- !u!1 &1658232233
 GameObject:
   m_ObjectHideFlags: 0
