@@ -11,9 +11,6 @@ public class ManaCardsPrefab : MonoBehaviour
     [SerializeField] private Image _iconCard;
     [SerializeField] public ResursBuild _cardInfo;
     
-    private bool InTheTable = false;
-    
-
     private void Start()
     {
         uniqueID = Guid.NewGuid().ToString();

@@ -1,14 +1,15 @@
 using System;
 using UnityEngine;
 
-public class PlayerBattleScene : MonoBehaviour, IPlayerBattleScene
+public class PlayerBattleScene : MonoBehaviour
 {
-    [SerializeField] private int _mana;
+    private int _manaBuild;
+    private int _manaHuman;
     [SerializeField] private int _health;
     [HideInInspector] public int currentHp;
-
-    public int Health { get; set; }
-    public int Mana => _mana;
+    
+    public int manaBuild => _manaBuild;
+    public int manaHuman => _manaHuman;
     
     private void Awake()
     {
@@ -16,9 +17,10 @@ public class PlayerBattleScene : MonoBehaviour, IPlayerBattleScene
         currentHp = _health;
     }
 
-    public void UpgradeMana()
+    public void UpgradeMana(int manaHumanAddCount, int manaBuildAddCount)
     {
-        _mana++;
+        _manaHuman += manaHumanAddCount;
+        _manaBuild += manaBuildAddCount;
     }
 
     public void hitHero(int damage)

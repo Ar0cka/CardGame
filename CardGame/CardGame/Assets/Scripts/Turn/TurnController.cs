@@ -11,8 +11,8 @@ public class TurnController : MonoBehaviour, ITurn
     [SerializeField] private DeckController _deckController;
     private PlayerBattleScene _player;
     [SerializeField] private GameObject _deadMenu;
-
     [SerializeField] private Fase _phaseController;
+    [SerializeField] private ManaManager _manaManager;
 
     #region parametrs
     private bool _isTurnPlayer;
@@ -49,14 +49,13 @@ public class TurnController : MonoBehaviour, ITurn
     public void TurnPlayerBegin()
     {
         _phaseController.BeginBuildPhase();
-        if (_deckController != null)
-        {
-            _deckController.TakeCardFromDeck();
-        }
+        _deckController.TakeCardFromDeck();
         #region ChangeCountTurn
         _turn++;
         turnUI.text = _turn.ToString();
         #endregion
+        
+        _manaManager.AddManaToPool();
     } // начало фазы строение игрока
 
     public void TurnPlayerPenutationPhase()

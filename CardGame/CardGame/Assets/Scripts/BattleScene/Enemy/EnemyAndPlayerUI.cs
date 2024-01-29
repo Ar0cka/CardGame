@@ -6,6 +6,7 @@ public class EnemyAndPlayerUI : MonoBehaviour
 {
      [SerializeField] private TextMeshProUGUI hpBarPlayer;
      [SerializeField] private TextMeshProUGUI hpBarEnemy;
+     [SerializeField] private TextMeshProUGUI manaPool;
 
      private PlayerBattleScene _playerBattleScene;
      [SerializeField] private EnemyController _enemyController;
@@ -14,7 +15,6 @@ public class EnemyAndPlayerUI : MonoBehaviour
      {
           _playerBattleScene = FindObjectOfType<PlayerBattleScene>();
           _enemyController = FindObjectOfType<EnemyController>();
-
           #region ChangeHpBars
 
           UpgradeUiPlayer();
@@ -31,4 +31,10 @@ public class EnemyAndPlayerUI : MonoBehaviour
      {
           hpBarEnemy.text = _enemyController._currentHitPoints.ToString();
      }
+
+     public void UpgradeManaPool(int buildMana, int humanMana)
+     {
+          manaPool.text = $"Build mana: {buildMana}\n Human mana {humanMana}";
+     }
+     
 }

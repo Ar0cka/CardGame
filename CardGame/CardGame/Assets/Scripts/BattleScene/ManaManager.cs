@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 
@@ -6,6 +8,14 @@ public class ManaManager : MonoBehaviour // Менеджер по добавле
 {
    private List<ManaCardsPrefab> buildResurses = new List<ManaCardsPrefab>();
    private List<ManaCardsPrefab> humanResurses = new List<ManaCardsPrefab>();
+   private PlayerBattleScene player;
+
+   [SerializeField] private EnemyAndPlayerUI _playerUI;
+   
+   public void InitializeManaManager()
+   {
+      player = FindObjectOfType<PlayerBattleScene>();
+   }
 
    public void RegisterCards(ManaCardsPrefab prefabCard, ResursBuild resursBuildInfo)
    {
@@ -19,9 +29,10 @@ public class ManaManager : MonoBehaviour // Менеджер по добавле
       }
    }
 
-   public void AddManaToPool(int humanManaPool, int buildManaPool)
+   public void AddManaToPool()
    {
-      humanManaPool += buildResurses.Count;
-      buildManaPool += humanResurses.Count;
+      player.UpgradeMana(buildResurses.Count, humanResurses.Count);
+      _playerUI.UpgradeManaPool(player.manaBuild, player.manaHuman);
    }
 }
+ 
