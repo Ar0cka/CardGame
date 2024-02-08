@@ -7,8 +7,6 @@ public class ZoneDropBegin : MonoBehaviour
 {
    [SerializeField] private List<ManaCardsPrefab> _zoneCards;
    [SerializeField] private Transform _transform;
-   
-
    [SerializeField] private ManaManager _manaManager;
 
     public void InitializeZoneDrop()

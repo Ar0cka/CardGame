@@ -12,6 +12,7 @@ public class DropCardInPanel : MonoBehaviour
     [SerializeField] private DeckController _deckController;
     [SerializeField] private HandCards _handCards;
     [SerializeField] private InitializeObjectToPool _initializeObject;
+    [SerializeField] private ManaManager _manaManager;
     
     public RectTransform miliArmyZone;
     public RectTransform rangeArmyZone;
@@ -20,25 +21,27 @@ public class DropCardInPanel : MonoBehaviour
     
     public void DropNewCardInPanel(CardPrefab cardPrefab, string zoneTag)
     {
-        
         switch (zoneTag)
         {
             case "MiliArmy":
                 _cardsInMilyArmyZone.Add(cardPrefab);
                 _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
                 _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
+                _manaManager.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
                 break;
             
             case "RangeSolder":
                 _cardsInRangeHumanZone.Add(cardPrefab);
                 _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
                 _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
+                _manaManager.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
                 break;
             
             case "RangeBuild":
                 _cardsInRangeBuildZone.Add(cardPrefab);
                 _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
                 _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
+                _manaManager.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
                 break;
         }
     }

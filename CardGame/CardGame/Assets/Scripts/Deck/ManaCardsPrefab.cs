@@ -21,4 +21,6 @@ public class ManaCardsPrefab : MonoBehaviour
         if (_cardInfo != null)
             _iconCard.sprite = _cardInfo.iconCard;
     }
+    
+    
 }

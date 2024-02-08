@@ -27,4 +27,13 @@ public class PlayerBattleScene : MonoBehaviour
     {
         currentHp -= damage;
     }
+
+    public void TakingAwayBuildManaFromManaPool(int manaCost)
+    {
+        _manaBuild -= manaCost;
+    }
+    public void TakingAwayHumandManaFromManaPool(int manaCost)
+    {
+        _manaHuman -= manaCost;
+    }
 }

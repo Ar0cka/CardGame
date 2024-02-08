@@ -7,6 +7,8 @@ using UnityEngine.XR;
 
 public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    private ManagerAbility _managerAbility;
+    
     private RectTransform _rectTransform;
     private Canvas _canvas;
     private CardPrefab cardPrefab;
@@ -26,6 +28,7 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         
         _dropCard = FindObjectOfType<DropCardInPanel>();
         _objectToPool = FindObjectOfType<InitializeObjectToPool>();
+        _managerAbility = FindObjectOfType<ManagerAbility>();
     }
 
     private void Update()
@@ -61,16 +64,17 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         if (zoneTag != null)
         {
-            var typeCard = cardPrefab._cardInfo.type;
+            var typeCard = cardPrefab._cardInfo.subtype;
             
              switch (zoneTag)
              {
                  case "MiliArmy":
-                     if (typeCard == CardInfo.TypeCard.AttackHuman || typeCard == CardInfo.TypeCard.DefenseBuild)
+                     if (typeCard == CardInfo.SubtypeCard.AttackHuman || typeCard == CardInfo.SubtypeCard.DefenseBuild)
                      {
-                         _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
+                         _dropCard.DropNewCardInPanel( cardPrefab, zoneTag);
                          _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.miliArmyZone.transform);
+                         _managerAbility.DropCard(cardPrefab._cardInfo);
                      }
                      else
                      {
@@ -79,11 +83,12 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                      break;
             
                  case "RangeSolder":
-                     if (typeCard == CardInfo.TypeCard.AttackRangeHuman)
+                     if (typeCard == CardInfo.SubtypeCard.AttackRangeHuman)
                      {
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.rangeArmyZone.transform);
+                         _managerAbility.DropCard(cardPrefab._cardInfo);
                      }
                      else
                      {
@@ -92,11 +97,12 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                      break;
             
                  case "RangeBuild":
-                     if (typeCard == CardInfo.TypeCard.AttackRangeBuild || typeCard == CardInfo.TypeCard.AuxiliaryBuild)
+                     if (typeCard == CardInfo.SubtypeCard.AttackRangeBuild || typeCard == CardInfo.SubtypeCard.AuxiliaryBuild)
                      { 
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.rangeBuildZone.transform);
+                         _managerAbility.DropCard(cardPrefab._cardInfo);
                      }
                      else
                      {

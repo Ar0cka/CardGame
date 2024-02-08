@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c475b5c4174fd884fa0a6941c84ad23a, type: 3}
-  m_Name: Tower
+  m_Name: Ferma
   m_EditorClassIdentifier: 
-  _iconCard: {fileID: 21300000, guid: fc255428cc72336418fd383d10fda6d4, type: 3}
-  subtype: 0
-  cardsType: 1
-  _nameCard: Tower
-  _descriptionCard: "\u0417\u0430\u0449\u0438\u0442\u043D\u043E\u0435 \u0441\u043E\u043E\u0440\u0443\u0436\u0435\u043D\u0438\u0435"
-  _hitPoint: 4
-  _damageAttack: 0
-  _damageDefense: 0
+  _iconCard: {fileID: 21300000, guid: c41284b177f088f49b6f8c5c86841b87, type: 3}
+  _subtype: 4
+  _cardsType: 0
+  _nameCard: Ferma
+  _descriptionCard: "Ferma \u0434\u043B\u044F \u043E\u0442\u0445\u0438\u043B\u0430
+    \u043F\u043B\u0435\u0435\u0440\u0430"
   _cost: 1
