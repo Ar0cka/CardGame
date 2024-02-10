@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _iconCard: {fileID: 21300000, guid: c41284b177f088f49b6f8c5c86841b87, type: 3}
   _subtype: 4
-  _cardsType: 0
+  _cardsType: 1
   _nameCard: Ferma
   _descriptionCard: "Ferma \u0434\u043B\u044F \u043E\u0442\u0445\u0438\u043B\u0430
     \u043F\u043B\u0435\u0435\u0440\u0430"

@@ -6,7 +6,7 @@ public class PlayerBattleScene : MonoBehaviour
     private int _manaBuild;
     private int _manaHuman;
     [SerializeField] private int _health;
-    [HideInInspector] public int currentHp;
+    /*[HideInInspector]*/ public int currentHp;
     
     public int manaBuild => _manaBuild;
     public int manaHuman => _manaHuman;
@@ -26,6 +26,11 @@ public class PlayerBattleScene : MonoBehaviour
     public void hitHero(int damage)
     {
         currentHp -= damage;
+    }
+
+    public void HealHero(int heal)
+    {
+        currentHp += heal;
     }
 
     public void TakingAwayBuildManaFromManaPool(int manaCost)

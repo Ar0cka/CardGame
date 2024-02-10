@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5290215275279516511}
   - component: {fileID: 570762295}
   - component: {fileID: 7113120657774953990}
+  - component: {fileID: 4509743361930968683}
+  - component: {fileID: -5150821784547364377}
   m_Layer: 2
   m_Name: DarkSolder
   m_TagString: Untagged
@@ -66,10 +68,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropCard: {fileID: 0}
-  _miliArmyZone: {fileID: 0}
-  _rangeSolderZone: {fileID: 0}
-  _rangeBuildZone: {fileID: 0}
+--- !u!114 &4509743361930968683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275279516508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd45448b332550499d4557e519c3fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5150821784547364377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275279516508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740cf28d2319a8e42b51218607b840aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsAbility: {fileID: 4509743361930968683}
 --- !u!1 &5290215275573792041
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,8 +130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 14}
-  m_SizeDelta: {x: 137.37, y: 144.16}
+  m_AnchoredPosition: {x: 2, y: 14.3728}
+  m_SizeDelta: {x: 137.37, y: 143.4143}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5290215275573792042
 CanvasRenderer:

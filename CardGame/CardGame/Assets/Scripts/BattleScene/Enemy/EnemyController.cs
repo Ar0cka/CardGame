@@ -60,7 +60,7 @@ public class EnemyController : MonoBehaviour
 
         #endregion
 
-        _enemyAndPlayerUI.UpgradeUIEnemy();
+        _enemyAndPlayerUI.UpgradeHPBarEnemy();
     }
     
     private void LoadSpriteMonster()
@@ -75,7 +75,7 @@ public class EnemyController : MonoBehaviour
         StartDelayAttackEnemy();
         
         _playerBattleScene.hitHero(_damage);
-        _enemyAndPlayerUI.UpgradeUiPlayer();
+        _enemyAndPlayerUI.UpgradeHPBardPlayer();
     }
     private IEnumerator StartDelayAttackEnemy()
     {

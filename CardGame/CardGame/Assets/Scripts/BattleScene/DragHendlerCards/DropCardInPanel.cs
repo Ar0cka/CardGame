@@ -9,6 +9,7 @@ public class DropCardInPanel : MonoBehaviour
     private List<CardPrefab> _cardsInRangeHumanZone = new List<CardPrefab>();
     private List<CardPrefab> _cardsInRangeBuildZone = new List<CardPrefab>();
     private List<GameObject> _objectInBattleZone = new List<GameObject>();
+
     [SerializeField] private DeckController _deckController;
     [SerializeField] private HandCards _handCards;
     [SerializeField] private InitializeObjectToPool _initializeObject;

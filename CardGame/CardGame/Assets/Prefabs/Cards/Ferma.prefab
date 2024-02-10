@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 570762295}
   - component: {fileID: 7113120657774953990}
   - component: {fileID: -1107174459355176814}
+  - component: {fileID: 4384721521001780015}
   m_Layer: 2
   m_Name: Ferma
   m_TagString: Untagged
@@ -67,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _managerAbility: {fileID: 0}
 --- !u!114 &-1107174459355176814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +80,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab582d53b164551961b5057c2ad58b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4384721521001780015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275279516508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740cf28d2319a8e42b51218607b840aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsAbility: {fileID: -1107174459355176814}
 --- !u!1 &5290215275573792041
 GameObject:
   m_ObjectHideFlags: 0

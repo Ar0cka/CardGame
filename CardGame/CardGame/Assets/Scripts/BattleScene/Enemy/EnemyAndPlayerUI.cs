@@ -17,17 +17,17 @@ public class EnemyAndPlayerUI : MonoBehaviour
           _enemyController = FindObjectOfType<EnemyController>();
           #region ChangeHpBars
 
-          UpgradeUiPlayer();
+          UpgradeHPBardPlayer();
 
           #endregion
      }
 
-     public void UpgradeUiPlayer()
+     public void UpgradeHPBardPlayer()
      {
           hpBarPlayer.text = _playerBattleScene.currentHp.ToString();
      }
 
-     public void UpgradeUIEnemy()
+     public void UpgradeHPBarEnemy()
      {
           hpBarEnemy.text = _enemyController._currentHitPoints.ToString();
      }

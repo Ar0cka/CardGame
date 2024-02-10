@@ -1,25 +1,25 @@
 using UnityEditor;
-using UnityEngine;
+
+
 [CustomEditor(typeof(CardInfo))]
 public class CardInfoEditor : Editor
 {
-   public override void OnInspectorGUI()
-   {
-      CardInfo cardInfo = (CardInfo)target;
+    public override void OnInspectorGUI()
+    {
+        CardInfo cardInfo = (CardInfo)target;
 
-      DrawDefaultInspector();
+        DrawDefaultInspector();
 
-      if (cardInfo.subtype == CardInfo.SubtypeCard.DefenseBuild)
+        if (cardInfo.subtype == CardInfo.SubtypeCard.DefenseBuild || cardInfo.subtype == CardInfo.SubtypeCard.AttackHuman)
       {
          cardInfo.defense = EditorGUILayout.IntField("Defense", cardInfo.defense);
          cardInfo.damage = EditorGUILayout.IntField("Damage", cardInfo.damage);
       }
 
-      if (cardInfo.subtype == CardInfo.SubtypeCard.AuxiliaryBuild)
+      else if (cardInfo.subtype == CardInfo.SubtypeCard.AuxiliaryBuild)
       {
          cardInfo.defense = EditorGUILayout.IntField("Defense", cardInfo.defense);
          cardInfo.heal = EditorGUILayout.IntField(("Heal"), cardInfo.heal);
-      }
-      
+      }   
    }
 }

@@ -7,8 +7,6 @@ using UnityEngine.XR;
 
 public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private ManagerAbility _managerAbility;
-    
     private RectTransform _rectTransform;
     private Canvas _canvas;
     private CardPrefab cardPrefab;
@@ -18,6 +16,8 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private DropCardInPanel _dropCard;
     private InitializeObjectToPool _objectToPool;
     private HendlerCards _hendlerCards;
+
+    private AbilityActivated _abilityActivated;
     
     private void Awake()
     {
@@ -25,10 +25,10 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
         _hendlerCards = GetComponent<HendlerCards>();
+        _abilityActivated = GetComponent<AbilityActivated>();
         
         _dropCard = FindObjectOfType<DropCardInPanel>();
         _objectToPool = FindObjectOfType<InitializeObjectToPool>();
-        _managerAbility = FindObjectOfType<ManagerAbility>();
     }
 
     private void Update()
@@ -74,7 +74,7 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                          _dropCard.DropNewCardInPanel( cardPrefab, zoneTag);
                          _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.miliArmyZone.transform);
-                         _managerAbility.DropCard(cardPrefab._cardInfo);
+                        _abilityActivated.ActivateAbility();
                      }
                      else
                      {
@@ -88,8 +88,8 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.rangeArmyZone.transform);
-                         _managerAbility.DropCard(cardPrefab._cardInfo);
-                     }
+                        _abilityActivated.ActivateAbility();
+                    }
                      else
                      {
                          transform.SetParent(_objectToPool.handTransform.transform);
@@ -102,8 +102,8 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.rangeBuildZone.transform);
-                         _managerAbility.DropCard(cardPrefab._cardInfo);
-                     }
+                        _abilityActivated.ActivateAbility();
+                    }
                      else
                      {
                          transform.SetParent(_objectToPool.handTransform.transform);
