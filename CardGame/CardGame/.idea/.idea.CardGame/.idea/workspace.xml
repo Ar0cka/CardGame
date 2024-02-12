@@ -5,29 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings/CardInfoEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings/CardInfoEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability/HealAbility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability/HealAbility.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability/Settings/IAbility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability/Settings/IAbility.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability/Settings/ManagerAbility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability/Settings/ManagerAbility.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase/CheckEnemyType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase/CheckEnemyType.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Resourse/Card/BattleCards/DarkSolder.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Resourse/Card/BattleCards/DarkSolder.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Resourse/Card/BattleCards/Tower.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Resourse/Card/BattleCards/Tower.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings/CardInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings/CardInfo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerCards.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/ManaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/ManaManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/ManaCardsPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/ManaCardsPrefab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/Fase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/Fase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBattleScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBattleScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZoneDropBegin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ZoneDropBegin.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.49532712&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;BattlePhase&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Battle&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -221,6 +207,9 @@
       <workItem from="1707198611247" duration="2281000" />
       <workItem from="1707219472827" duration="1145000" />
       <workItem from="1707358714200" duration="133000" />
+      <workItem from="1707638242142" duration="25000" />
+      <workItem from="1707638273813" duration="6626000" />
+      <workItem from="1707752163787" duration="6269000" />
     </task>
     <servers />
   </component>
@@ -236,68 +225,15 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs</url>
-          <line>115</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\Turn\TurnController.cs" initialLine="116" containingFunctionPresentation="Method 'OnClickButtonEndTurn'">
-            <startOffsets>
-              <option value="3184" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3217" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemyAndPlayerUI.cs</url>
-          <line>26</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Enemy\EnemyAndPlayerUI.cs" initialLine="26" containingFunctionPresentation="Method 'UpgradeUiPlayer'">
-            <startOffsets>
-              <option value="703" />
-            </startOffsets>
-            <endOffsets>
-              <option value="762" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/ManaManager.cs</url>
-          <line>34</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\ManaManager.cs" initialLine="34" containingFunctionPresentation="Method 'AddManaToPool'">
-            <startOffsets>
-              <option value="995" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1057" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability/Settings/ManagerAbility.cs</url>
           <line>11</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Ability\Settings\ManagerAbility.cs" initialLine="11" containingFunctionPresentation="Method 'DropCard'">
-            <startOffsets>
-              <option value="222" />
-            </startOffsets>
-            <endOffsets>
-              <option value="253" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Ability\Settings\ManagerAbility.cs" initialLine="11" containingFunctionPresentation="Method 'DropCard'" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/Ability/HealAbility.cs</url>
           <line>17</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Ability\HealAbility.cs" initialLine="17" containingFunctionPresentation="Method 'OnEnable'">
-            <startOffsets>
-              <option value="371" />
-            </startOffsets>
-            <endOffsets>
-              <option value="420" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Ability\HealAbility.cs" initialLine="17" containingFunctionPresentation="Method 'OnEnable'" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

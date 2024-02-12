@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerBattleScene : MonoBehaviour
 {
+    [SerializeField] private AttackMonster _attack;
+    
     private int _manaBuild;
     private int _manaHuman;
     [SerializeField] private int _health;
@@ -40,5 +42,11 @@ public class PlayerBattleScene : MonoBehaviour
     public void TakingAwayHumandManaFromManaPool(int manaCost)
     {
         _manaHuman -= manaCost;
+    }
+
+    public void AttackMonsters()
+    {
+        _attack.GetCardPrefabFromPanel();
+        _attack.DamageMonsters();
     }
 }

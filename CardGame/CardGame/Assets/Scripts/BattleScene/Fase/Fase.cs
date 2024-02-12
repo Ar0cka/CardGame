@@ -10,15 +10,17 @@ public class Fase : MonoBehaviour
    
    private bool beginBuildPhase, beginPenutationFase, _beginBattleFase, _beginEndPhase;
 
+   private bool Monster, Player;
+
    public bool _isBuildPhase => beginBuildPhase;
    public bool _isPenutationPhase => beginPenutationFase;
    public bool _isBattlePhase => _beginBattleFase;
    public bool _isEndPhase => _beginEndPhase;
 
    [SerializeField] private TextMeshProUGUI _phaseText, _buttonsEndPhase;
+
+   [SerializeField ]private CheckEnemyType _checkEnemy;
    
-
-
    public void BeginBuildPhase()
    {
       // Тут мы должны включить перетаскивание на картах, поменять фазу на строительств, поменять кнопку, на закончить фазу строительства, так же данная фаза должна включать добавление маны с домиков.
@@ -40,11 +42,14 @@ public class Fase : MonoBehaviour
 
    public void BeginBattle()
    {
+      #region ChangeFase
       battlePhase = "Battle phase";
       beginPenutationFase = false;
       _beginBattleFase = true;
       _phaseText.text = battlePhase;
       _buttonsEndPhase.text = "End battle phase";
+      #endregion
+      _checkEnemy.MonstersAttack();
    }
 
    public void EndPhase()

@@ -74,6 +74,8 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                          _dropCard.DropNewCardInPanel( cardPrefab, zoneTag);
                          _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.miliArmyZone.transform);
+                         
+                         if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                      }
                      else
@@ -88,6 +90,8 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.rangeArmyZone.transform);
+                         
+                         if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }
                      else
@@ -102,6 +106,8 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCards.enabled = false;
                          transform.SetParent(_dropCard.rangeBuildZone.transform);
+                         
+                         if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }
                      else

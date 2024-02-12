@@ -5,6 +5,7 @@ using UnityEngine.PlayerLoop;
 
 public class DropCardInPanel : MonoBehaviour
 {
+    private List<CardPrefab> _cardInBattleZone = new List<CardPrefab>();
     private List<CardPrefab> _cardsInMilyArmyZone = new List<CardPrefab>();
     private List<CardPrefab> _cardsInRangeHumanZone = new List<CardPrefab>();
     private List<CardPrefab> _cardsInRangeBuildZone = new List<CardPrefab>();
@@ -57,5 +58,22 @@ public class DropCardInPanel : MonoBehaviour
             _cardsInMilyArmyZone.RemoveAt(index);
             _objectInBattleZone.RemoveAt(index);
         }                                                           
+    }
+
+    public List<CardPrefab> repackAllLists(List<CardPrefab> list)
+    {
+        foreach (var cards in _cardsInMilyArmyZone)
+        {
+            list.Add(cards);
+        }
+        foreach (var cards in _cardsInRangeHumanZone)
+        {
+            list.Add(cards);
+        }
+        foreach (var cards in _cardsInRangeBuildZone)
+        {
+            list.Add(cards);
+        }
+        return list;
     }
 }
