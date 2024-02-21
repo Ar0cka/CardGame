@@ -17,9 +17,15 @@ public class Fase : MonoBehaviour
    public bool _isBattlePhase => _beginBattleFase;
    public bool _isEndPhase => _beginEndPhase;
 
+   List<CardPrefab> cards = new List<CardPrefab>();
+
    [SerializeField] private TextMeshProUGUI _phaseText, _buttonsEndPhase;
 
    [SerializeField ]private CheckEnemyType _checkEnemy;
+
+   [SerializeField] private DropCardInPanel _zoneCards;
+
+   private HendlerController _hendlerController;
    
    public void BeginBuildPhase()
    {
@@ -32,16 +38,31 @@ public class Fase : MonoBehaviour
 
    public void BeginPenutationPhase()
    {
+      _zoneCards.repackAllLists(cards);
+      foreach (var vCard in cards)
+      {
+            _hendlerController = vCard.GetComponent<HendlerController>();
+         
+         _hendlerController.PenutationPhase();
+      }
       // тут должно быть выключено перетаскивание с руки, но при этом включино перетаскивание с одной панели на поле в другую
       permutationPhase = "Permutation phase";
       beginBuildPhase = false;
       beginPenutationFase = true;
       _phaseText.text = permutationPhase;
       _buttonsEndPhase.text = "End permutation phase";
+
    }
 
    public void BeginBattle()
    {
+      foreach (var vCard in cards)
+      {
+            _hendlerController = vCard.GetComponent<HendlerController>();
+         
+         _hendlerController.endPenutationPhase();
+      }
+      cards.Clear();
       #region ChangeFase
       battlePhase = "Battle phase";
       beginPenutationFase = false;

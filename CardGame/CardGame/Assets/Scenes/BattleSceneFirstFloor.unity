@@ -1343,6 +1343,9 @@ MonoBehaviour:
   - {fileID: 607128850502955106, guid: e83c03661c6c8a044a3a490fa4ffcf90, type: 3}
   - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
   - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
+  - {fileID: 607128850502955106, guid: e83c03661c6c8a044a3a490fa4ffcf90, type: 3}
+  - {fileID: 607128850502955106, guid: e83c03661c6c8a044a3a490fa4ffcf90, type: 3}
+  - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
   _discardDeckList: []
   amountDeck: {fileID: 920344900}
   amountDiscardDeck: {fileID: 1658232235}
@@ -1703,8 +1706,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -574, y: 0}
-  m_SizeDelta: {x: 171.7, y: 261.93}
+  m_AnchoredPosition: {x: -547.8, y: 21.033}
+  m_SizeDelta: {x: 202.94, y: 219.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &914539284
 MonoBehaviour:
@@ -1745,14 +1748,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f34dd3d2141391846a8ff76ea91f96ac, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2018,6 +2021,7 @@ MonoBehaviour:
   miliArmyZone: {fileID: 1223471715}
   rangeArmyZone: {fileID: 914539283}
   rangeBuildZone: {fileID: 1629708151}
+  battleZone: {fileID: 2146691832}
   _hendlerZone: {fileID: 260315599}
 --- !u!1 &1001818485
 GameObject:
@@ -2220,8 +2224,8 @@ GameObject:
   - component: {fileID: 1223471715}
   - component: {fileID: 1223471718}
   - component: {fileID: 1223471717}
-  - component: {fileID: 1223471716}
   - component: {fileID: 1223471719}
+  - component: {fileID: 1223471720}
   m_Layer: 3
   m_Name: MiliArmy
   m_TagString: MiliArmy
@@ -2246,35 +2250,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -238.35999, y: 0}
-  m_SizeDelta: {x: 171.7, y: 261.93}
+  m_AnchoredPosition: {x: -168.30002, y: 21.033}
+  m_SizeDelta: {x: 199.77, y: 219.86}
   m_Pivot: {x: 1.113156, y: 0.5}
---- !u!114 &1223471716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223471714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 5
-    m_Right: 5
-    m_Top: 5
-    m_Bottom: 5
-  m_ChildAlignment: 0
-  m_Spacing: 5
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &1223471717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2288,14 +2266,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f34dd3d2141391846a8ff76ea91f96ac, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2339,6 +2317,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1223471720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223471714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 2
+    m_Right: 4
+    m_Top: 4
+    m_Bottom: 4
+  m_ChildAlignment: 2
+  m_StartCorner: 0
+  m_StartAxis: 1
+  m_CellSize: {x: 90, y: 170}
+  m_Spacing: {x: 7, y: -30}
+  m_Constraint: 1
+  m_ConstraintCount: 2
 --- !u!1 &1298740424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,6 +3102,7 @@ MonoBehaviour:
   _phaseText: {fileID: 545457788}
   _buttonsEndPhase: {fileID: 202366673}
   _checkEnemy: {fileID: 1516248460}
+  _zoneCards: {fileID: 977147229}
 --- !u!114 &1516248460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3147,7 +3150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -705, y: 227}
+  m_AnchoredPosition: {x: -570, y: 276}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595897132
@@ -3260,9 +3263,9 @@ GameObject:
   - component: {fileID: 1629708151}
   - component: {fileID: 1629708153}
   - component: {fileID: 1629708152}
-  - component: {fileID: 1629708154}
   - component: {fileID: 1629708155}
   - component: {fileID: 1629708156}
+  - component: {fileID: 1629708157}
   m_Layer: 3
   m_Name: RangeBuild
   m_TagString: RangeBuild
@@ -3287,8 +3290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -806.9999, y: 0}
-  m_SizeDelta: {x: 171.7, y: 261.93}
+  m_AnchoredPosition: {x: -798.93, y: 21.03}
+  m_SizeDelta: {x: 187.86, y: 219.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1629708152
 MonoBehaviour:
@@ -3303,14 +3306,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f34dd3d2141391846a8ff76ea91f96ac, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3328,32 +3331,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629708150}
   m_CullTransparentMesh: 1
---- !u!114 &1629708154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629708150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 5
-    m_Right: 5
-    m_Top: 5
-    m_Bottom: 5
-  m_ChildAlignment: 0
-  m_Spacing: 5
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!61 &1629708155
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3395,9 +3372,32 @@ MonoBehaviour:
   _zoneCards:
   - {fileID: 2666386241227845301, guid: d3fb1f5ebb7c7874e85dcfb08430071e, type: 3}
   - {fileID: 7572587704688605338, guid: d6dd31b5054dbb4498567de158a44bf3, type: 3}
-  - {fileID: 7572587704688605338, guid: d6dd31b5054dbb4498567de158a44bf3, type: 3}
   _transform: {fileID: 1629708151}
   _manaManager: {fileID: 1471489352}
+--- !u!114 &1629708157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629708150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 4
+    m_Top: 0
+    m_Bottom: 4
+  m_ChildAlignment: 1
+  m_StartCorner: 0
+  m_StartAxis: 1
+  m_CellSize: {x: 138, y: 140}
+  m_Spacing: {x: -60, y: -37}
+  m_Constraint: 1
+  m_ConstraintCount: 3
 --- !u!1 &1658232233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3967,8 +3967,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -101, y: 0}
-  m_SizeDelta: {x: 171.7, y: 261.93}
+  m_AnchoredPosition: {x: -36.9, y: 21.033}
+  m_SizeDelta: {x: 191.07, y: 219.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146691833
 MonoBehaviour:
@@ -4009,14 +4009,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.56078434}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f34dd3d2141391846a8ff76ea91f96ac, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

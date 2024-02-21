@@ -48,6 +48,8 @@ public class TurnController : MonoBehaviour, ITurn
     } // проверка на ход противника
     public void TurnPlayerBegin()
     {
+        if (_player.currentHp > 0)
+        {
         _phaseController.BeginBuildPhase();
         _deckController.TakeCardFromDeck();
         #region ChangeCountTurn
@@ -56,6 +58,11 @@ public class TurnController : MonoBehaviour, ITurn
         #endregion
         
         _manaManager.AddManaToPool();
+        }
+        else
+        {
+            _deadMenu.SetActive(true);
+        }
     } // начало фазы строение игрока
 
     public void TurnPlayerPenutationPhase()
@@ -75,19 +82,12 @@ public class TurnController : MonoBehaviour, ITurn
     
     public void TurnEnemy()
     {
-        if (_player.currentHp > 0)
-        {
-            _enemyController.AttackPlayer();
-            #region ChangeTurn
-            _isTurnEnemy = false;
-            _isTurnPlayer = true;
-            #endregion
-            StartCoroutine(DelayStarTurnPlayer());
-        }
-        else
-        {
-            _deadMenu.SetActive(true);
-        }
+        _enemyController.AttackPlayer();
+        #region ChangeTurn
+        _isTurnEnemy = false;
+        _isTurnPlayer = true;
+        #endregion
+        StartCoroutine(DelayStarTurnPlayer());
     } // ход противника
 
     private IEnumerator DelayStarTurnPlayer()

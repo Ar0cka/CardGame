@@ -22,43 +22,24 @@ public class CardInfo : ScriptableObject
     }
 
     #region initialize parametrs
-    [SerializeField] private Sprite _iconCard;
-    [SerializeField] private SubtypeCard _subtype;
-    [SerializeField] private CardsType _cardsType;
-    [SerializeField] private string _nameCard;
-    [SerializeField] private string _descriptionCard;
-    [SerializeField] private int _cost;
-    private int _hitPoint; 
-    private int _damageAttack, _defense;
-    private int _heal;
+    [SerializeField] protected Sprite _iconCard;
+    [SerializeField] protected SubtypeCard _subtype;
+    [SerializeField] protected CardsType _cardsType;
+    [SerializeField] protected string _nameCard;
+    [SerializeField] protected string _descriptionCard;
+    [SerializeField] protected int _cost;
+    [SerializeField] protected int _damageAttack;
+    [SerializeField] protected int _hitPoint;
    
-    #endregion
-
     public Sprite iconCard => _iconCard;
     public SubtypeCard subtype => _subtype;
     public CardsType cardType => _cardsType;
     public string nameCard => _nameCard;
     public string descriptionCard => _descriptionCard;
     public int cost => _cost;
-    
-    #region SettersParametrs
-    
-    public int damage
-    {
-        get { return _damageAttack; }
-        set { _damageAttack = value; }
-    }
-
-    public int defense
-    {
-        get { return _defense; }
-        set { _defense = value; }
-    }
-
-    public int heal
-    {
-        get { return _heal;}
-        set { _heal = value; }
-    }
+    public int damage => _damageAttack;
+    public int hitPoint => _hitPoint;
     #endregion
 }
+
+

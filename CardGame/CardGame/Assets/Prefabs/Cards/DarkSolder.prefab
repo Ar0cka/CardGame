@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7113120657774953990}
   - component: {fileID: 4509743361930968683}
   - component: {fileID: -5150821784547364377}
+  - component: {fileID: 5597236151985810015}
+  - component: {fileID: 8141857313336508811}
   m_Layer: 2
   m_Name: DarkSolder
   m_TagString: Untagged
@@ -55,7 +57,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueID: 
   _iconCard: {fileID: 6951324898934110733}
-  _cardInfo: {fileID: 11400000, guid: ca6c22cbcc2b3ea48b346d28ec48ab60, type: 2}
+  cardInfo: {fileID: 11400000, guid: ca6c22cbcc2b3ea48b346d28ec48ab60, type: 2}
+  currentZoneTag: 
 --- !u!114 &7113120657774953990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hendlerController: {fileID: 8141857313336508811}
 --- !u!114 &4509743361930968683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +97,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsAbility: {fileID: 4509743361930968683}
+--- !u!114 &5597236151985810015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275279516508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563a2bd1f8f741c288f5bcd9f9b2b868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8141857313336508811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275279516508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ece43d04994fe9bd03bcd60d089d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hendlerFromHand: {fileID: 7113120657774953990}
+  _hendlerSwitchZone: {fileID: 5597236151985810015}
 --- !u!1 &5290215275573792041
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 14.3728}
-  m_SizeDelta: {x: 137.37, y: 143.4143}
+  m_AnchoredPosition: {x: 1.3796, y: 15.6136}
+  m_SizeDelta: {x: 138.6108, y: 140.9327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5290215275573792042
 CanvasRenderer:

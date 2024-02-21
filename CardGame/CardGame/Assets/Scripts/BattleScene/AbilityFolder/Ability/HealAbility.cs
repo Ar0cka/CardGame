@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 
@@ -15,7 +14,11 @@ public class HealAbility : MonoBehaviour, IAbility
 
     public void ActivatedAbility(CardInfo cardInfo)
     {
-        _player.HealHero(cardInfo.heal);
+        if (cardInfo is AuxiliaryBuild)
+        {
+            AuxiliaryBuild auxiliaryBuild = (AuxiliaryBuild)cardInfo;
+            _player.HealHero(auxiliaryBuild.heal);
+        }
         _playerUI.UpgradeHPBardPlayer();
     }   
 }

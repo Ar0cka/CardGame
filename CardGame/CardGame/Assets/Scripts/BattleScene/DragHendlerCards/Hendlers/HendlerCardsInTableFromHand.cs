@@ -5,8 +5,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.XR;
 
 
-public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class HendlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [SerializeField] private HendlerController _hendlerController;
+    
     private RectTransform _rectTransform;
     private Canvas _canvas;
     private CardPrefab cardPrefab;
@@ -15,20 +17,23 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     private DropCardInPanel _dropCard;
     private InitializeObjectToPool _objectToPool;
-    private HendlerCards _hendlerCards;
+    private HendlerCardsInTableFromHand _hendlerCardsInTableFromHand;
 
     private AbilityActivated _abilityActivated;
+
+    private PlayerBattleScene _player;
     
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
-        _hendlerCards = GetComponent<HendlerCards>();
+        _hendlerCardsInTableFromHand = GetComponent<HendlerCardsInTableFromHand>();
         _abilityActivated = GetComponent<AbilityActivated>();
         
         _dropCard = FindObjectOfType<DropCardInPanel>();
         _objectToPool = FindObjectOfType<InitializeObjectToPool>();
+        _player = FindObjectOfType<PlayerBattleScene>();
     }
 
     private void Update()
@@ -69,12 +74,13 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
              switch (zoneTag)
              {
                  case "MiliArmy":
-                     if (typeCard == CardInfo.SubtypeCard.AttackHuman || typeCard == CardInfo.SubtypeCard.DefenseBuild)
+                     if (typeCard == CardInfo.SubtypeCard.AttackHuman && _player.manaHuman >= cardPrefab._cardInfo.cost 
+                         || typeCard == CardInfo.SubtypeCard.DefenseBuild && _player.manaBuild >= cardPrefab._cardInfo.cost)
                      {
                          _dropCard.DropNewCardInPanel( cardPrefab, zoneTag);
-                         _hendlerCards.enabled = false;
+                         _hendlerCardsInTableFromHand.enabled = false;
                          transform.SetParent(_dropCard.miliArmyZone.transform);
-                         
+                         _hendlerController.CardInTable();
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                      }
@@ -85,12 +91,12 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                      break;
             
                  case "RangeSolder":
-                     if (typeCard == CardInfo.SubtypeCard.AttackRangeHuman)
+                     if (typeCard == CardInfo.SubtypeCard.AttackRangeHuman && _player.manaHuman >= cardPrefab._cardInfo.cost)
                      {
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
-                         _hendlerCards.enabled = false;
+                         _hendlerCardsInTableFromHand.enabled = false;
                          transform.SetParent(_dropCard.rangeArmyZone.transform);
-                         
+                         _hendlerController.CardInTable();
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }
@@ -101,12 +107,12 @@ public class HendlerCards : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                      break;
             
                  case "RangeBuild":
-                     if (typeCard == CardInfo.SubtypeCard.AttackRangeBuild || typeCard == CardInfo.SubtypeCard.AuxiliaryBuild)
+                     if (typeCard == CardInfo.SubtypeCard.AttackRangeBuild || typeCard == CardInfo.SubtypeCard.AuxiliaryBuild && _player.manaBuild >= cardPrefab._cardInfo.cost)
                      { 
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
-                         _hendlerCards.enabled = false;
+                         _hendlerCardsInTableFromHand.enabled = false;
                          transform.SetParent(_dropCard.rangeBuildZone.transform);
-                         
+                         _hendlerController.CardInTable();
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }

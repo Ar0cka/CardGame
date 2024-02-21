@@ -21,6 +21,8 @@ public class HandCards : MonoBehaviour
     private List<GameObject> _objectPool = new List<GameObject>();
     private List<Animator> _animators = new List<Animator>();
 
+    private HendlerController _hendlerController;
+
     private int maxSizeHand = 5;
     
     public void DrawCard(List<CardPrefab> _deckList, List<CardPrefab> _discardList)
@@ -88,12 +90,16 @@ public class HandCards : MonoBehaviour
 
     public void DropCardFromHand(CardPrefab cardPrefab, string uniqueID)
     {
-        int index = _cardInHand.FindIndex(card => card.uniqueID == uniqueID);
-         _cardInHand.RemoveAt(index);
+        _hendlerController = cardPrefab.GetComponent<HendlerController>();
+        if (_hendlerController._isTable == false)
+        {
+            int index = _cardInHand.FindIndex(card => card.uniqueID == uniqueID);
+            _cardInHand.RemoveAt(index);
         
-        GameObject cardObject = cardPrefab.gameObject;
-        int indexObject = _objectPool.FindIndex(obj => obj == cardObject);
-        _objectPool.RemoveAt(indexObject);
+            GameObject cardObject = cardPrefab.gameObject;
+            int indexObject = _objectPool.FindIndex(obj => obj == cardObject);
+            _objectPool.RemoveAt(indexObject);
+        }
     }
 
     private void VisualDrawCard(int index)

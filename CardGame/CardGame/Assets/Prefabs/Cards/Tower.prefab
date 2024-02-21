@@ -186,6 +186,8 @@ GameObject:
   - component: {fileID: 2790176645178801301}
   - component: {fileID: 607128850502955106}
   - component: {fileID: -8145471316848677512}
+  - component: {fileID: 8875794167571437748}
+  - component: {fileID: 4521175566533057882}
   m_Layer: 2
   m_Name: Tower
   m_TagString: Untagged
@@ -228,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueID: 
   _iconCard: {fileID: 1128781769220490695}
-  _cardInfo: {fileID: 11400000, guid: 0c1e8b45d0d51064aa9470e9b62bc531, type: 2}
+  cardInfo: {fileID: 11400000, guid: 0c1e8b45d0d51064aa9470e9b62bc531, type: 2}
 --- !u!114 &-8145471316848677512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,3 +243,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hendlerController: {fileID: 4521175566533057882}
+--- !u!114 &8875794167571437748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790176645178801302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563a2bd1f8f741c288f5bcd9f9b2b868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4521175566533057882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790176645178801302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ece43d04994fe9bd03bcd60d089d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hendlerFromHand: {fileID: -8145471316848677512}
+  _hendlerSwitchZone: {fileID: 8875794167571437748}
