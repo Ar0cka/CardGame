@@ -17,10 +17,18 @@ using UnityEngine.Serialization;
 public class InitializeObjectToPool : MonoBehaviour
 {
     [SerializeField] public RectTransform handTransform;
+    [SerializeField] private DeckController _deck;
+    
+    
     public List<GameObject> poolHands = new List<GameObject>();
     [FormerlySerializedAs("poolBattelAZone")] public List<GameObject> poolBattelZone;
     private GameObject card;
-    private int maxSizePool = 10;
+    private int maxSizePool;
+
+    public void GetMaxSizePool()
+    {
+        maxSizePool = _deck.RetunrCountDeck();
+    }
     
     public void CreateNewObjectToPool(CardPrefab cardPref)
     {

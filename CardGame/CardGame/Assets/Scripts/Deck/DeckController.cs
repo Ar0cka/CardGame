@@ -31,6 +31,7 @@ public class DeckController : MonoBehaviour
     
    public void Initialize() // метод в которой будет происходить первичная инициализация
    {
+      _initializeObject.GetMaxSizePool();
       CreateObject();
       _deckList.Clear();
       _deckList.AddRange(_initializeObject.poolHands.Select(obj => obj.GetComponent<CardPrefab>()));
@@ -96,11 +97,17 @@ public class DeckController : MonoBehaviour
          T1 tempCard = deck[i];
          deck[i] = deck[j];
 
+
          T2 tempObject = objectPool[i];
          objectPool[i] = objectPool[j];
 
          deck[j] = tempCard;
          objectPool[j] = tempObject;
       }
+   }
+
+   public int RetunrCountDeck()
+   {
+      return _deckList.Count;
    }
 }
