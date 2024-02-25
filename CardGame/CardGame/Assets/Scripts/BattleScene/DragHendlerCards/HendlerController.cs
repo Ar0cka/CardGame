@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class HendlerController : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class HendlerController : MonoBehaviour
 
     public bool _isTable => isTable;
     
-    [SerializeField] private HendlerCardsInTableFromHand hendlerFromHand;
+    [FormerlySerializedAs("hendlerFromHand")] [SerializeField] private HendlerCardsInTableFromHand _hendlerFromHand;
     [SerializeField] private HendlerCardsInBattleZone _hendlerSwitchZone;
 
     private void Awake()
@@ -18,18 +19,28 @@ public class HendlerController : MonoBehaviour
     public void CardInTable()
     {
         isTable = true;
-        hendlerFromHand.enabled = false;
+        _hendlerFromHand.enabled = false;
     }
 
     public void RemoveCardFromTable()
     {
         isTable = false;
-        hendlerFromHand.enabled = true;
+        _hendlerFromHand.enabled = true;
     }
 
     public void PenutationPhase()
     {
         _hendlerSwitchZone.enabled = true;
+    }
+
+    public void OffHendlersFromHand()
+    {
+        _hendlerFromHand.enabled = false;
+    }
+
+    public void OnHendlersFromHand()
+    {
+        _hendlerFromHand.enabled = true;
     }
 
     public void endPenutationPhase()

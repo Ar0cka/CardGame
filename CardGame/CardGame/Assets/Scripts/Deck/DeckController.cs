@@ -33,6 +33,12 @@ public class DeckController : MonoBehaviour
    {
       _initializeObject.GetMaxSizePool();
       CreateObject();
+      
+      //foreach (var cardsInDeckList in _deckList)
+      //{
+        // Debug.Log($"DeckController Scripts: uniqID {cardsInDeckList.uniqueID}");
+     // }
+      
       _deckList.Clear();
       _deckList.AddRange(_initializeObject.poolHands.Select(obj => obj.GetComponent<CardPrefab>()));
       _turnController.TurnPlayerBegin();
@@ -42,7 +48,6 @@ public class DeckController : MonoBehaviour
 
    private void CreateObject()
    {
-    
       for (int i = 0; i < _deckList.Count; i++)
       {
          _initializeObject.CreateNewObjectToPool(_deckList[i]);

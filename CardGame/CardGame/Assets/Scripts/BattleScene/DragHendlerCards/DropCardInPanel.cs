@@ -49,11 +49,6 @@ public class DropCardInPanel : MonoBehaviour
                 _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
                 _manaManager.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
                 break;
-            case "BattleZone":
-                _cardInBattleZone.Add(cardPrefab);
-                cardPrefab.SetZoneTag(zoneTag);
-                _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
-                break;
         }
     }
 

@@ -15,16 +15,14 @@ public class CardPrefab : MonoBehaviour
 
     [HideInInspector]
     public string currentZoneTag;
-        
-    private void Start()
-    {
-        uniqueID = Guid.NewGuid().ToString();
-    }
 
     private void Awake()
     {
         if (cardInfo != null)
         _iconCard.sprite = cardInfo.iconCard;
+        
+        uniqueID = Guid.NewGuid().ToString();
+        Debug.Log($"CardPrefab scripts: uniqID {uniqueID}");
     }
 
     public void SetZoneTag(string zone)

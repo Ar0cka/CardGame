@@ -41,13 +41,9 @@ public class HandCards : MonoBehaviour
                 CardPrefab card = _deckList[0];
                 _cardInHand.Add(card);
                 
-                _objectPool.Add(_initializeObject.GetObjectFromPool(i));
-                
-                _animators.Add(_objectPool[i].GetComponentInChildren<Animator>());
+                _objectPool.Add(_initializeObject.GetObjectFromPool(card.gameObject));
                 
                 _deckList.RemoveAt(0);
-                
-                VisualDrawCard(i);
 
                 yield return new WaitForSeconds(0.5f);
 
@@ -74,15 +70,12 @@ public class HandCards : MonoBehaviour
             
             _discardDeck.Add(card);
             
-            VisualDiscardCard(i);
-            
             yield return new WaitForSeconds(0.5f);
             
             _initializeObject.ReturnObjectInPool(_objectPool[i]);
             
             _cardInHand.RemoveAt(i);
-            _objectPool.RemoveAt(i);    
-            _animators.RemoveAt(i);
+            _objectPool.RemoveAt(i);
             
             _deckController.UpdateUIDiscardDeck(_discardDeck);
         }
@@ -99,6 +92,14 @@ public class HandCards : MonoBehaviour
             GameObject cardObject = cardPrefab.gameObject;
             int indexObject = _objectPool.FindIndex(obj => obj == cardObject);
             _objectPool.RemoveAt(indexObject);
+        }
+    }
+
+    public void repackHandList(List<CardPrefab> cardsList)
+    {
+        foreach (var cards in _cardInHand)
+        {
+           cardsList.Add(cards); 
         }
     }
 

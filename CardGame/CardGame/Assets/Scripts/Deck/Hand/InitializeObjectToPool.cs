@@ -40,8 +40,10 @@ public class InitializeObjectToPool : MonoBehaviour
         }
     }
     
-    public GameObject GetObjectFromPool(int index)
+    public GameObject GetObjectFromPool(GameObject card)
     {
+        int index = poolHands.FindIndex(obj => obj.gameObject == card);
+        
         if (poolHands != null)
         {
             card = poolHands[index];
@@ -51,9 +53,12 @@ public class InitializeObjectToPool : MonoBehaviour
         else
             return null;
     }
-    public void ReturnObjectInPool(GameObject obj)
+    public void ReturnObjectInPool(GameObject objCard)
     {
-        obj.SetActive(false);
+        int index = poolHands.FindIndex(obj => obj.gameObject == objCard);
+        
+        card = poolHands[index];
+        card.SetActive(false);
     }
 
     public void CreateObjectToBattelZonePool(CardPrefab _cardPrefab)

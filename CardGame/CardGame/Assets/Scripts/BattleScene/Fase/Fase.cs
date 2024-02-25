@@ -21,15 +21,23 @@ public class Fase : MonoBehaviour
 
    [SerializeField] private TextMeshProUGUI _phaseText, _buttonsEndPhase;
 
-   [SerializeField ]private CheckEnemyType _checkEnemy;
-
    [SerializeField] private DropCardInPanel _zoneCards;
+   [SerializeField] private HandCards _handCards;
 
    private HendlerController _hendlerController;
+   private bool isFirstTurn;
    
    public void BeginBuildPhase()
    {
-      // Тут мы должны включить перетаскивание на картах, поменять фазу на строительств, поменять кнопку, на закончить фазу строительства, так же данная фаза должна включать добавление маны с домиков.
+      if (!isFirstTurn)
+      {
+         foreach (var vCard in cards)
+         {
+            _hendlerController = vCard.GetComponent<HendlerController>();
+            _hendlerController.OnHendlersFromHand();
+         }
+         cards.Clear();
+      }
       buildPhase = "Build phase";
       beginBuildPhase = true;
       _phaseText.text = buildPhase;
@@ -38,13 +46,8 @@ public class Fase : MonoBehaviour
 
    public void BeginPenutationPhase()
    {
-      _zoneCards.repackAllLists(cards);
-      foreach (var vCard in cards)
-      {
-            _hendlerController = vCard.GetComponent<HendlerController>();
-         
-         _hendlerController.PenutationPhase();
-      }
+      FirstRepackList();
+      SecondRepackList();
       // тут должно быть выключено перетаскивание с руки, но при этом включино перетаскивание с одной панели на поле в другую
       permutationPhase = "Permutation phase";
       beginBuildPhase = false;
@@ -54,15 +57,39 @@ public class Fase : MonoBehaviour
 
    }
 
+   #region RepackListsInPenutationPhase
+
+   private void FirstRepackList()
+   {
+      _zoneCards.repackAllLists(cards);
+      foreach (var vCard in cards)
+      {
+         _hendlerController = vCard.GetComponent<HendlerController>();
+         _hendlerController.PenutationPhase();
+      }
+      cards.Clear();
+   }
+
+   private void SecondRepackList()
+   {
+      _handCards.repackHandList(cards);
+      foreach (var vCard in cards)
+      {
+         _hendlerController = vCard.GetComponent<HendlerController>();
+         _hendlerController.OffHendlersFromHand();
+      }
+   }
+
+   #endregion
+   
+
    public void BeginBattle()
    {
       foreach (var vCard in cards)
       {
-            _hendlerController = vCard.GetComponent<HendlerController>();
-         
+         _hendlerController = vCard.GetComponent<HendlerController>();
          _hendlerController.endPenutationPhase();
       }
-      cards.Clear();
       #region ChangeFase
       battlePhase = "Battle phase";
       beginPenutationFase = false;
@@ -70,7 +97,6 @@ public class Fase : MonoBehaviour
       _phaseText.text = battlePhase;
       _buttonsEndPhase.text = "End battle phase";
       #endregion
-      _checkEnemy.MonstersAttack();
    }
 
    public void EndPhase()
@@ -81,5 +107,6 @@ public class Fase : MonoBehaviour
       _beginEndPhase = true;
       _phaseText.text = endPhase;
       _buttonsEndPhase.text = "End turn";
+      isFirstTurn = false;
    }
 }

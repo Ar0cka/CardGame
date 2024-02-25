@@ -9,6 +9,7 @@ TagManager:
   - MiliArmy
   - BattleZone
   - enemy
+  - BackGroundZone
   layers:
   - Default
   - TransparentFX

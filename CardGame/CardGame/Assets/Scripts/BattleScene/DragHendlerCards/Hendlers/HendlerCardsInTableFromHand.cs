@@ -79,8 +79,10 @@ public class HendlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
                      {
                          _dropCard.DropNewCardInPanel( cardPrefab, zoneTag);
                          _hendlerCardsInTableFromHand.enabled = false;
+                         
                          transform.SetParent(_dropCard.miliArmyZone.transform);
                          _hendlerController.CardInTable();
+                         
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                      }
@@ -120,6 +122,9 @@ public class HendlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
                      {
                          transform.SetParent(_objectToPool.handTransform.transform);
                      } 
+                     break;
+                 default:
+                     transform.SetParent(_objectToPool.handTransform.transform);
                      break;
              }
         }
