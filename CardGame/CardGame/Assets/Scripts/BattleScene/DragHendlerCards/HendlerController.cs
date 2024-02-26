@@ -33,6 +33,8 @@ public class HendlerController : MonoBehaviour
         _hendlerSwitchZone.enabled = true;
     }
 
+    #region HendlersFromHand
+
     public void OffHendlersFromHand()
     {
         _hendlerFromHand.enabled = false;
@@ -42,6 +44,9 @@ public class HendlerController : MonoBehaviour
     {
         _hendlerFromHand.enabled = true;
     }
+
+    #endregion
+    
 
     public void endPenutationPhase()
     {

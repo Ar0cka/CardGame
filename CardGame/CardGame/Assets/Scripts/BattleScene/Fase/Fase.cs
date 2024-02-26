@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Fase : MonoBehaviour
@@ -17,7 +18,8 @@ public class Fase : MonoBehaviour
    public bool _isBattlePhase => _beginBattleFase;
    public bool _isEndPhase => _beginEndPhase;
 
-   List<CardPrefab> cards = new List<CardPrefab>();
+   List<CardPrefab> cardsZone = new List<CardPrefab>();
+   List<CardPrefab> cardsHand = new List<CardPrefab>();
 
    [SerializeField] private TextMeshProUGUI _phaseText, _buttonsEndPhase;
 
@@ -31,12 +33,12 @@ public class Fase : MonoBehaviour
    {
       if (!isFirstTurn)
       {
-         foreach (var vCard in cards)
+         foreach (var vCard in cardsHand)
          {
             _hendlerController = vCard.GetComponent<HendlerController>();
             _hendlerController.OnHendlersFromHand();
          }
-         cards.Clear();
+         cardsZone.Clear();
       }
       buildPhase = "Build phase";
       beginBuildPhase = true;
@@ -61,19 +63,22 @@ public class Fase : MonoBehaviour
 
    private void FirstRepackList()
    {
-      _zoneCards.repackAllLists(cards);
-      foreach (var vCard in cards)
+      _zoneCards.repackAllLists(cardsZone);
+      foreach (var vCard in cardsZone)
       {
-         _hendlerController = vCard.GetComponent<HendlerController>();
-         _hendlerController.PenutationPhase();
+         if (vCard._cardInfo.subtype != CardInfo.SubtypeCard.AuxiliaryBuild &&
+             vCard._cardInfo.subtype != CardInfo.SubtypeCard.AttackRangeBuild)
+         {
+            _hendlerController = vCard.GetComponent<HendlerController>();
+            _hendlerController.PenutationPhase();
+         }
       }
-      cards.Clear();
    }
 
    private void SecondRepackList()
    {
-      _handCards.repackHandList(cards);
-      foreach (var vCard in cards)
+      _handCards.repackHandList(cardsHand);
+      foreach (var vCard in cardsHand)
       {
          _hendlerController = vCard.GetComponent<HendlerController>();
          _hendlerController.OffHendlersFromHand();
@@ -82,10 +87,9 @@ public class Fase : MonoBehaviour
 
    #endregion
    
-
    public void BeginBattle()
    {
-      foreach (var vCard in cards)
+      foreach (var vCard in cardsZone)
       {
          _hendlerController = vCard.GetComponent<HendlerController>();
          _hendlerController.endPenutationPhase();

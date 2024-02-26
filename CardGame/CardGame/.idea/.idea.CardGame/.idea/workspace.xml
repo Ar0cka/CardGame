@@ -6,19 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Resourse/Enemy/Goblin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Resourse/Enemy/Goblin.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInTableFromHand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInTableFromHand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/Fase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/Fase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/DeckController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/HandCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/HandCards.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/InitializeObjectToPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/InitializeObjectToPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +49,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "XThreadsFramesViewSplitterKey": "0.4906542",
-    "git-widget-placeholder": "DropTestNew",
+    "git-widget-placeholder": "Battle",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,10 +101,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15024">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15024" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
