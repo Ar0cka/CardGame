@@ -44,13 +44,15 @@ public class HendlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerEventData, results);
 
+        int ignoreLayerMask = 1 << LayerMask.NameToLayer("Ignore Raycast");
+        int allLayersExceptIgnore = ~ignoreLayerMask;
+
         foreach (RaycastResult result in results)
         {
-            // Проверяем слой объекта
-            if (result.gameObject.layer == LayerMask.NameToLayer("BattleZoneLayer"))
+            if (((1 << result.gameObject.layer) & allLayersExceptIgnore) != 0)
             {
                 zoneTag = result.gameObject.tag;
-                break; 
+                break;
             }
         }
     }

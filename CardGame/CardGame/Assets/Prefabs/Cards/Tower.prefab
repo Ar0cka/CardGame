@@ -76,6 +76,109 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &423112702812056633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9155210092734351725}
+  - component: {fileID: 292796510621156206}
+  - component: {fileID: 3840320854538472407}
+  - component: {fileID: 4638868595107344822}
+  m_Layer: 2
+  m_Name: EmpetyCard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9155210092734351725
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423112702812056633}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2790176645178801301}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 13.824}
+  m_SizeDelta: {x: 127.9682, y: 127.6479}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!61 &292796510621156206
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423112702812056633}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000030517578, y: 0.89497375}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 90.26344, y: 131.1304}
+  m_EdgeRadius: 0
+--- !u!222 &3840320854538472407
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423112702812056633}
+  m_CullTransparentMesh: 1
+--- !u!114 &4638868595107344822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423112702812056633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2fe611100e1ace748ada67c7a255972a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2790176644398281443
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +212,7 @@ RectTransform:
   m_Children:
   - {fileID: 5634968849493022907}
   m_Father: {fileID: 2790176645178801301}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -207,6 +310,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 9155210092734351725}
   - {fileID: 2790176644398281442}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -231,6 +335,7 @@ MonoBehaviour:
   uniqueID: 
   _iconCard: {fileID: 1128781769220490695}
   cardInfo: {fileID: 11400000, guid: 0c1e8b45d0d51064aa9470e9b62bc531, type: 2}
+  currentZoneTag: 
 --- !u!114 &-8145471316848677512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563a2bd1f8f741c288f5bcd9f9b2b868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _settingsEmpetyCard: {fileID: 2790176645178801301}
 --- !u!114 &4521175566533057882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,5 +374,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ece43d04994fe9bd03bcd60d089d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hendlerFromHand: {fileID: -8145471316848677512}
+  _hendlerFromHand: {fileID: -8145471316848677512}
   _hendlerSwitchZone: {fileID: 8875794167571437748}

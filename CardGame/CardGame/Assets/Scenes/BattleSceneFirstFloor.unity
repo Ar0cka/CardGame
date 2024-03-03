@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 63728920}
   m_Layer: 5
   m_Name: Trash
-  m_TagString: Untagged
+  m_TagString: BackGroundZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -918,7 +918,7 @@ GameObject:
   - component: {fileID: 423733552}
   m_Layer: 5
   m_Name: AvatarHero
-  m_TagString: Untagged
+  m_TagString: BackGroundZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 620064198}
   m_Layer: 5
   m_Name: EndTurnButton
-  m_TagString: Untagged
+  m_TagString: BackGroundZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 657813419}
   m_Layer: 5
   m_Name: AmountTurn
-  m_TagString: Untagged
+  m_TagString: BackGroundZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1296,7 +1296,7 @@ GameObject:
   - component: {fileID: 679914810}
   m_Layer: 5
   m_Name: DeckManager
-  m_TagString: Untagged
+  m_TagString: BackGroundZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1342,16 +1342,10 @@ MonoBehaviour:
   _deckList:
   - {fileID: 607128850502955106, guid: e83c03661c6c8a044a3a490fa4ffcf90, type: 3}
   - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
-  - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
-  - {fileID: 607128850502955106, guid: e83c03661c6c8a044a3a490fa4ffcf90, type: 3}
-  - {fileID: 607128850502955106, guid: e83c03661c6c8a044a3a490fa4ffcf90, type: 3}
-  - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
-  - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
-  - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
-  - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
-  - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
-  - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
-  - {fileID: 570762295, guid: 3ce30445fed854a4fa184ed6ef0dd57d, type: 3}
+  - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
+  - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
+  - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
+  - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
   _discardDeckList: []
   amountDeck: {fileID: 920344900}
   amountDiscardDeck: {fileID: 1658232235}
@@ -1611,7 +1605,7 @@ GameObject:
   - component: {fileID: 903946122}
   m_Layer: 5
   m_Name: Deck
-  m_TagString: Untagged
+  m_TagString: BackGroundZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1792,7 +1786,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 58.99314, y: -61.70541}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1803,7 +1797,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 118.98628, y: 122.41093}
   m_EdgeRadius: 0
 --- !u!1 &920344898
 GameObject:
@@ -1818,7 +1812,7 @@ GameObject:
   - component: {fileID: 920344900}
   m_Layer: 5
   m_Name: AmountCardInDect
-  m_TagString: Untagged
+  m_TagString: BackGroundZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2707,7 +2701,7 @@ GameObject:
   - component: {fileID: 1434429735}
   m_Layer: 5
   m_Name: Hand
-  m_TagString: Untagged
+  m_TagString: BackGroundZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3422,7 +3416,7 @@ GameObject:
   - component: {fileID: 1658232235}
   m_Layer: 5
   m_Name: AmountCardInTrash
-  m_TagString: Untagged
+  m_TagString: BackGroundZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3953,7 +3947,6 @@ GameObject:
   - component: {fileID: 2146691835}
   - component: {fileID: 2146691834}
   - component: {fileID: 2146691833}
-  - component: {fileID: 2146691836}
   m_Layer: 3
   m_Name: BatteZone
   m_TagString: BattleZone
@@ -4045,29 +4038,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146691831}
   m_CullTransparentMesh: 1
---- !u!61 &2146691836
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146691831}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
