@@ -7,10 +7,17 @@ using UnityEngine.XR;
 
 public class HendlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    #region SettingsEmpetyObject
+    
+    private GameObject _gameCardEmpety;
+    private int originalIndex;
+    [SerializeField] private RectTransform _settingsEmpetyCard;
+
+    #endregion
     private RectTransform _rectTransform;
     private Canvas _canvas;
     private CardPrefab cardPrefab;
-
+    
     private string zoneTag;
 
     private HendlerCardsInBattleZone _hendler;
@@ -19,6 +26,7 @@ public class HendlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
     private InitializeObjectToPool _objectToPool;
 
     private bool cardsTypes;
+    private bool LayerMasksSet;
     
     private void Awake()
     {
@@ -36,33 +44,45 @@ public class HendlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
         cardsTypes = cardPrefab._cardInfo.subtype == CardInfo.SubtypeCard.AttackHuman
                      || cardPrefab._cardInfo.subtype == CardInfo.SubtypeCard.AttackRangeHuman
                      || cardPrefab._cardInfo.subtype == CardInfo.SubtypeCard.DefenseBuild;
-
         #endregion
-
+        
         _hendler.enabled = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
         pointerEventData.position = Input.mousePosition;
-
+        
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerEventData, results);
 
+        int ignoreLayerMask = 1 << LayerMask.NameToLayer("Ignore Raycast");
+        int allLayersExceptIgnore = ~ignoreLayerMask;
+
         foreach (RaycastResult result in results)
         {
-            // Проверяем слой объекта
-            if (result.gameObject.layer == LayerMask.NameToLayer("BattleZoneLayer"))
+            if (((1 << result.gameObject.layer) & allLayersExceptIgnore) != 0)
             {
                 zoneTag = result.gameObject.tag;
-                break; 
+                break;
             }
         }
+
     }
 
+    private void CreateFakeGameObject()
+    {
+        originalIndex = gameObject.transform.GetSiblingIndex();
+        _gameCardEmpety = Instantiate(gameObject, _settingsEmpetyCard);
+        _gameCardEmpety.transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag));
+        _gameCardEmpety.transform.SetSiblingIndex(originalIndex);
+    }
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
+        CreateFakeGameObject();
+        
         if (cardsTypes)
         transform.SetParent(_dropCard._hendlerZone.transform);
     }
@@ -76,14 +96,21 @@ public class HendlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
     {
         if (zoneTag != null)
         {
-            if (zoneTag == "BattleZone" && cardPrefab._cardInfo.subtype == CardInfo.SubtypeCard.AttackHuman)
-            _dropCard.ChangeLane(zoneTag, cardPrefab);
-            transform.SetParent(_dropCard.battleZone.transform);
+            if (zoneTag == "BattleZone" && cardsTypes)
+            {
+                _dropCard.ChangeLane(zoneTag, cardPrefab);
+                transform.SetParent(_dropCard.battleZone.transform);
+                Destroy(_gameCardEmpety);
+            }
+            
+            else
+            {
+                transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag));
+                gameObject.transform.SetSiblingIndex(_gameCardEmpety.transform.GetSiblingIndex());
+                Destroy(_gameCardEmpety);
+            }
         }
-        else
-        {
-            transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag));
-        }
+
     }
 }
                                                                                             

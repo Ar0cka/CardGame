@@ -22,7 +22,6 @@ public class CardPrefab : MonoBehaviour
         _iconCard.sprite = cardInfo.iconCard;
         
         uniqueID = Guid.NewGuid().ToString();
-        Debug.Log($"CardPrefab scripts: uniqID {uniqueID}");
     }
 
     public void SetZoneTag(string zone)

@@ -40,17 +40,20 @@ public class Fase : MonoBehaviour
          }
          cardsZone.Clear();
       }
+
+      #region BuildFase
       buildPhase = "Build phase";
       beginBuildPhase = true;
       _phaseText.text = buildPhase;
       _buttonsEndPhase.text = "End build phase";
+      #endregion
    }
 
    public void BeginPenutationPhase()
    {
       FirstRepackList();
       SecondRepackList();
-      // тут должно быть выключено перетаскивание с руки, но при этом включино перетаскивание с одной панели на поле в другую
+      
       permutationPhase = "Permutation phase";
       beginBuildPhase = false;
       beginPenutationFase = true;
