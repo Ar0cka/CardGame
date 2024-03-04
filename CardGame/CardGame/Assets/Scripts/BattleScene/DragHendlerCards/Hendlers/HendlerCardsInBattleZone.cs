@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
 using UnityEngine.XR;
 
@@ -70,18 +72,32 @@ public class HendlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
         }
 
     }
+    #region SettingsEmpetyCard
 
     private void CreateFakeGameObject()
     {
-        originalIndex = gameObject.transform.GetSiblingIndex();
+       originalIndex = gameObject.transform.GetSiblingIndex();
         
-        _gameCardEmpety = Instantiate(gameObject, _settingsEmpetyCard);
+       _gameCardEmpety = Instantiate(gameObject, _settingsEmpetyCard);
         
-        _gameCardEmpety.transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag));
-        _gameCardEmpety.transform.SetSiblingIndex(originalIndex);
-        
-        
+       _gameCardEmpety.transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag)); 
+       _gameCardEmpety.transform.SetSiblingIndex(originalIndex);
+       SetColorSettingsInFakeGameObject(_gameCardEmpety);
     }
+
+    private void SetColorSettingsInFakeGameObject(GameObject _card)
+    {
+        CanvasRenderer outlineCard = _card.transform.GetChild(0).GetComponent<CanvasRenderer>();
+        CanvasRenderer iconCard = _card.transform.GetChild(0).GetChild(0).GetComponent<CanvasRenderer>();
+
+        Color colorCard = Color.white;
+        colorCard.a = 0.5f;
+
+        outlineCard.SetColor(colorCard);
+        iconCard.SetColor(colorCard);
+    }
+    #endregion
+   
     
     public void OnBeginDrag(PointerEventData eventData)
     {
