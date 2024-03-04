@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/Ferma.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/Ferma.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/Tower.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsFromBattleZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsFromBattleZone.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInBattleZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInBattleZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInTableFromHand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInTableFromHand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/Fase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/Fase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,10 +101,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7040">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="7040" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -245,7 +236,7 @@
       <workItem from="1709355481751" duration="144000" />
       <workItem from="1709356234221" duration="510000" />
       <workItem from="1709383736714" duration="17825000" />
-      <workItem from="1709467384126" duration="10817000" />
+      <workItem from="1709467384126" duration="14478000" />
     </task>
     <servers />
   </component>
@@ -287,13 +278,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInBattleZone.cs</url>
-          <line>96</line>
+          <line>116</line>
           <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\DragHendlerCards\Hendlers\HendlerCardsInBattleZone.cs" initialLine="96" containingFunctionPresentation="Method 'OnEndDrag'">
             <startOffsets>
-              <option value="2994" />
+              <option value="3498" />
             </startOffsets>
             <endOffsets>
-              <option value="3014" />
+              <option value="3518" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="24" />
