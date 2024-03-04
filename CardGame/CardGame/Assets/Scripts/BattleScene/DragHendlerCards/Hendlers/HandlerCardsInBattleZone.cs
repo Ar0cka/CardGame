@@ -25,7 +25,6 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
     private HandlerCardsInBattleZone _hendler;
 
     private DropCardInPanel _dropCard;
-    private InitializeObjectToPool _objectToPool;
 
     private bool cardsTypes;
     private bool LayerMasksSet;
@@ -39,7 +38,6 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
         _hendler = GetComponent<HandlerCardsInBattleZone>();
         
         _dropCard = FindObjectOfType<DropCardInPanel>();
-        _objectToPool = FindObjectOfType<InitializeObjectToPool>(); 
 
         #region BoolCards
 
@@ -77,11 +75,11 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
     private void CreateFakeGameObject()
     {
        originalIndex = gameObject.transform.GetSiblingIndex();
-        
+       
        _gameCardEmpety = Instantiate(gameObject, _settingsEmpetyCard);
-        
        _gameCardEmpety.transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag)); 
        _gameCardEmpety.transform.SetSiblingIndex(originalIndex);
+       
        SetColorSettingsInFakeGameObject(_gameCardEmpety);
     }
 
@@ -129,6 +127,12 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
                 gameObject.transform.SetSiblingIndex(_gameCardEmpety.transform.GetSiblingIndex());
                 Destroy(_gameCardEmpety);
             }
+        }
+        else
+        {
+            transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag));
+            gameObject.transform.SetSiblingIndex(_gameCardEmpety.transform.GetSiblingIndex());
+            Destroy(_gameCardEmpety);
         }
 
     }

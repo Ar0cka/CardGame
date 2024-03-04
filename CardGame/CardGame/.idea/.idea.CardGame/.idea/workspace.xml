@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HendlerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsFromBattleZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsFromBattleZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInBattleZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInBattleZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInTableFromHand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInTableFromHand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsFromBattleZone.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsFromBattleZone.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInBattleZone.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInBattleZone.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInTableFromHand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInTableFromHand.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +29,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a7a68d74033849c295a86e87bd1510c33d400/b0/54c1d736/IEventSystemHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings/AuxiliaryBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleScene/AbilityFolder/Ability/HealAbility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HandlerCardsInBattleZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase/AttackMonster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Deck/ManaCardsPrefab.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/DeadMenu/ButtonsDeadMenu.cs" root0="FORCE_HIGHLIGHTING" />
@@ -52,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "XThreadsFramesViewSplitterKey": "0.4906542",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Battle",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -239,7 +242,7 @@
       <workItem from="1709355481751" duration="144000" />
       <workItem from="1709356234221" duration="510000" />
       <workItem from="1709383736714" duration="17825000" />
-      <workItem from="1709467384126" duration="15618000" />
+      <workItem from="1709467384126" duration="18104000" />
     </task>
     <servers />
   </component>
@@ -265,32 +268,6 @@
           <line>17</line>
           <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Ability\HealAbility.cs" initialLine="17" containingFunctionPresentation="Method 'OnEnable'" />
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInTableFromHand.cs</url>
-          <line>134</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\DragHendlerCards\Hendlers\HendlerCardsInTableFromHand.cs" initialLine="129" containingFunctionPresentation="Method 'OnEndDrag'">
-            <startOffsets>
-              <option value="5246" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5305" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HendlerCardsInBattleZone.cs</url>
-          <line>116</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\DragHendlerCards\Hendlers\HendlerCardsInBattleZone.cs" initialLine="96" containingFunctionPresentation="Method 'OnEndDrag'">
-            <startOffsets>
-              <option value="3627" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3647" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
