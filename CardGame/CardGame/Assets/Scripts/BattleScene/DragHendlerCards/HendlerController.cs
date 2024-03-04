@@ -8,8 +8,8 @@ public class HendlerController : MonoBehaviour
 
     public bool _isTable => isTable;
     
-    [FormerlySerializedAs("hendlerFromHand")] [SerializeField] private HendlerCardsInTableFromHand _hendlerFromHand;
-    [SerializeField] private HendlerCardsInBattleZone _hendlerSwitchZone;
+    [FormerlySerializedAs("hendlerFromHand")] [SerializeField] private HandlerCardsInTableFromHand _hendlerFromHand;
+    [SerializeField] private HandlerCardsInBattleZone _hendlerSwitchZone;
 
     private void Awake()
     {

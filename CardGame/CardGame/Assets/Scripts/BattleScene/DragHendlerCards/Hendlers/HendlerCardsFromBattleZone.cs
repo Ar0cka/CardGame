@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.XR;
 
 
-public class HendlerCardsFromBattleZone : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class HandlerCardsFromBattleZone : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private RectTransform _rectTransform;
     private Canvas _canvas;
@@ -17,7 +17,7 @@ public class HendlerCardsFromBattleZone : MonoBehaviour, IBeginDragHandler, IDra
     
     private string zoneTag;
 
-    private HendlerCardsFromBattleZone _hendler;
+    private HandlerCardsFromBattleZone _hendler;
 
     private DropCardInPanel _dropCard;
 
@@ -29,7 +29,7 @@ public class HendlerCardsFromBattleZone : MonoBehaviour, IBeginDragHandler, IDra
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
 
-        _hendler = GetComponent<HendlerCardsFromBattleZone>();
+        _hendler = GetComponent<HandlerCardsFromBattleZone>();
         
         _dropCard = FindObjectOfType<DropCardInPanel>();
 

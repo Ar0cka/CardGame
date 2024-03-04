@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.XR;
 
 
-public class HendlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     #region SettingsEmpetyObject
     
@@ -22,7 +22,7 @@ public class HendlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
     
     private string zoneTag;
 
-    private HendlerCardsInBattleZone _hendler;
+    private HandlerCardsInBattleZone _hendler;
 
     private DropCardInPanel _dropCard;
     private InitializeObjectToPool _objectToPool;
@@ -36,7 +36,7 @@ public class HendlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
 
-        _hendler = GetComponent<HendlerCardsInBattleZone>();
+        _hendler = GetComponent<HandlerCardsInBattleZone>();
         
         _dropCard = FindObjectOfType<DropCardInPanel>();
         _objectToPool = FindObjectOfType<InitializeObjectToPool>(); 

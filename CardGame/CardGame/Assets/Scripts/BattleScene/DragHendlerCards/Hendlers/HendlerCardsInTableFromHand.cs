@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.XR;
 
 
-public class HendlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] private HendlerController _hendlerController;
     
@@ -17,7 +17,7 @@ public class HendlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
 
     private DropCardInPanel _dropCard;
     private InitializeObjectToPool _objectToPool;
-    private HendlerCardsInTableFromHand _hendlerCardsInTableFromHand;
+    private HandlerCardsInTableFromHand _hendlerCardsInTableFromHand;
 
     private AbilityActivated _abilityActivated;
 
@@ -28,7 +28,7 @@ public class HendlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
-        _hendlerCardsInTableFromHand = GetComponent<HendlerCardsInTableFromHand>();
+        _hendlerCardsInTableFromHand = GetComponent<HandlerCardsInTableFromHand>();
         _abilityActivated = GetComponent<AbilityActivated>();
         
         _dropCard = FindObjectOfType<DropCardInPanel>();
