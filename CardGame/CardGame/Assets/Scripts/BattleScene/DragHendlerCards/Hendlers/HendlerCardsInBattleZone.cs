@@ -74,9 +74,13 @@ public class HendlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
     private void CreateFakeGameObject()
     {
         originalIndex = gameObject.transform.GetSiblingIndex();
+        
         _gameCardEmpety = Instantiate(gameObject, _settingsEmpetyCard);
+        
         _gameCardEmpety.transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag));
         _gameCardEmpety.transform.SetSiblingIndex(originalIndex);
+        
+        
     }
     
     public void OnBeginDrag(PointerEventData eventData)

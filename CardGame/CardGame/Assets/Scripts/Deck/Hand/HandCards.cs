@@ -21,6 +21,8 @@ public class HandCards : MonoBehaviour
     private List<GameObject> _objectPool = new List<GameObject>();
     private List<Animator> _animators = new List<Animator>();
 
+    private int counterHandCards = 0;
+
     private HendlerController _hendlerController;
 
     private int maxSizeHand = 5;
@@ -33,8 +35,7 @@ public class HandCards : MonoBehaviour
     
     private IEnumerator DrawNextCard(List<CardPrefab> _deckList, List<CardPrefab> _discardList)
     {
-        int i = 0;
-        while(_cardInHand.Count < maxSizeHand && (_deckList.Count != 0 || _discardList.Count != 0))
+        while(_cardInHand.Count < maxSizeHand && (_deckList.Count != 0 || _discardList.Count != 0) && counterHandCards < maxSizeHand)
         {
             if (_deckList.Count != 0)
             {
@@ -47,13 +48,15 @@ public class HandCards : MonoBehaviour
 
                 yield return new WaitForSeconds(0.5f);
 
-                i++;
+                counterHandCards++;
                 
                 _deckController.UpdateUIDeck(_deckList);
             }
             else
                 _deckController.ReturnDeck();
         }
+
+        counterHandCards = 0;
     }
 
     public void DiscardCard(List<CardPrefab> _discardDeck)
