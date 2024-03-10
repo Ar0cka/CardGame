@@ -23,7 +23,7 @@ public class HandCards : MonoBehaviour
 
     private int counterHandCards = 0;
 
-    private HendlerController _hendlerController;
+    private HandlerController _handlerController;
 
     private int maxSizeHand = 5;
     
@@ -86,8 +86,8 @@ public class HandCards : MonoBehaviour
 
     public void DropCardFromHand(CardPrefab cardPrefab, string uniqueID)
     {
-        _hendlerController = cardPrefab.GetComponent<HendlerController>();
-        if (_hendlerController._isTable == false)
+        _handlerController = cardPrefab.GetComponent<HandlerController>();
+        if (_handlerController._isTable == false)
         {
             int index = _cardInHand.FindIndex(card => card.uniqueID == uniqueID);
             _cardInHand.RemoveAt(index);
