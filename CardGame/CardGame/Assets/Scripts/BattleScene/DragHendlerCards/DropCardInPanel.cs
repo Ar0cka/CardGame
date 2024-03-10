@@ -15,6 +15,9 @@ public class DropCardInPanel : MonoBehaviour
     [SerializeField] private HandCards _handCards;
     [SerializeField] private InitializeObjectToPool _initializeObject;
     [SerializeField] private ManaManager _manaManager;
+
+    private int countHandler = 0;
+    public int _countHandler => countHandler;
     
     public RectTransform miliArmyZone;
     public RectTransform rangeArmyZone;
@@ -141,5 +144,15 @@ public class DropCardInPanel : MonoBehaviour
             list.Add(cards);
         }
         return list;
+    }
+
+    public void ChangeCountHandler()
+    {
+        countHandler++;
+    }
+
+    public void ResetCountHandler()
+    {
+        countHandler = 0;
     }
 }

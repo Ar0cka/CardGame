@@ -26,7 +26,7 @@ public class Fase : MonoBehaviour
    [SerializeField] private DropCardInPanel _zoneCards;
    [SerializeField] private HandCards _handCards;
 
-   private HendlerController _hendlerController;
+   private HandlerController _handlerController;
    private bool isFirstTurn;
    
    public void BeginBuildPhase()
@@ -35,8 +35,8 @@ public class Fase : MonoBehaviour
       {
          foreach (var vCard in cardsHand)
          {
-            _hendlerController = vCard.GetComponent<HendlerController>();
-            _hendlerController.OnHendlersFromHand();
+            _handlerController = vCard.GetComponent<HandlerController>();
+            _handlerController.OnHandlersFromHand();
          }
          cardsZone.Clear();
       }
@@ -53,6 +53,8 @@ public class Fase : MonoBehaviour
    {
       FirstRepackList();
       SecondRepackList();
+      
+      _zoneCards.ResetCountHandler();
       
       permutationPhase = "Permutation phase";
       beginBuildPhase = false;
@@ -72,8 +74,8 @@ public class Fase : MonoBehaviour
          if (vCard._cardInfo.subtype != CardInfo.SubtypeCard.AuxiliaryBuild &&
              vCard._cardInfo.subtype != CardInfo.SubtypeCard.AttackRangeBuild)
          {
-            _hendlerController = vCard.GetComponent<HendlerController>();
-            _hendlerController.PenutationPhase();
+            _handlerController = vCard.GetComponent<HandlerController>();
+            _handlerController.OnSwitchHandler();
          }
       }
    }
@@ -83,8 +85,8 @@ public class Fase : MonoBehaviour
       _handCards.repackHandList(cardsHand);
       foreach (var vCard in cardsHand)
       {
-         _hendlerController = vCard.GetComponent<HendlerController>();
-         _hendlerController.OffHendlersFromHand();
+         _handlerController = vCard.GetComponent<HandlerController>();
+         _handlerController.OffHandlersFromHand();
       }
    }
 
@@ -94,8 +96,8 @@ public class Fase : MonoBehaviour
    {
       foreach (var vCard in cardsZone)
       {
-         _hendlerController = vCard.GetComponent<HendlerController>();
-         _hendlerController.endPenutationPhase();
+         _handlerController = vCard.GetComponent<HandlerController>();
+         _handlerController.OffSwitchHandler();
       }
       #region ChangeFase
       battlePhase = "Battle phase";

@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 4384721521001780015}
   - component: {fileID: 6517139848286585005}
   - component: {fileID: 1169772492370581000}
+  - component: {fileID: 6989939587375615464}
   m_Layer: 2
   m_Name: Ferma
   m_TagString: Untagged
@@ -108,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hendlerController: {fileID: 1169772492370581000}
+  handlerController: {fileID: 1169772492370581000}
 --- !u!114 &-1107174459355176814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563a2bd1f8f741c288f5bcd9f9b2b868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameCardEmpety: {fileID: 1730712175314092454}
+  _settingsEmpetyCard: {fileID: 5290215275279516511}
+  _handlerController: {fileID: 1169772492370581000}
 --- !u!114 &1169772492370581000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,8 +161,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ece43d04994fe9bd03bcd60d089d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hendlerFromHand: {fileID: 7113120657774953990}
-  _hendlerSwitchZone: {fileID: 6517139848286585005}
+  _handlerFromHand: {fileID: 7113120657774953990}
+  _handlerSwitchZone: {fileID: 6517139848286585005}
+  _handlerCardsFromBattle: {fileID: 6989939587375615464}
+--- !u!114 &6989939587375615464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275279516508}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe7f990a988486f8a482922a78042f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settingsEmpetyCard: {fileID: 5290215275279516511}
+  _handlerController: {fileID: 1169772492370581000}
 --- !u!1 &5290215275573792041
 GameObject:
   m_ObjectHideFlags: 0

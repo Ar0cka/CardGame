@@ -21,9 +21,9 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
     private CardPrefab cardPrefab;
     
     private string zoneTag;
-
-    private HandlerCardsInBattleZone _hendler;
-
+    
+    [SerializeField] private HandlerController _handlerController;
+    
     private DropCardInPanel _dropCard;
 
     private bool cardsTypes;
@@ -34,8 +34,6 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
-
-        _hendler = GetComponent<HandlerCardsInBattleZone>();
         
         _dropCard = FindObjectOfType<DropCardInPanel>();
 
@@ -45,8 +43,6 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
                      || cardPrefab._cardInfo.subtype == CardInfo.SubtypeCard.AttackRangeHuman
                      || cardPrefab._cardInfo.subtype == CardInfo.SubtypeCard.DefenseBuild;
         #endregion
-        
-        _hendler.enabled = false;
     }
 
     private void FixedUpdate()
@@ -95,14 +91,20 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
         iconCard.SetColor(colorCard);
     }
     #endregion
-   
     
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (_dropCard._countHandler >= 2)
+        {
+            eventData.pointerDrag = null;
+            eventData.dragging = false;
+            return;
+        }
+        
         CreateFakeGameObject();
         
         if (cardsTypes)
-        transform.SetParent(_dropCard._hendlerZone.transform);
+            transform.SetParent(_dropCard._hendlerZone.transform);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -118,6 +120,13 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
             {
                 _dropCard.ChangeLane(zoneTag, cardPrefab);
                 transform.SetParent(_dropCard.battleZone.transform);
+                cardPrefab.SetZoneTag(zoneTag);
+                
+                _dropCard.ChangeCountHandler();
+                
+                _handlerController.OffSwitchHandler();
+                _handlerController.OnHandlerCardsFromBattleZone();
+                
                 Destroy(_gameCardEmpety);
             }
             

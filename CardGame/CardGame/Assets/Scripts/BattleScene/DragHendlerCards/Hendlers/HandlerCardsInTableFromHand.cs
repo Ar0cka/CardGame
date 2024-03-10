@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.XR;
 
 
 public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [SerializeField] private HendlerController _hendlerController;
+    [FormerlySerializedAs("_hendlerController")] [SerializeField] private HandlerController handlerController;
     
     private RectTransform _rectTransform;
     private Canvas _canvas;
@@ -83,7 +84,7 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
                          _hendlerCardsInTableFromHand.enabled = false;
                          
                          transform.SetParent(_dropCard.miliArmyZone.transform);
-                         _hendlerController.CardInTable();
+                         handlerController.CardInTable();
                          
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
@@ -100,7 +101,7 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCardsInTableFromHand.enabled = false;
                          transform.SetParent(_dropCard.rangeArmyZone.transform);
-                         _hendlerController.CardInTable();
+                         handlerController.CardInTable();
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }
@@ -116,7 +117,7 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCardsInTableFromHand.enabled = false;
                          transform.SetParent(_dropCard.rangeBuildZone.transform);
-                         _hendlerController.CardInTable();
+                         handlerController.CardInTable();
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }

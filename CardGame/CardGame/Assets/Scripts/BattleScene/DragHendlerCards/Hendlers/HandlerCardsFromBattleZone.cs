@@ -21,9 +21,8 @@ public class HandlerCardsFromBattleZone : MonoBehaviour, IBeginDragHandler, IDra
     
     private string zoneTag;
 
-    private HandlerCardsFromBattleZone _hendler;
-
     private DropCardInPanel _dropCard;
+    [SerializeField] private HandlerController _handlerController;
 
     private bool cardsTypes;
     
@@ -32,8 +31,6 @@ public class HandlerCardsFromBattleZone : MonoBehaviour, IBeginDragHandler, IDra
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
-
-        _hendler = GetComponent<HandlerCardsFromBattleZone>();
         
         _dropCard = FindObjectOfType<DropCardInPanel>();
 
@@ -44,9 +41,6 @@ public class HandlerCardsFromBattleZone : MonoBehaviour, IBeginDragHandler, IDra
                      || cardPrefab._cardInfo.subtype == CardInfo.SubtypeCard.AttackRangeHuman;
 
         #endregion
-        
-        _hendler.enabled = false;
-        _gameCardEmpety.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -99,11 +93,17 @@ public class HandlerCardsFromBattleZone : MonoBehaviour, IBeginDragHandler, IDra
     
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (_dropCard._countHandler >= 2)
+        {
+            eventData.pointerDrag = null;
+            eventData.dragging = false;
+            return;
+        }
+        
         CreateFakeGameObject();
         
         if (cardsTypes)
             transform.SetParent(_dropCard._hendlerZone.transform);
-        
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -119,6 +119,13 @@ public class HandlerCardsFromBattleZone : MonoBehaviour, IBeginDragHandler, IDra
             {
                 _dropCard.ChangeLane(zoneTag, cardPrefab);
                 transform.SetParent(_dropCard.miliArmyZone.transform);
+                cardPrefab.SetZoneTag(zoneTag);
+
+                _dropCard.ChangeCountHandler();
+                
+                _handlerController.OffHandlerCardsFromBattle();
+                _handlerController.OnSwitchHandler();
+                
                 Destroy(_gameCardEmpety);
             }
             else
