@@ -12,6 +12,7 @@ public class HandlerController : MonoBehaviour
     [SerializeField] private HandlerCardsInTableFromHand _handlerFromHand;
     [SerializeField] private HandlerCardsInBattleZone _handlerSwitchZone;
     [SerializeField] private HandlerCardsFromBattleZone _handlerCardsFromBattle;
+    [SerializeField] private AttackHandler _attackHandler;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class HandlerController : MonoBehaviour
 
         _handlerSwitchZone.enabled = false;
         _handlerCardsFromBattle.enabled = false;
+        _attackHandler.enabled = false;
 
         #endregion
     }
@@ -37,6 +39,19 @@ public class HandlerController : MonoBehaviour
         _handlerFromHand.enabled = true;
     }
 
+    #region attackHandlerSettings
+
+    public void OnAttackHandler()
+    {
+        _attackHandler.enabled = true;
+    }
+
+    public void OffAttackHandler()
+    {
+        _attackHandler.enabled = false;
+    }
+    #endregion
+    
     #region SwitchHandler
 
     public void OnSwitchHandler()

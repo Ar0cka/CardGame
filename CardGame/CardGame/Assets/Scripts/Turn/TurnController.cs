@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -75,6 +76,12 @@ public class TurnController : MonoBehaviour, ITurn
         _phaseController.BeginBattle();
     } // начало боевой фазы
 
+    public void TurnPlayerAttackPhase()
+    {
+        _phaseController.BeginAttackPhase();
+        AssigningAttackers.Attack();
+    }
+
     public void TurnPlayerEnd()
     {
         _phaseController.EndPhase();
@@ -111,7 +118,11 @@ public class TurnController : MonoBehaviour, ITurn
             }
             else if (_phaseController._isBattlePhase)
             {
-                TurnPlayerEnd();
+                TurnPlayerAttackPhase();
+            }
+            else if (_phaseController._isAttackPhase)
+            {
+                TurnPlayerEnd(); 
             }
             else if (_phaseController._isEndPhase)
             {

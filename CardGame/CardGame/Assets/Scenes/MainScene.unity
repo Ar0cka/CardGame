@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 140274319}
   m_Layer: 0
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 593141418}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -478,7 +478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ec10183ad64f63bcfcb6c6401c2fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attack: {fileID: 773904517}
   _health: 10
   currentHp: 0
 --- !u!4 &773904513

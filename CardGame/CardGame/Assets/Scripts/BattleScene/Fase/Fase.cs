@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Fase : MonoBehaviour
 {
-   private string buildPhase, permutationPhase, battlePhase, endPhase;
+   private string buildPhase, permutationPhase, battlePhase, attackPhase, _endPhase;
    
-   private bool beginBuildPhase, beginPenutationFase, _beginBattleFase, _beginEndPhase;
+   private bool beginBuildPhase, beginPenutationFase, _beginBattleFase, _beginAttackPhase, _beginEndPhase;
 
    private bool Monster, Player;
 
@@ -17,11 +18,13 @@ public class Fase : MonoBehaviour
    public bool _isPenutationPhase => beginPenutationFase;
    public bool _isBattlePhase => _beginBattleFase;
    public bool _isEndPhase => _beginEndPhase;
+   public bool _isAttackPhase => _beginAttackPhase;
 
    List<CardPrefab> cardsZone = new List<CardPrefab>();
    List<CardPrefab> cardsHand = new List<CardPrefab>();
 
-   [SerializeField] private TextMeshProUGUI _phaseText, _buttonsEndPhase;
+   [FormerlySerializedAs("_phaseText")] [SerializeField] private TextMeshProUGUI _phaseTextGUI;
+   [SerializeField] private TextMeshProUGUI _buttonsEndPhase;
 
    [SerializeField] private DropCardInPanel _zoneCards;
    [SerializeField] private HandCards _handCards;
@@ -40,12 +43,17 @@ public class Fase : MonoBehaviour
          }
          cardsZone.Clear();
       }
-
-      #region BuildFase
       buildPhase = "Build phase";
-      beginBuildPhase = true;
-      _phaseText.text = buildPhase;
-      _buttonsEndPhase.text = "End build phase";
+      #region BuildFase
+
+      if (_beginEndPhase)
+      {
+         ChangePhase(ref _beginEndPhase, ref beginBuildPhase, "End build phase", buildPhase);
+      }
+      else
+      {
+         ChangePhase(ref beginBuildPhase, "End build phase", buildPhase);
+      }
       #endregion
    }
 
@@ -57,13 +65,10 @@ public class Fase : MonoBehaviour
       _zoneCards.ResetCountHandler();
       
       permutationPhase = "Permutation phase";
-      beginBuildPhase = false;
-      beginPenutationFase = true;
-      _phaseText.text = permutationPhase;
-      _buttonsEndPhase.text = "End permutation phase";
-
+      
+      ChangePhase(ref beginBuildPhase, ref beginPenutationFase, "End permutation phase", permutationPhase);
    }
-
+   
    #region RepackListsInPenutationPhase
 
    private void FirstRepackList()
@@ -98,24 +103,48 @@ public class Fase : MonoBehaviour
       {
          _handlerController = vCard.GetComponent<HandlerController>();
          _handlerController.OffSwitchHandler();
+         _handlerController.OnAttackHandler();
       }
       #region ChangeFase
       battlePhase = "Battle phase";
-      beginPenutationFase = false;
-      _beginBattleFase = true;
-      _phaseText.text = battlePhase;
-      _buttonsEndPhase.text = "End battle phase";
+      ChangePhase(ref beginPenutationFase, ref _beginBattleFase, "End battle phase", battlePhase);
       #endregion
    }
 
+   public void BeginAttackPhase()
+   {
+      foreach (var vCard in cardsZone)
+      {
+         _handlerController = vCard.GetComponent<HandlerController>();
+         _handlerController.OffAttackHandler();
+      }
+
+      attackPhase = "Attack phase";
+      ChangePhase(ref _beginBattleFase, ref _beginAttackPhase, "End attack phase", attackPhase);
+   }
+   
    public void EndPhase()
    {
-      // момент сброса карт с руки и передача хода противнику
-      endPhase = "End phase";
-      _beginBattleFase = false;
-      _beginEndPhase = true;
-      _phaseText.text = endPhase;
-      _buttonsEndPhase.text = "End turn";
+      _endPhase = "End phase";
+      ChangePhase(ref _beginAttackPhase, ref _beginEndPhase, "End turn", _endPhase);
       isFirstTurn = false;
    }
+   #region ChangePhase
+
+   public void ChangePhase(ref bool endPhase, ref bool beginPhase, string buttonText, string PhaseText)
+   {
+      _phaseTextGUI.text = PhaseText;
+      endPhase = false;
+      beginPhase = true;
+      _buttonsEndPhase.text = buttonText;
+   }
+
+   public void ChangePhase(ref bool beginPhase, string buttonText, string PhaseText)
+   {
+      _phaseTextGUI.text = PhaseText;
+      beginPhase = true;
+      _buttonsEndPhase.text = buttonText;
+   }
+
+   #endregion
 }

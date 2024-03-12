@@ -12,6 +12,7 @@ public class CardPrefab : MonoBehaviour
     [SerializeField] private Image _iconCard;
     [SerializeField] private CardInfo cardInfo;
     public CardInfo _cardInfo => cardInfo;
+    private EnemyController _enemyController;
 
     [HideInInspector]
     public string currentZoneTag;
@@ -22,11 +23,18 @@ public class CardPrefab : MonoBehaviour
         _iconCard.sprite = cardInfo.iconCard;
         
         uniqueID = Guid.NewGuid().ToString();
+
+        _enemyController = FindObjectOfType<EnemyController>();
     }
 
     public void SetZoneTag(string zone)
     {
         currentZoneTag = zone;
+    }
+
+    public void DealDamage()
+    {
+        _enemyController.AttackEnemy(_cardInfo.damage);
     }
     
 

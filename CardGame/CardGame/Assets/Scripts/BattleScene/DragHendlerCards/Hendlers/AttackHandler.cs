@@ -11,7 +11,9 @@ public class AttackHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [FormerlySerializedAs("_lineRenderer")] [SerializeField] private LineManager _lineManager;
     
     private string zoneTag;
-    
+
+    private GameObject attacker;
+    private GameObject target;
 
     private void FixedUpdate()
     {
@@ -29,6 +31,7 @@ public class AttackHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             if (((1 << result.gameObject.layer) & allRaycastExceptIgnore) != 0)
             {
                 zoneTag = result.gameObject.tag;
+                target = result.gameObject;
                 break;
             }
         }
@@ -37,6 +40,7 @@ public class AttackHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnBeginDrag(PointerEventData eventData)
     {
         _lineManager.ShowIndication();
+        attacker = gameObject;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -46,8 +50,15 @@ public class AttackHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        _lineManager.OffLine();
+        if (zoneTag == "enemy")
+        {
+            AssigningAttackers.AddAttackerAndTarget(attacker, target);
+            _lineManager.OffLine();
+        }
+        else
+        {
+            _lineManager.OffLine();
+        }
+        
     }
-    
-
 }

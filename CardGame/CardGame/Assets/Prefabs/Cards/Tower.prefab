@@ -391,6 +391,7 @@ MonoBehaviour:
   _handlerFromHand: {fileID: -8145471316848677512}
   _handlerSwitchZone: {fileID: 8875794167571437748}
   _handlerCardsFromBattle: {fileID: 8767069130117268514}
+  _attackHandler: {fileID: 5213544629674369330}
 --- !u!114 &8767069130117268514
 MonoBehaviour:
   m_ObjectHideFlags: 0
