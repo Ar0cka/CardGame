@@ -5,9 +5,7 @@ public interface ITurn
   bool isTurnEnemy { get; }
   int turn { get;}
 
-    void TurnPlayerBegin();
-    void TurnPlayerPenutationPhase();
-    void TurnPlayerBattlePhase();
-    void TurnPlayerEnd();
+    void BeginTurnPlayer();
+    void TurnControllerPlayer();
     void TurnEnemy();
 }

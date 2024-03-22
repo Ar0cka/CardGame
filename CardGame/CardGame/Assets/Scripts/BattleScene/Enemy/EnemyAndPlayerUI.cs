@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemyAndPlayerUI : MonoBehaviour
 {
@@ -9,12 +10,12 @@ public class EnemyAndPlayerUI : MonoBehaviour
      [SerializeField] private TextMeshProUGUI manaPool;
 
      private PlayerBattleScene _playerBattleScene;
-     [SerializeField] private EnemyController _enemyController;
+     private EnemySettings enemySettings;
 
      public void InitializeUI()
      {
           _playerBattleScene = FindObjectOfType<PlayerBattleScene>();
-          _enemyController = FindObjectOfType<EnemyController>();
+          enemySettings = FindObjectOfType<EnemySettings>();
           #region ChangeHpBars
 
           UpgradeHPBardPlayer();
@@ -29,7 +30,7 @@ public class EnemyAndPlayerUI : MonoBehaviour
 
      public void UpgradeHPBarEnemy()
      {
-          hpBarEnemy.text = _enemyController._currentHitPoints.ToString();
+          hpBarEnemy.text = enemySettings._currentHitPointsEnemy.ToString();
      }
 
      public void UpgradeManaPool(int buildMana, int humanMana)

@@ -14,6 +14,8 @@ public class HandlerController : MonoBehaviour
     [SerializeField] private HandlerCardsFromBattleZone _handlerCardsFromBattle;
     [SerializeField] private AttackHandler _attackHandler;
 
+    private CardPrefab _cardPrefab;
+
     private void Awake()
     {
         isTable = false;
@@ -38,62 +40,44 @@ public class HandlerController : MonoBehaviour
         isTable = false;
         _handlerFromHand.enabled = true;
     }
-
-    #region attackHandlerSettings
-
-    public void OnAttackHandler()
-    {
-        _attackHandler.enabled = true;
-    }
-
-    public void OffAttackHandler()
-    {
-        _attackHandler.enabled = false;
-    }
-    #endregion
     
-    #region SwitchHandler
+    public void SettingsHandlersFromHand(bool phase)
+    {
+        if (!phase || isTable)
+        {
+            _handlerFromHand.enabled = false;
+        }
+        else if (!isTable && phase)
+        {
+            _handlerFromHand.enabled = true;
+        }
+    }
+
+    #region ChangeHandler
 
     public void OnSwitchHandler()
     {
         _handlerSwitchZone.enabled = true;
-    }
-
-    public void OffSwitchHandler()
-    {
-        _handlerSwitchZone.enabled = false;
-    }
-
-    #endregion
-
-    #region SettingsHandlerFromBattleZone
-
-    public void OnHandlerCardsFromBattleZone()
-    {
-        _handlerCardsFromBattle.enabled = true;
-    }
-    
-    public void OffHandlerCardsFromBattle()
-    {
         _handlerCardsFromBattle.enabled = false;
     }
 
-    #endregion
-    
-    #region HendlersFromHand
-
-    public void OffHandlersFromHand()
+    public void OnHandlerFromBattleZone()
     {
-        _handlerFromHand.enabled = false;
+        _handlerSwitchZone.enabled = false;
+        _handlerCardsFromBattle.enabled = true;
+    }
+    
+    #endregion
+
+    public void BeginAttackPhase()
+    {
+        _attackHandler.enabled = false;
     }
 
-    public void OnHandlersFromHand()
+    public void BeginBattleFase()
     {
-        _handlerFromHand.enabled = true;
+        _handlerSwitchZone.enabled = false;
+        _handlerCardsFromBattle.enabled = false;
+        _attackHandler.enabled = true;
     }
-
-    #endregion
-    
-
-    
 }

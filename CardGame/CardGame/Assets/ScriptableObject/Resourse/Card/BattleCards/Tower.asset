@@ -18,5 +18,5 @@ MonoBehaviour:
   _nameCard: Tower
   _descriptionCard: "\u0417\u0430\u0449\u0438\u0442\u043D\u043E\u0435 \u0441\u043E\u043E\u0440\u0443\u0436\u0435\u043D\u0438\u0435"
   _cost: 1
-  _damageAttack: 1
+  _damageAttack: 4
   _hitPoint: 4

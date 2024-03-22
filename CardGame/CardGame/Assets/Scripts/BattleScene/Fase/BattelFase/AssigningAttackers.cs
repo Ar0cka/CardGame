@@ -24,12 +24,15 @@ public static class AssigningAttackers
           foreach (var vCard in attackersAndTargetDictionary)
           {
                var AttackCreature = vCard.Key;
+               var TargetCreature = vCard.Value;
 
                CardPrefab cardPrefab = AttackCreature.GetComponent<CardPrefab>();
+               AttackHandler attackHandler = cardPrefab.GetComponent<AttackHandler>();
                
                if (cardPrefab != null)
                {
-                    cardPrefab.DealDamage();
+                    cardPrefab.DealDamage(TargetCreature);
+                    attackHandler.OffAssigningAttackers();
                }
                else
                {
@@ -37,5 +40,10 @@ public static class AssigningAttackers
                }
           }
           attackersAndTargetDictionary.Clear();
+     }
+
+     public static void RemoveAttacker(GameObject attacker, GameObject target)
+     {
+          attackersAndTargetDictionary.Remove(attacker);
      }
 }

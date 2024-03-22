@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Fase : MonoBehaviour
+public class PlayerFase : MonoBehaviour
 {
    private string buildPhase, permutationPhase, battlePhase, attackPhase, _endPhase;
    
@@ -39,7 +39,7 @@ public class Fase : MonoBehaviour
          foreach (var vCard in cardsHand)
          {
             _handlerController = vCard.GetComponent<HandlerController>();
-            _handlerController.OnHandlersFromHand();
+            _handlerController.SettingsHandlersFromHand(_isBuildPhase);
          }
          cardsZone.Clear();
       }
@@ -59,14 +59,15 @@ public class Fase : MonoBehaviour
 
    public void BeginPenutationPhase()
    {
+      permutationPhase = "Permutation phase";
+      ChangePhase(ref beginBuildPhase, ref beginPenutationFase, "End permutation phase", permutationPhase);
+      
       FirstRepackList();
       SecondRepackList();
       
       _zoneCards.ResetCountHandler();
       
-      permutationPhase = "Permutation phase";
-      
-      ChangePhase(ref beginBuildPhase, ref beginPenutationFase, "End permutation phase", permutationPhase);
+     
    }
    
    #region RepackListsInPenutationPhase
@@ -80,7 +81,16 @@ public class Fase : MonoBehaviour
              vCard._cardInfo.subtype != CardInfo.SubtypeCard.AttackRangeBuild)
          {
             _handlerController = vCard.GetComponent<HandlerController>();
-            _handlerController.OnSwitchHandler();
+
+            switch (vCard.isBattleZone)
+            {
+               case false:
+                  _handlerController.OnSwitchHandler();
+                  break;
+               case true:
+                  _handlerController.OnHandlerFromBattleZone();
+                  break;
+            }
          }
       }
    }
@@ -91,7 +101,7 @@ public class Fase : MonoBehaviour
       foreach (var vCard in cardsHand)
       {
          _handlerController = vCard.GetComponent<HandlerController>();
-         _handlerController.OffHandlersFromHand();
+         _handlerController.SettingsHandlersFromHand(_isBuildPhase);
       }
    }
 
@@ -102,8 +112,7 @@ public class Fase : MonoBehaviour
       foreach (var vCard in cardsZone)
       {
          _handlerController = vCard.GetComponent<HandlerController>();
-         _handlerController.OffSwitchHandler();
-         _handlerController.OnAttackHandler();
+         _handlerController.BeginBattleFase();
       }
       #region ChangeFase
       battlePhase = "Battle phase";
@@ -116,7 +125,7 @@ public class Fase : MonoBehaviour
       foreach (var vCard in cardsZone)
       {
          _handlerController = vCard.GetComponent<HandlerController>();
-         _handlerController.OffAttackHandler();
+         _handlerController.BeginAttackPhase();
       }
 
       attackPhase = "Attack phase";

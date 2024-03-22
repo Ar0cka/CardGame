@@ -82,6 +82,7 @@ public class DropCardInPanel : MonoBehaviour
                 break;
             case "BattleZone":
                 _cardInBattleZone.Remove(cardPrefab);
+                cardPrefab.isBattleZone = false;
                 break;
         } 
         
@@ -100,6 +101,7 @@ public class DropCardInPanel : MonoBehaviour
                 break;
             case "BattleZone":
                 _cardInBattleZone.Add(cardPrefab);
+                cardPrefab.isBattleZone = true;
                 break;
         }
     }

@@ -57,7 +57,12 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
             }
         }
     }
-
+  
+    private void OnCollisionEnter(Collision other)
+    {
+        other.transform.SetParent(_objectToPool.handTransform.transform);
+    }
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         transform.SetParent(_dropCard._hendlerZone.transform);

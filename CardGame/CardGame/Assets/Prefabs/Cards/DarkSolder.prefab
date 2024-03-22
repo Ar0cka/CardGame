@@ -60,6 +60,7 @@ MonoBehaviour:
   uniqueID: 
   _iconCard: {fileID: 6951324898934110733}
   cardInfo: {fileID: 11400000, guid: ca6c22cbcc2b3ea48b346d28ec48ab60, type: 2}
+  isBattleZone: 0
   currentZoneTag: 
 --- !u!114 &7113120657774953990
 MonoBehaviour:
@@ -171,6 +172,7 @@ GameObject:
   - component: {fileID: 5290215275573792045}
   - component: {fileID: 1019273780238560390}
   - component: {fileID: 7485964833168490167}
+  - component: {fileID: 255623785751062350}
   m_Layer: 2
   m_Name: OutLineCard
   m_TagString: Untagged
@@ -196,7 +198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.3796, y: 15.6136}
+  m_AnchoredPosition: {x: 1.3796005, y: 15.6136}
   m_SizeDelta: {x: 138.6108, y: 140.9327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5290215275573792042
@@ -371,6 +373,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lineRenderer: {fileID: 1019273780238560390}
   _startPoint: {fileID: 5290215275573792040}
+--- !u!61 &255623785751062350
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275573792041}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.624733, y: 1.1623192}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 92.91545, y: 132.93512}
+  m_EdgeRadius: 0
 --- !u!1 &7763522817851260340
 GameObject:
   m_ObjectHideFlags: 0

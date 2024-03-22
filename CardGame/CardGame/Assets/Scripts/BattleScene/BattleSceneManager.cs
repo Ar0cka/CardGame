@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BattleSceneManager : MonoBehaviour
 {
     [SerializeField] private DeckController _deckController;
-    [SerializeField] private EnemyController _enemyController;
+    [FormerlySerializedAs("_enemyController")] [SerializeField] private EnemySettings enemySettings;
     [SerializeField] private EnemyAndPlayerUI _enemyAndPlayerUI;
     [SerializeField] private TurnController _turnController;
     [SerializeField] private ZoneDropBegin _zoneDropBegin;
@@ -14,7 +15,7 @@ public class BattleSceneManager : MonoBehaviour
     private void Awake()
     {
         _zoneDropBegin.InitializeZoneDrop();
-        _enemyController.InitializeEnemyController();
+        enemySettings.InitializeEnemyController();
         _turnController.InitializeTurnConttoller();
         _manager.InitializeManaManager();
         _deckController.Initialize();

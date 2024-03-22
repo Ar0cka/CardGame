@@ -124,8 +124,7 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
                 
                 _dropCard.ChangeCountHandler();
                 
-                _handlerController.OffSwitchHandler();
-                _handlerController.OnHandlerCardsFromBattleZone();
+                _handlerController.OnHandlerFromBattleZone();
                 
                 Destroy(_gameCardEmpety);
             }

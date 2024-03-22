@@ -34,14 +34,9 @@ public class DeckController : MonoBehaviour
       _initializeObject.GetMaxSizePool();
       CreateObject();
       
-      //foreach (var cardsInDeckList in _deckList)
-      //{
-        // Debug.Log($"DeckController Scripts: uniqID {cardsInDeckList.uniqueID}");
-     // }
-      
       _deckList.Clear();
       _deckList.AddRange(_initializeObject.poolHands.Select(obj => obj.GetComponent<CardPrefab>()));
-      _turnController.TurnPlayerBegin();
+      _turnController.BeginTurnPlayer();
       UpdateUIDeck(_deckList);
       UpdateUIDiscardDeck(_discardDeckList);
    }

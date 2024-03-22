@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DamageAbility : MonoBehaviour, IAbility
 {
-    private EnemyController _enemy;
+    private EnemySettings _enemy;
     private EnemyAndPlayerUI _enemyAndPlayerUI;
 
     private void Awake()
     {
-        _enemy = FindObjectOfType<EnemyController>();
+        _enemy = FindObjectOfType<EnemySettings>();
         _enemyAndPlayerUI = FindObjectOfType<EnemyAndPlayerUI>();
     }
 
