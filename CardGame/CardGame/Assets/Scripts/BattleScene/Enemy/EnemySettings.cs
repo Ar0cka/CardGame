@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class EnemySettings : MonoBehaviour
         _defense;
 
     private Sprite _monsterSprite;
+    
+    public string uniqueID; 
 
 
     public string name => _name;
@@ -57,6 +60,12 @@ public class EnemySettings : MonoBehaviour
         #endregion
 
         _currentHitPointsEnemy = _maxHitPoints;
+
+        #region InitializeUniqueID;
+
+        uniqueID = Guid.NewGuid().ToString();
+
+        #endregion
         
         SetSettingsCollider();
     }

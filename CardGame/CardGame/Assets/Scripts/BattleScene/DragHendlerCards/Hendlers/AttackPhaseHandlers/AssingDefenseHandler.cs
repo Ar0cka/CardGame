@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class AssingDefenseHandler : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
+public class AssingDefenseHandler : AbstractAttackHandlers, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
+    [SerializeField] private LineManager _lineManager;
+    
     private CardPrefab _cardPrefab;
     private DropCardInPanel _drop;
-    private LineManager _lineManager;
-
+    
     private bool isDefense = false;
 
     private void Awake()
@@ -19,9 +20,9 @@ public class AssingDefenseHandler : MonoBehaviour, IPointerClickHandler, IPointe
         _drop = FindObjectOfType<DropCardInPanel>();
     }
 
-
     public void OnPointerClick(PointerEventData eventData)
     {
+        AssigningDefense.RemoveDefenser(gameObject);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -31,16 +32,19 @@ public class AssingDefenseHandler : MonoBehaviour, IPointerClickHandler, IPointe
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        
+        if (zoneTag == "Enemy")
+        {
+            AssignDefensers(target);
+        }
     }
 
-    public void CardDead()
+    public void CardRemoveFromBattleZone()
     {
         _drop.RemoveCardFromBattleZone(_cardPrefab.uniqueID);
     }
     
-    public void AttackEnemy(GameObject attacker)
+    public void AssignDefensers(GameObject target)
     {
-        AssigningDefense.AddNewDefense(gameObject, attacker);
+        AssigningDefense.AddNewDefense(gameObject, target);
     }
 }

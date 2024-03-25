@@ -48,7 +48,7 @@ public class CardPrefab : MonoBehaviour
         _enemyBattlePhase.AttackEnemy(_cardInfo.damage);
     }
 
-    public void ReturnHP(ref int summaAttack)
+    public void TakeDamage(ref int summaAttack)
     {
         currentHitPoint -= summaAttack;
         summaAttack -= currentHitPoint;

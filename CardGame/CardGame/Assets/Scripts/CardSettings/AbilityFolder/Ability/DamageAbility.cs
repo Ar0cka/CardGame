@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DamageAbility : MonoBehaviour, IAbility
 {
-    private EnemySettings _enemy;
+    private EnemyBattlePhase _enemy;
     private EnemyAndPlayerUI _enemyAndPlayerUI;
 
     private void Awake()
     {
-        _enemy = FindObjectOfType<EnemySettings>();
+        _enemy = FindObjectOfType<EnemyBattlePhase>();
         _enemyAndPlayerUI = FindObjectOfType<EnemyAndPlayerUI>();
     }
 

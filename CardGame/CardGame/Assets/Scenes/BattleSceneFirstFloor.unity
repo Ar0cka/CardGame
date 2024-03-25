@@ -651,7 +651,6 @@ MonoBehaviour:
   hpBarPlayer: {fileID: 27255032}
   hpBarEnemy: {fileID: 1298740426}
   manaPool: {fileID: 1595897132}
-  _enemyController: {fileID: 1673763972}
 --- !u!1 &202366671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,10 +2681,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endTurnButton: {fileID: 620064198}
   turnUI: {fileID: 3625620}
-  _enemyController: {fileID: 1673763972}
+  enemyBattlePhase: {fileID: 0}
   _deckController: {fileID: 679914810}
   _deadMenu: {fileID: 1992973584}
   _phaseController: {fileID: 1516248459}
+  _enemyPhaseController: {fileID: 0}
   _manaManager: {fileID: 1471489352}
 --- !u!4 &1343841188
 Transform:
@@ -2715,7 +2715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deckController: {fileID: 679914810}
-  _enemyController: {fileID: 1673763972}
+  enemySettings: {fileID: 1673763972}
   _enemyAndPlayerUI: {fileID: 170355974}
   _turnController: {fileID: 1343841187}
   _zoneDropBegin: {fileID: 1629708156}
@@ -3721,6 +3721,7 @@ GameObject:
   - component: {fileID: 1673763977}
   - component: {fileID: 1673763975}
   - component: {fileID: 1673763972}
+  - component: {fileID: 1673763979}
   - component: {fileID: 1673763976}
   - component: {fileID: 1673763978}
   m_Layer: 0
@@ -3742,7 +3743,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec473c85f1942d24b9c2e64226573888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHitPoints: 0
+  uniqueID: 
+  _currentHitPointsEnemy: 0
 --- !u!212 &1673763975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3863,6 +3865,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
+--- !u!114 &1673763979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673763971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd64630bd6340d5a33c43ae215e9ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1781632501
 GameObject:
   m_ObjectHideFlags: 0
