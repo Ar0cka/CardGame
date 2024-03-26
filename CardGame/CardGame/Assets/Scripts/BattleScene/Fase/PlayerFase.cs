@@ -154,6 +154,8 @@ public class PlayerFase : MonoBehaviour
       beginPhase = true;
       _buttonsEndPhase.text = buttonText;
    }
+   
+   
 
    #endregion
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyPhase : MonoBehaviour
 { 
-    [SerializeField] private string preparationEnemy, assignDefense, attackPhase;
+   
+    
      private EnemyBattlePhase _enemyBattlePhase;
     
      private bool isPreparationPhase = false; 
@@ -18,7 +19,7 @@ public class EnemyPhase : MonoBehaviour
 
      public void EnemyPreparationPhase()
      {
-         // Выбор между бафом и атакой
+         // Выбор между бафом и атакой автоматическая фаза
      }
 
      public void IsAssingDefense()
@@ -26,8 +27,11 @@ public class EnemyPhase : MonoBehaviour
          // это фаза игрока на которой он сможет спокойно назначить атакующих
      }
 
-     public void AttackEnemyPhase()
+     public void AttackEnemyPhase(ref bool turnEnemy, ref bool turnPlayer)
      {
-         // Фаза в которая проходит автоматически. В этот момент противник атакуют по назначенным кричам или бьет в плеера (или то и другое) 
+         _enemyBattlePhase.AttackPlayer();
+
+         turnEnemy = false;
+         turnPlayer = true;
      }
 }

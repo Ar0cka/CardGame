@@ -16,6 +16,7 @@ public class TurnController : MonoBehaviour, ITurn
     [SerializeField] private PlayerFase _phaseController;
     [SerializeField] private EnemyPhase _enemyPhaseController;
     [SerializeField] private ManaManager _manaManager;
+    [SerializeField] private EnemyPhase _enemyPhase;
     
     private PlayerBattleScene _player;
 
@@ -85,7 +86,7 @@ public class TurnController : MonoBehaviour, ITurn
     
     public void TurnEnemy()
     {
-      
+       _enemyPhase.IsAssingDefense();
     } // ход противника
 
     private IEnumerator DelayStarTurnPlayer()

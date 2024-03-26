@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AbstractAttackHandlers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AbstractAttackHandlers.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/AttackHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/AttackHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/EnemyPhaseController.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/EnemyPhaseController/AssingDefenseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/AssingDefenseHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemyBattlePhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemyBattlePhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemySettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase/AssigningDefense.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase/AssigningDefense.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/EnemyPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/EnemyPhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Ability/DamageAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Ability/DamageAbility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/PlayerFase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/PlayerFase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,6 +277,7 @@
       <workItem from="1711183086196" duration="5016000" />
       <workItem from="1711273364490" duration="6834000" />
       <workItem from="1711335918829" duration="1464000" />
+      <workItem from="1711354607322" duration="4078000" />
     </task>
     <servers />
   </component>

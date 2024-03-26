@@ -31,20 +31,15 @@ public class EnemyBattlePhase : MonoBehaviour
 
     public void AttackPlayer()
     {
-        if (_defensers.Count != 0 && _defensers != null)
-        {
-            AttackUnits();
-        }
         
-        _animator.SetTrigger("IsAttack");
-        StartDelayAttackEnemy();
+        AttackUnits();
         
         _playerBattleScene.hitHero(_enemySettings.damage);
         _enemyAndPlayerUI.UpgradeHPBardPlayer();
     }
     private IEnumerator StartDelayAttackEnemy()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
     }
     
     public void AttackEnemy(int damageHero)
@@ -53,6 +48,12 @@ public class EnemyBattlePhase : MonoBehaviour
         _enemyAndPlayerUI.UpgradeHPBarEnemy();
     }
 
+    private void PlayAnimations()
+    {
+        _animator.SetTrigger("IsAttack");
+        StartDelayAttackEnemy();
+    }
+    
     public void CheackDefensers()
     {
         AssigningDefense.DefenseEnemy(ref _defensers);
@@ -60,11 +61,20 @@ public class EnemyBattlePhase : MonoBehaviour
     
     public void AttackUnits()
     {
-        foreach (var vCard in _defensers)
+        if (_defensers.Count > 0)
         {
-            vCard.TakeDamage(ref _summaEnemyAttack);
+            foreach (var vCard in _defensers)
+            {
+                vCard.TakeDamage(ref _summaEnemyAttack);
+                PlayAnimations();
             
-            AttackEnemy(vCard._cardInfo.damage);
+                AttackEnemy(vCard._cardInfo.damage);
+            }
+        }
+
+        if (_summaEnemyAttack > 0)
+        {
+            AttackPlayer();
         }
     }
     
