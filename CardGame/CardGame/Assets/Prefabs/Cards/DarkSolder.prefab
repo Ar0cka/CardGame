@@ -57,11 +57,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe36614767a2b4046b821b98d2b92bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueID: 
   _iconCard: {fileID: 6951324898934110733}
-  cardInfo: {fileID: 11400000, guid: ca6c22cbcc2b3ea48b346d28ec48ab60, type: 2}
-  isBattleZone: 0
   currentZoneTag: 
+  cardInfo: {fileID: 11400000, guid: ca6c22cbcc2b3ea48b346d28ec48ab60, type: 2}
+  uniqueID: 
+  isBattleZone: 0
 --- !u!114 &7113120657774953990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c4bad2faf34773bb106b0668c3a369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: {r: 0, g: 0, b: 0, a: 0}
   _lineManager: {fileID: 7485964833168490167}
 --- !u!1 &5290215275573792041
 GameObject:
@@ -269,8 +268,8 @@ LineRenderer:
   m_GameObject: {fileID: 5290215275573792041}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
@@ -280,7 +279,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 81a79e5f2bb57b6479de28cfa70118df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -300,7 +299,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}

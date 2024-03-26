@@ -20,13 +20,15 @@ public class LineManager : MonoBehaviour
         if (_lineRenderer.enabled)
         {
             _lineRenderer.SetPosition(0, _startPoint.position);
-            _lineRenderer.SetPosition(1, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            _lineRenderer.SetPosition(1, new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y));
         }
     }
 
     private void SettingsLine()
     {
-       _lineRenderer.SetWidth(0.1f, 0.1f);
+        _lineRenderer.startWidth = 50;
+        _lineRenderer.endWidth = 50;
+        _lineRenderer.alignment = LineAlignment.TransformZ;
     }
     
     public void ShowIndication()
