@@ -9,8 +9,7 @@ public class EnemySettings : MonoBehaviour
     private List<EnemyInfo> enemyInfo;
     private SpriteRenderer _spriteRenderer;
     private EnemyTransit _monstersTransit;
-    private BoxCollider2D _boxColliderTriger;
-    private BoxCollider2D _boxCollider2D;
+    [SerializeField] private BoxCollider2D _boxColliderTriger;
     
     #endregion
     
@@ -38,8 +37,6 @@ public class EnemySettings : MonoBehaviour
         #region SerilizeComponent
         
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _boxColliderTriger = GetComponent<BoxCollider2D>();
-        _boxCollider2D = GetComponentInChildren<BoxCollider2D>();
         _monstersTransit = FindObjectOfType<EnemyTransit>();
         
         #endregion
@@ -77,7 +74,7 @@ public class EnemySettings : MonoBehaviour
         if (_spriteRenderer != null)
         {
             _boxColliderTriger.size = _spriteRenderer.size;
-            _boxCollider2D.size = _spriteRenderer.size;
+            _boxColliderTriger.enabled = true;
         }
     }
     

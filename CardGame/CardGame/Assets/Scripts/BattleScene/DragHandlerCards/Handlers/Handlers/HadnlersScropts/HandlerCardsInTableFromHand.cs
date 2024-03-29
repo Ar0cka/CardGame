@@ -6,17 +6,8 @@ using UnityEngine.Serialization;
 using UnityEngine.XR;
 
 
-public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [FormerlySerializedAs("_hendlerController")] [SerializeField] private HandlerController handlerController;
-    
-    private RectTransform _rectTransform;
-    private Canvas _canvas;
-    private CardPrefab cardPrefab;
-
-    private string zoneTag;
-
-    private DropCardInPanel _dropCard;
     private InitializeObjectToPool _objectToPool;
     private HandlerCardsInTableFromHand _hendlerCardsInTableFromHand;
 
@@ -36,27 +27,6 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
         _objectToPool = FindObjectOfType<InitializeObjectToPool>();
         _player = FindObjectOfType<PlayerBattleScene>();
     }
-
-    private void Update()
-    {
-        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
-        pointerEventData.position = Input.mousePosition;
-
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(pointerEventData, results);
-
-        int ignoreLayerMask = 1 << LayerMask.NameToLayer("Ignore Raycast");
-        int allLayersExceptIgnore = ~ignoreLayerMask;
-
-        foreach (RaycastResult result in results)
-        {
-            if (((1 << result.gameObject.layer) & allLayersExceptIgnore) != 0)
-            {
-                zoneTag = result.gameObject.tag;
-                break;
-            }
-        }
-    }
   
     private void OnCollisionEnter(Collision other)
     {
@@ -65,6 +35,7 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
     
     public void OnBeginDrag(PointerEventData eventData)
     {
+        isBeginDrag = true;
         transform.SetParent(_dropCard._hendlerZone.transform);
     }
 
@@ -89,7 +60,7 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
                          _hendlerCardsInTableFromHand.enabled = false;
                          
                          transform.SetParent(_dropCard.miliArmyZone.transform);
-                         handlerController.CardInTable();
+                         _handlerController.CardInTable();
                          
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
@@ -106,7 +77,7 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCardsInTableFromHand.enabled = false;
                          transform.SetParent(_dropCard.rangeArmyZone.transform);
-                         handlerController.CardInTable();
+                         _handlerController.CardInTable();
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }
@@ -122,7 +93,7 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
                          _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCardsInTableFromHand.enabled = false;
                          transform.SetParent(_dropCard.rangeBuildZone.transform);
-                         handlerController.CardInTable();
+                         _handlerController.CardInTable();
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }
@@ -140,6 +111,8 @@ public class HandlerCardsInTableFromHand : MonoBehaviour, IBeginDragHandler, IDr
         {
             transform.SetParent(_objectToPool.handTransform.transform);
         }
+
+        isBeginDrag = false;
     }
 }
                                                                                             

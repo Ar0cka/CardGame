@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 
-public class ManaManager : MonoBehaviour // Менеджер по добавлению маны в пул
+public class ManaController : MonoBehaviour // Менеджер по добавлению маны в пул
 {
    private List<ManaCardsPrefab> buildResurses = new List<ManaCardsPrefab>();
    private List<ManaCardsPrefab> humanResurses = new List<ManaCardsPrefab>();

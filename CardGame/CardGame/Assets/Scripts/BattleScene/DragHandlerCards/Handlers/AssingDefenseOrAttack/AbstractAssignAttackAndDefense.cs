@@ -2,11 +2,13 @@ using System;
 using UnityEngine;
 
 
-public class AbstractAttackHandlers : MonoBehaviour
+public class AbstractAssignAttackAndDefense : MonoBehaviour
 {
     protected string zoneTag;
     protected bool isBeginLine;
 
+    protected string enemyTag = "enemy";
+    
     protected GameObject target;
     
     private void FixedUpdate()

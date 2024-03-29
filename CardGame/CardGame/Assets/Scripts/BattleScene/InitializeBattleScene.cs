@@ -4,21 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class BattleSceneManager : MonoBehaviour
+public class InitializeBattleScene : MonoBehaviour
 {
     [SerializeField] private DeckController _deckController;
     [FormerlySerializedAs("_enemyController")] [SerializeField] private EnemySettings enemySettings;
     [SerializeField] private EnemyAndPlayerUI _enemyAndPlayerUI;
     [SerializeField] private TurnController _turnController;
     [SerializeField] private ZoneDropBegin _zoneDropBegin;
-    [SerializeField] private ManaManager _manager;
+    [FormerlySerializedAs("_manager")] [SerializeField] private ManaController controller;
+    
     private void Awake()
     {
         _zoneDropBegin.InitializeZoneDrop();
         enemySettings.InitializeEnemyController();
         _turnController.InitializeTurnConttoller();
-        _manager.InitializeManaManager();
+        controller.InitializeManaManager();
         _deckController.Initialize();
         _enemyAndPlayerUI.InitializeUI();
+        
     }
 }

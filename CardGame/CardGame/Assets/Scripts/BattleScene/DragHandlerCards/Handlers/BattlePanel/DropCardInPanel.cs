@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Serialization;
 
 
 public class DropCardInPanel : MonoBehaviour
@@ -14,7 +15,7 @@ public class DropCardInPanel : MonoBehaviour
     [SerializeField] private DeckController _deckController;
     [SerializeField] private HandCards _handCards;
     [SerializeField] private InitializeObjectToPool _initializeObject;
-    [SerializeField] private ManaManager _manaManager;
+    [FormerlySerializedAs("_manaManager")] [SerializeField] private ManaController manaController;
 
     private int countHandler = 0;
     public int _countHandler => countHandler;
@@ -34,7 +35,7 @@ public class DropCardInPanel : MonoBehaviour
                  cardPrefab.SetZoneTag(zoneTag);
                 _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
                 _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
-                _manaManager.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
+                manaController.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
                 break;
             
             case "RangeSolder":
@@ -42,7 +43,7 @@ public class DropCardInPanel : MonoBehaviour
                  cardPrefab.SetZoneTag(zoneTag);
                 _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
                 _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
-                _manaManager.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
+                manaController.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
                 break;
             
             case "RangeBuild":
@@ -50,7 +51,7 @@ public class DropCardInPanel : MonoBehaviour
                  cardPrefab.SetZoneTag(zoneTag);
                 _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
                 _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
-                _manaManager.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
+                manaController.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
                 break;
         }
     }
@@ -148,6 +149,21 @@ public class DropCardInPanel : MonoBehaviour
         return list;
     }
 
+    public void CheakBattleZone(ref List<CardPrefab> list)
+    {
+        foreach (var battleZoneCards in _cardInBattleZone)
+        {
+            list.Add(battleZoneCards);
+        }
+
+        foreach (var rangeCards in _cardsInRangeHumanZone)
+        {
+            list.Add(rangeCards);
+        }
+        //Добавить в этот метод условие, которое будет проверять, может ли карта защищаться или атаковать.
+        //Для этого стоит добавить флаг в кард префаб который будет говорить о боеспособности
+    }
+    
     public void ChangeCountHandler()
     {
         countHandler++;

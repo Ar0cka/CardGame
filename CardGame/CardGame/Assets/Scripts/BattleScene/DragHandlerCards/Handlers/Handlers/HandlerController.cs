@@ -12,7 +12,8 @@ public class HandlerController : MonoBehaviour
     [SerializeField] private HandlerCardsInTableFromHand _handlerFromHand;
     [SerializeField] private HandlerCardsInBattleZone _handlerSwitchZone;
     [SerializeField] private HandlerCardsFromBattleZone _handlerCardsFromBattle;
-    [SerializeField] private AttackHandler _attackHandler;
+    [FormerlySerializedAs("_attackHandler")] [SerializeField] private AssignAttack assignAttackAndDefense;
+    [FormerlySerializedAs("assingDefenseAndDefense")] [FormerlySerializedAs("_assingDefenseHandler")] [SerializeField] private AssingDefense assingDefense;
 
     private CardPrefab _cardPrefab;
 
@@ -22,10 +23,12 @@ public class HandlerController : MonoBehaviour
 
         #region SettingsHandlers
 
+        _handlerFromHand.enabled = false;
         _handlerSwitchZone.enabled = false;
         _handlerCardsFromBattle.enabled = false;
-        _attackHandler.enabled = false;
-
+        assignAttackAndDefense.enabled = false;
+        assingDefense.enabled = false;
+        
         #endregion
     }
 
@@ -38,6 +41,11 @@ public class HandlerController : MonoBehaviour
     public void RemoveCardFromTable()
     {
         isTable = false;
+        _handlerFromHand.enabled = true;
+    }
+
+    public void OnHandlersFromHand()
+    {
         _handlerFromHand.enabled = true;
     }
     
@@ -71,13 +79,21 @@ public class HandlerController : MonoBehaviour
 
     public void BeginAttackPhase()
     {
-        _attackHandler.enabled = false;
+        assignAttackAndDefense.enabled = false;
     }
 
     public void BeginBattleFase()
     {
         _handlerSwitchZone.enabled = false;
         _handlerCardsFromBattle.enabled = false;
-        _attackHandler.enabled = true;
+        assignAttackAndDefense.enabled = true;
+    }
+
+    public void DefenseHandlerConroller(bool isDefensePhase)
+    {
+        if (isDefensePhase)
+            assingDefense.enabled = true;
+        else
+            assingDefense.enabled = false;
     }
 }

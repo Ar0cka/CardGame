@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 4521175566533057882}
   - component: {fileID: 8767069130117268514}
   - component: {fileID: 5213544629674369330}
+  - component: {fileID: 6467005456757775431}
   m_Layer: 2
   m_Name: Tower
   m_TagString: Untagged
@@ -389,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handlerController: {fileID: 4521175566533057882}
+  _handlerController: {fileID: 4521175566533057882}
 --- !u!114 &8875794167571437748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,8 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563a2bd1f8f741c288f5bcd9f9b2b868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingsEmpetyCard: {fileID: 2790176645178801301}
   _handlerController: {fileID: 4521175566533057882}
+  _settingsEmpetyCard: {fileID: 2790176645178801301}
 --- !u!114 &4521175566533057882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +421,7 @@ MonoBehaviour:
   _handlerSwitchZone: {fileID: 8875794167571437748}
   _handlerCardsFromBattle: {fileID: 8767069130117268514}
   _attackHandler: {fileID: 5213544629674369330}
+  _assingDefenseHandler: {fileID: 6467005456757775431}
 --- !u!114 &8767069130117268514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,8 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe7f990a988486f8a482922a78042f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingsEmpetyCard: {fileID: 2790176645178801301}
   _handlerController: {fileID: 4521175566533057882}
+  _settingsEmpetyCard: {fileID: 2790176645178801301}
 --- !u!114 &5213544629674369330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +446,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19c4bad2faf34773bb106b0668c3a369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lineManager: {fileID: 6554227211864215489}
+--- !u!114 &6467005456757775431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790176645178801302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06ca57a0412d9a4e8499e42bff7d986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _lineManager: {fileID: 6554227211864215489}

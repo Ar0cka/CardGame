@@ -31,10 +31,8 @@ public class EnemyBattlePhase : MonoBehaviour
 
     public void AttackPlayer()
     {
-        
         AttackUnits();
         
-        _playerBattleScene.hitHero(_enemySettings.damage);
         _enemyAndPlayerUI.UpgradeHPBardPlayer();
     }
     private IEnumerator StartDelayAttackEnemy()
@@ -51,16 +49,18 @@ public class EnemyBattlePhase : MonoBehaviour
     private void PlayAnimations()
     {
         _animator.SetTrigger("IsAttack");
-        StartDelayAttackEnemy();
+        StartCoroutine(StartDelayAttackEnemy());
     }
     
-    public void CheackDefensers()
+    public void CheackDefensers(ref List<CardPrefab> defensers)
     {
-        AssigningDefense.DefenseEnemy(ref _defensers);
+        AssigningDefense.DefenseEnemy(ref defensers);
     }
     
     public void AttackUnits()
     {
+        CheackDefensers(ref _defensers);
+        _summaEnemyAttack = _enemySettings.damage;
         if (_defensers.Count > 0)
         {
             foreach (var vCard in _defensers)
@@ -74,7 +74,7 @@ public class EnemyBattlePhase : MonoBehaviour
 
         if (_summaEnemyAttack > 0)
         {
-            AttackPlayer();
+            _playerBattleScene.hitHero(_summaEnemyAttack);
         }
     }
     

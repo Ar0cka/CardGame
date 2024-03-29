@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4509743361930968683}
   - component: {fileID: -5150821784547364377}
   - component: {fileID: -7555018137298548954}
+  - component: {fileID: 1336453505002646482}
   m_Layer: 2
   m_Name: DarkSolder
   m_TagString: Untagged
@@ -74,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handlerController: {fileID: 8141857313336508811}
+  _handlerController: {fileID: 8141857313336508811}
 --- !u!114 &5597236151985810015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,8 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563a2bd1f8f741c288f5bcd9f9b2b868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingsEmpetyCard: {fileID: 5290215275279516511}
   _handlerController: {fileID: 8141857313336508811}
+  _settingsEmpetyCard: {fileID: 5290215275279516511}
 --- !u!114 &4759212913955734833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe7f990a988486f8a482922a78042f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingsEmpetyCard: {fileID: 5290215275279516511}
   _handlerController: {fileID: 8141857313336508811}
+  _settingsEmpetyCard: {fileID: 5290215275279516511}
 --- !u!114 &8141857313336508811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
   _handlerSwitchZone: {fileID: 5597236151985810015}
   _handlerCardsFromBattle: {fileID: 4759212913955734833}
   _attackHandler: {fileID: -7555018137298548954}
+  _assingDefenseHandler: {fileID: 1336453505002646482}
 --- !u!114 &4509743361930968683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +156,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19c4bad2faf34773bb106b0668c3a369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lineManager: {fileID: 7485964833168490167}
+--- !u!114 &1336453505002646482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275279516508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06ca57a0412d9a4e8499e42bff7d986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _lineManager: {fileID: 7485964833168490167}

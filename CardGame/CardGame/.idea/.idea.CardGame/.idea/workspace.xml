@@ -5,10 +5,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssingDefense.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/AbstractHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/AbstractHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/ManaSettings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/EnemyPhase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnInterfase.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/Ferma.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/Ferma.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/Tower.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Card.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Card.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Card.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Card.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/BattleSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/InitializeBattleScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/BattleSceneManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/InitializeBattleScene.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/DropCardInPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/DropCardInPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/DropCardInPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HandlerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HandlerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/HandlerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HandlerController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AbstractAttackHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AbstractAssignAttackAndDefense.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AbstractAttackHandlers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AbstractAssignAttackAndDefense.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/AssingDefenseHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/AssingDefenseHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssingDefense.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/AttackHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssignAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/AttackHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssignAttack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/LineRendererSettings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/LineRendererSettings.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/LineRendererSettings/LineManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/LineRendererSettings/LineManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/AttackPhaseHandlers/LineRendererSettings/LineManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/LineRendererSettings/LineManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/BuildPhaseHandlers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/BuildPhaseHandlers/HandlerCardsInTableFromHand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsInTableFromHand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/BuildPhaseHandlers/HandlerCardsInTableFromHand.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsInTableFromHand.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/PreparationPhaseHandlers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/PreparationPhaseHandlers/HandlerCardsFromBattleZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsFromBattleZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/PreparationPhaseHandlers/HandlerCardsFromBattleZone.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsFromBattleZone.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/PreparationPhaseHandlers/HandlerCardsInBattleZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsInBattleZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/PreparationPhaseHandlers/HandlerCardsInBattleZone.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsInBattleZone.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemyAndPlayerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EnemyAndPlayerUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemyAndPlayerUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EnemyAndPlayerUI.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemyBattlePhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemyBattlePhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/EnemyPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/EnemyPhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/PlayerFase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/PlayerFase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemySettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase/AssigningAttackers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase/AssigningAttackers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase/AssigningDefense.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningDefense.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/BattelFase/AssigningDefense.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningDefense.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/EnemyPhase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/EnemyPhase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/EnemyPhase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/PlayerFase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/PlayerFase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/ManaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/ManaSettings/ManaController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/ManaManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/ManaSettings/ManaController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/ManaCardsPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/ManaSettings/ManaCardsPrefab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/ManaCardsPrefab.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/ManaSettings/ManaCardsPrefab.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/HandCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck/Hand/HandCards.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/ITurn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnInterfase/ITurn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/ITurn.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnInterfase/ITurn.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZoneDropBegin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/ZoneDropBegin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZoneDropBegin.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/ZoneDropBegin.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,22 +86,23 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06837d428b6d46f581d93f9597703696826400/46/05f089ac/BuildPipelineInterfaces.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53aac14d88ba4477acc998b039cfd73a15ae00/99/a820cfdf/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53aac14d88ba4477acc998b039cfd73a15ae00/f6/a28c26f2/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7e05db41a20b45108859fa03b97088d446ac00/1c/a8fe6daf/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7e05db41a20b45108859fa03b97088d446ac00/9f/bfb2edd3/List`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7e05db41a20b45108859fa03b97088d446ac00/9f/bfb2edd3/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/956313298d0c49f6a1a27441511bb98527000/d2/469820b1/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a7a68d74033849c295a86e87bd1510c33d400/87/66751fdd/IBeginDragHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a7a68d74033849c295a86e87bd1510c33d400/b0/54c1d736/IEventSystemHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings/AuxiliaryBuild.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleScene/AbilityFolder/Ability/HealAbility.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHendlerCards/Hendlers/HandlerCardsInBattleZone.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Deck/ManaCardsPrefab.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/DeadMenu/ButtonsDeadMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/ITurn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/TurnInterfase/ITurn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/PointerInputModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/Raycasters/Physics2DRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -48,29 +115,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.4906542&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Battle&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.48598132",
+    "git-widget-placeholder": "Battle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\vanos\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\vanos\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\vanos\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\vanos\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\vanos\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\vanos\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/Build/CardGame.exe" />
@@ -106,10 +173,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19256">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="19256" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -278,6 +345,11 @@
       <workItem from="1711273364490" duration="6834000" />
       <workItem from="1711335918829" duration="1464000" />
       <workItem from="1711354607322" duration="4078000" />
+      <workItem from="1711447294084" duration="8786000" />
+      <workItem from="1711509182433" duration="14331000" />
+      <workItem from="1711613434096" duration="10038000" />
+      <workItem from="1711659291766" duration="10911000" />
+      <workItem from="1711736723292" duration="1711000" />
     </task>
     <servers />
   </component>
@@ -305,10 +377,17 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/Fase/PlayerFase.cs</url>
-          <line>103</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Fase\Fase.cs" initialLine="102" containingFunctionPresentation="Method 'SecondRepackList'" />
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/Assets/Scripts/BattleScene/Enemy/EnemyBattlePhase.cs</url>
+          <line>67</line>
+          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Enemy\EnemyBattlePhase.cs" initialLine="67" containingFunctionPresentation="Method 'AttackUnits'">
+            <startOffsets>
+              <option value="1728" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1768" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,13 +10,11 @@ public class TurnController : MonoBehaviour, ITurn
 {
     [SerializeField] private Button endTurnButton;
     [SerializeField] private TextMeshProUGUI turnUI;
-    [SerializeField] private EnemyBattlePhase enemyBattlePhase;
     [SerializeField] private DeckController _deckController;
     
     [SerializeField] private GameObject _deadMenu;
-    [SerializeField] private PlayerFase _phaseController;
-    [SerializeField] private EnemyPhase _enemyPhaseController;
-    [SerializeField] private ManaManager _manaManager;
+    [SerializeField] private PlayerPhase _phaseController;
+    [FormerlySerializedAs("_manaManager")] [SerializeField] private ManaController manaController;
     [SerializeField] private EnemyPhase _enemyPhase;
     
     private PlayerBattleScene _player;
@@ -46,7 +45,7 @@ public class TurnController : MonoBehaviour, ITurn
 
     public void BeginTurnPlayer()
     {
-        _isTurnPlayer = true;
+        SwapTurn();
         if (_player.currentHp > 0)
         {
             _phaseController.BeginBuildPhase();
@@ -59,7 +58,7 @@ public class TurnController : MonoBehaviour, ITurn
 
             #endregion
             
-            _manaManager.AddManaToPool();
+            manaController.AddManaToPool();
         }
     }
     
@@ -81,21 +80,22 @@ public class TurnController : MonoBehaviour, ITurn
         {
             _phaseController.EndPhase();
         }
-        
+        else if (_phaseController._isEndPhase)
+        {
+            _phaseController.BeginEnemyTurn();
+            TurnEnemy();
+        }
+        else if (_enemyPhase._isAssignDefense)
+        {
+           _enemyPhase.AttackEnemyPhase(); 
+        }
     } // начало фазы перестановки
     
     public void TurnEnemy()
     {
-       _enemyPhase.IsAssingDefense();
-    } // ход противника
-
-    private IEnumerator DelayStarTurnPlayer()
-    {
-        endTurnButton.interactable = false;
-        yield return new WaitForSeconds(3);
-        BeginTurnPlayer();
-        endTurnButton.interactable = true;
-    } // задержка перед началом хода игрока
+        SwapTurn();
+        _enemyPhase.EnemyPreparationPhase();
+    } 
     
     private void OnClickButtonEndTurn()
     {
@@ -104,4 +104,21 @@ public class TurnController : MonoBehaviour, ITurn
             TurnControllerPlayer();
         }
     }
+
+    public void SwapTurn() 
+    {
+        if (_isTurnPlayer)
+        {
+            _isTurnEnemy = true;
+            _isTurnPlayer = false;
+            endTurnButton.interactable = false;
+        }
+        else
+        {
+            _isTurnEnemy = false;
+            _isTurnPlayer = true;
+            endTurnButton.interactable = true;
+        }
+    }
+    
 }

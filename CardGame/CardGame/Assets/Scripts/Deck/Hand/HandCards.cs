@@ -57,6 +57,12 @@ public class HandCards : MonoBehaviour
         }
 
         counterHandCards = 0;
+        
+        foreach (var card in _cardInHand)
+        {
+            var handlerController = card.GetComponent<HandlerController>();
+            handlerController.OnHandlersFromHand();
+        }
     }
 
     public void DiscardCard(List<CardPrefab> _discardDeck)

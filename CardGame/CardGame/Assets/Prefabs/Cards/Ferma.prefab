@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 1169772492370581000}
   - component: {fileID: 6989939587375615464}
   - component: {fileID: 1257353838552548762}
+  - component: {fileID: 5636999586097038121}
   m_Layer: 2
   m_Name: Ferma
   m_TagString: Untagged
@@ -94,10 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe36614767a2b4046b821b98d2b92bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueID: 
   _iconCard: {fileID: 6951324898934110733}
-  cardInfo: {fileID: 11400000, guid: 1a33685ad171abb41985a7a71a52930f, type: 2}
   currentZoneTag: 
+  cardInfo: {fileID: 11400000, guid: 1a33685ad171abb41985a7a71a52930f, type: 2}
+  uniqueID: 
+  isBattleZone: 0
 --- !u!114 &7113120657774953990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ad8ebaca724a6e9d25792c3ecc6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handlerController: {fileID: 1169772492370581000}
+  _handlerController: {fileID: 1169772492370581000}
 --- !u!114 &-1107174459355176814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563a2bd1f8f741c288f5bcd9f9b2b868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingsEmpetyCard: {fileID: 5290215275279516511}
   _handlerController: {fileID: 1169772492370581000}
+  _settingsEmpetyCard: {fileID: 5290215275279516511}
 --- !u!114 &1169772492370581000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +168,7 @@ MonoBehaviour:
   _handlerSwitchZone: {fileID: 6517139848286585005}
   _handlerCardsFromBattle: {fileID: 6989939587375615464}
   _attackHandler: {fileID: 1257353838552548762}
+  _assingDefenseHandler: {fileID: 0}
 --- !u!114 &6989939587375615464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,8 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe7f990a988486f8a482922a78042f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingsEmpetyCard: {fileID: 5290215275279516511}
   _handlerController: {fileID: 1169772492370581000}
+  _settingsEmpetyCard: {fileID: 5290215275279516511}
 --- !u!114 &1257353838552548762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,8 +195,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c4bad2faf34773bb106b0668c3a369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: {r: 0, g: 0, b: 0, a: 0}
   _lineManager: {fileID: 0}
+--- !u!210 &5636999586097038121
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275279516508}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 9
 --- !u!1 &5290215275573792041
 GameObject:
   m_ObjectHideFlags: 0

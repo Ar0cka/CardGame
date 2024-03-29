@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerFase : MonoBehaviour
+public class PlayerPhase : MonoBehaviour
 {
    private string buildPhase, permutationPhase, battlePhase, attackPhase, _endPhase;
    
@@ -130,6 +130,7 @@ public class PlayerFase : MonoBehaviour
 
       attackPhase = "Attack phase";
       ChangePhase(ref _beginBattleFase, ref _beginAttackPhase, "End attack phase", attackPhase);
+      AssigningAttackers.Attack();
    }
    
    public void EndPhase()
@@ -137,6 +138,11 @@ public class PlayerFase : MonoBehaviour
       _endPhase = "End phase";
       ChangePhase(ref _beginAttackPhase, ref _beginEndPhase, "End turn", _endPhase);
       isFirstTurn = false;
+   }
+
+   public void BeginEnemyTurn()
+   {
+      _beginEndPhase = false;
    }
    #region ChangePhase
 
@@ -154,8 +160,5 @@ public class PlayerFase : MonoBehaviour
       beginPhase = true;
       _buttonsEndPhase.text = buttonText;
    }
-   
-   
-
    #endregion
 }

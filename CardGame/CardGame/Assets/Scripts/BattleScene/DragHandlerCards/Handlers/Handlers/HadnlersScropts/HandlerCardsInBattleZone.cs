@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.XR;
 
 
-public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class HandlerCardsInBattleZone : AbstractHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     #region SettingsEmpetyObject
     
@@ -16,15 +16,6 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
     [SerializeField] private RectTransform _settingsEmpetyCard;
 
     #endregion
-    private RectTransform _rectTransform;
-    private Canvas _canvas;
-    private CardPrefab cardPrefab;
-    
-    private string zoneTag;
-    
-    [SerializeField] private HandlerController _handlerController;
-    
-    private DropCardInPanel _dropCard;
 
     private bool cardsTypes;
     private bool LayerMasksSet;
@@ -100,7 +91,8 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
             eventData.dragging = false;
             return;
         }
-        
+
+        isBeginDrag = true;
         CreateFakeGameObject();
         
         if (cardsTypes)
@@ -143,6 +135,7 @@ public class HandlerCardsInBattleZone : MonoBehaviour, IBeginDragHandler, IDragH
             Destroy(_gameCardEmpety);
         }
 
+        isBeginDrag = false;
     }
 }
                                                                                             
