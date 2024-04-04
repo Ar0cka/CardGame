@@ -17,12 +17,11 @@ public class EnemySettings : MonoBehaviour
     
     private string _name;
     private int _damage, _maxHitPoints,
-        _defense;
+        _defense, buff;
 
     private Sprite _monsterSprite;
     
-    public string uniqueID; 
-
+    public string uniqueID;
 
     public string name => _name;
     public int damage => _damage;
@@ -51,6 +50,7 @@ public class EnemySettings : MonoBehaviour
             _damage = enemyInfo[i].damage;
             _defense = enemyInfo[i].defense;
             _monsterSprite = enemyInfo[i].monsterSprite;
+             buff = enemyInfo[i].buff;
         }
         LoadSpriteMonster();
 
@@ -63,7 +63,6 @@ public class EnemySettings : MonoBehaviour
         uniqueID = Guid.NewGuid().ToString();
 
         #endregion
-        
         SetSettingsCollider();
     }
 
@@ -85,4 +84,9 @@ public class EnemySettings : MonoBehaviour
     }
 
     #endregion
+
+    public void Buff()
+    {
+        _damage += buff;
+    }
 }

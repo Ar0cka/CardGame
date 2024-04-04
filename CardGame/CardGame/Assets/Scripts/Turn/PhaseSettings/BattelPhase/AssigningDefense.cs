@@ -30,4 +30,9 @@ public static class AssigningDefense
     {
         _assigningDefense.Remove(defenser);
     }
+
+    public static void ClearDictionaryDefensers()
+    {
+        _assigningDefense.Clear();
+    }
 }

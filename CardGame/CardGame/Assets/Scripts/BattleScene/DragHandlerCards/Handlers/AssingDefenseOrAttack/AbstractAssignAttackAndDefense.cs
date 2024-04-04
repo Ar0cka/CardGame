@@ -10,6 +10,8 @@ public class AbstractAssignAttackAndDefense : MonoBehaviour
     protected string enemyTag = "enemy";
     
     protected GameObject target;
+
+    protected bool isAssigningAttackers = false;
     
     private void FixedUpdate()
     {
@@ -17,7 +19,7 @@ public class AbstractAssignAttackAndDefense : MonoBehaviour
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero);
-
+            
             foreach (RaycastHit2D hit in hits)
             {
                 Debug.Log("Hit object: " + hit.collider.gameObject.name);

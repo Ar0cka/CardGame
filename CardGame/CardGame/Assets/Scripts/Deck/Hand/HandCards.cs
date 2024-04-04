@@ -46,7 +46,7 @@ public class HandCards : MonoBehaviour
                 
                 _deckList.RemoveAt(0);
 
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.2f);
 
                 counterHandCards++;
                 

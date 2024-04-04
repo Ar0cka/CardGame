@@ -16,11 +16,7 @@ public class EnemyTransit : MonoBehaviour
             {
                 EnemyData enemyData = JsonUtility.FromJson<EnemyData>(jsonData);
                 EnemyInfo loadedMonster =  ScriptableObject.CreateInstance<EnemyInfo>();
-                loadedMonster.nameEnemy = enemyData.name;
-                loadedMonster.hp = enemyData.hp;
-                loadedMonster.damage = enemyData.damage;
-                loadedMonster.defense = enemyData.defense;
-                loadedMonster.monsterSprite = enemyData.spriteMonster;
+                loadedMonster.LoadSetting(enemyData.name, enemyData.damage, enemyData.hp, enemyData.defense, enemyData.buffDamage, enemyData.spriteMonster);
                 loadedMonsters.Add(loadedMonster);
             }
         }

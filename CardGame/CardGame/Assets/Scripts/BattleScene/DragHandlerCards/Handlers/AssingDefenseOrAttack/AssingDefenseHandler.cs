@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class AssingDefense : AbstractAssignAttackAndDefense, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
+public class AssingDefenseHandler : AbstractAssignAttackAndDefense, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private LineManager _lineManager;
 
@@ -12,13 +12,17 @@ public class AssingDefense : AbstractAssignAttackAndDefense, IPointerClickHandle
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (isAssigningAttackers)
         AssigningDefense.RemoveDefenser(gameObject);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _lineManager.ShowIndication();
-        isBeginLine = true;
+        if (!isAssigningAttackers)
+        {
+            _lineManager.ShowIndication();
+            isBeginLine = true;
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)

@@ -1,10 +1,6 @@
-using System;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
-using UnityEngine.XR;
 
 
 public class HandlerCardsInBattleZone : AbstractHandler, IBeginDragHandler, IDragHandler, IEndDragHandler

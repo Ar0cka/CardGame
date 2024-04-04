@@ -12,8 +12,8 @@ public class HandlerController : MonoBehaviour
     [SerializeField] private HandlerCardsInTableFromHand _handlerFromHand;
     [SerializeField] private HandlerCardsInBattleZone _handlerSwitchZone;
     [SerializeField] private HandlerCardsFromBattleZone _handlerCardsFromBattle;
-    [FormerlySerializedAs("_attackHandler")] [SerializeField] private AssignAttack assignAttackAndDefense;
-    [FormerlySerializedAs("assingDefenseAndDefense")] [FormerlySerializedAs("_assingDefenseHandler")] [SerializeField] private AssingDefense assingDefense;
+    [FormerlySerializedAs("assignAttackAndDefense")] [FormerlySerializedAs("_attackHandler")] [SerializeField] private AssignAttackHandler assignAttackHandlerAndDefense;
+    [FormerlySerializedAs("assingDefense")] [FormerlySerializedAs("assingDefenseAndDefense")] [FormerlySerializedAs("_assingDefenseHandler")] [SerializeField] private AssingDefenseHandler assingDefenseHandler;
 
     private CardPrefab _cardPrefab;
 
@@ -26,8 +26,8 @@ public class HandlerController : MonoBehaviour
         _handlerFromHand.enabled = false;
         _handlerSwitchZone.enabled = false;
         _handlerCardsFromBattle.enabled = false;
-        assignAttackAndDefense.enabled = false;
-        assingDefense.enabled = false;
+        assignAttackHandlerAndDefense.enabled = false;
+        assingDefenseHandler.enabled = false;
         
         #endregion
     }
@@ -79,21 +79,21 @@ public class HandlerController : MonoBehaviour
 
     public void BeginAttackPhase()
     {
-        assignAttackAndDefense.enabled = false;
+        assignAttackHandlerAndDefense.enabled = false;
     }
 
     public void BeginBattleFase()
     {
         _handlerSwitchZone.enabled = false;
         _handlerCardsFromBattle.enabled = false;
-        assignAttackAndDefense.enabled = true;
+        assignAttackHandlerAndDefense.enabled = true;
     }
 
     public void DefenseHandlerConroller(bool isDefensePhase)
     {
         if (isDefensePhase)
-            assingDefense.enabled = true;
+            assingDefenseHandler.enabled = true;
         else
-            assingDefense.enabled = false;
+            assingDefenseHandler.enabled = false;
     }
 }

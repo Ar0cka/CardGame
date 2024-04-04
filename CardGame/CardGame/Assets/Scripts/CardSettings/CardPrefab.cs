@@ -50,7 +50,9 @@ public class CardPrefab : MonoBehaviour
 
     public void TakeDamage(ref int summaAttack)
     {
+        int hpDefenser = currentHitPoint;
         currentHitPoint -= summaAttack;
-        summaAttack -= currentHitPoint;
+        
+        summaAttack -= hpDefenser;
     }
 }

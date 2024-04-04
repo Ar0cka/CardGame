@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335eae5e471d5be41aaf302d0f48a3e6, type: 3}
   m_Name: Goblin
   m_EditorClassIdentifier: 
-  nameEnemy: Goblin
-  damage: 1
-  hp: 15
-  defense: 4
-  monsterSprite: {fileID: -49667565, guid: a763fc01bbf585144a067de662941c90, type: 3}
+  _nameEnemy: Goblin
+  _damage: 5
+  _hp: 27
+  _defense: 5
+  _buff: 2
+  _monsterSprite: {fileID: 0}

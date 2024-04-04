@@ -27,12 +27,12 @@ public static class AssigningAttackers
                var TargetCreature = vCard.Value;
 
                CardPrefab cardPrefab = AttackCreature.GetComponent<CardPrefab>();
-               AssignAttack assignAttack = cardPrefab.GetComponent<AssignAttack>();
+               AssignAttackHandler assignAttackHandler = cardPrefab.GetComponent<AssignAttackHandler>();
                
                if (cardPrefab != null)
                {
                     cardPrefab.DealDamage(TargetCreature);
-                    assignAttack.OffAssigningAttackers();
+                    assignAttackHandler.OffAssigningAttackers();
                }
                else
                {
