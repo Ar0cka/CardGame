@@ -79,7 +79,7 @@ public class HandCards : MonoBehaviour
             
             _discardDeck.Add(card);
             
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
             
             _initializeObject.ReturnObjectInPool(_objectPool[i]);
             

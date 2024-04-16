@@ -4,18 +4,17 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.Serialization;
 
 
-public class DropCardInPanel : MonoBehaviour
+public class CardZoneController : MonoBehaviour
 {
     private List<CardPrefab> _cardInBattleZone = new List<CardPrefab>(9);
     private List<CardPrefab> _cardsInMilyArmyZone = new List<CardPrefab>(9);
     private List<CardPrefab> _cardsInRangeHumanZone = new List<CardPrefab>(9);
     private List<CardPrefab> _cardsInRangeBuildZone = new List<CardPrefab>(9);
-    private List<GameObject> _objectInBattleZone = new List<GameObject>(9);
 
     [SerializeField] private DeckController _deckController;
     [SerializeField] private HandCards _handCards;
     [SerializeField] private InitializeObjectToPool _initializeObject;
-    [FormerlySerializedAs("_manaManager")] [SerializeField] private ManaController manaController;
+    [SerializeField] private ManaController manaController;
 
     private int countHandler = 0;
     public int _countHandler => countHandler;
@@ -32,39 +31,50 @@ public class DropCardInPanel : MonoBehaviour
         {
             case "MiliArmy":
                 _cardsInMilyArmyZone.Add(cardPrefab);
-                 cardPrefab.SetZoneTag(zoneTag);
-                _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
-                _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
-                manaController.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
                 break;
             
             case "RangeSolder":
                 _cardsInRangeHumanZone.Add(cardPrefab);
-                 cardPrefab.SetZoneTag(zoneTag);
-                _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
-                _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
-                manaController.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
                 break;
             
             case "RangeBuild":
                 _cardsInRangeBuildZone.Add(cardPrefab);
-                 cardPrefab.SetZoneTag(zoneTag);
-                _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
-                _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
-                manaController.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
+                
                 break;
         }
+        cardPrefab.SetZoneTag(zoneTag);
+        _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
+        _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
+        manaController.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
     }
 
     public void RemoveCardFromBattleZone(string uniqueID)
     {
-        int index = _cardsInMilyArmyZone.FindIndex(card => card.uniqueID == uniqueID);
+        List<CardPrefab> cardInTable = new List<CardPrefab>();
+        repackAllLists(cardInTable);
+        
+        int index = cardInTable.FindIndex(card => card.uniqueID == uniqueID);
 
         if (index >= 0)
         {
-            _deckController.DiscardCardFromBattleZone(_cardsInMilyArmyZone[index]);
-            _cardsInMilyArmyZone.RemoveAt(index);
-            _objectInBattleZone.RemoveAt(index);
+            _deckController.DiscardCardFromBattleZone(cardInTable[index]);
+            _initializeObject.ReturnObjectToHandPool(cardInTable[index]);
+
+            switch (cardInTable[index].currentZoneTag)
+            {
+                case "MiliArmy":
+                    _cardsInMilyArmyZone.Remove(cardInTable[index]);
+                    break;
+                case "RangeSolder":
+                    _cardsInRangeHumanZone.Remove(cardInTable[index]);
+                    break;
+                case "RangeBuild":
+                    _cardsInRangeBuildZone.Remove(cardInTable[index]);
+                    break;
+                case "BattleZone":
+                    _cardInBattleZone.Remove(cardInTable[index]);
+                    break;
+            }
         }                                                           
     }
 

@@ -20,7 +20,7 @@ public static class AssigningDefense
             var target = vCard.Value;
 
             CardPrefab cardPrefab = defense.GetComponent<CardPrefab>();
-            DropCardInPanel _drop = defense.GetComponent<DropCardInPanel>();
+            CardZoneController _drop = defense.GetComponent<CardZoneController>();
             
             defenser.Add(cardPrefab);
         }

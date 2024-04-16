@@ -9,7 +9,7 @@ public class AbstractHandler : MonoBehaviour
     protected RectTransform _rectTransform;
     protected Canvas _canvas;
     protected CardPrefab cardPrefab;
-    protected DropCardInPanel _dropCard;
+    protected CardZoneController Card;
     
     protected string zoneTag;
 

@@ -21,7 +21,7 @@ public class InitializeObjectToPool : MonoBehaviour
     
     
     public List<GameObject> poolHands = new List<GameObject>();
-    [FormerlySerializedAs("poolBattelAZone")] public List<GameObject> poolBattelZone;
+    public List<GameObject> poolBattelZone;
     private GameObject card;
     private int maxSizePool;
 
@@ -80,6 +80,8 @@ public class InitializeObjectToPool : MonoBehaviour
         if (index != -1)
         {
             poolHands.Add(poolBattelZone[index]);
+            poolBattelZone[index].SetActive(false);
+            poolBattelZone[index].transform.SetParent(handTransform);
             poolBattelZone.RemoveAt(index);
         }
     }

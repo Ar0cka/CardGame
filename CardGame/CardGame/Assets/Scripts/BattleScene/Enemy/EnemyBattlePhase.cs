@@ -41,7 +41,7 @@ public class EnemyBattlePhase : MonoBehaviour
     }
     private IEnumerator StartDelayAttackEnemy()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2.5f);
     }
 
     private void PlayAnimations()
@@ -69,6 +69,7 @@ public class EnemyBattlePhase : MonoBehaviour
         {
             _playerBattleScene.hitHero(_summaEnemyAttack);
         }
+        AssigningDefense.ClearDictionaryDefensers();
     }
     
     #endregion
@@ -93,6 +94,14 @@ public class EnemyBattlePhase : MonoBehaviour
         _enemyAndPlayerUI.UpgradeHPBarEnemy();
     }
 
+    public void BeginTurnEnemy()
+    {
+        if (_defense > 0)
+        _defense = 0;
+        
+        _enemyAndPlayerUI.UpgradeHPBarEnemy();
+    }
+    
     public void Buff()
     {
         _enemySettings.Buff();
@@ -102,7 +111,4 @@ public class EnemyBattlePhase : MonoBehaviour
     {
         AssigningDefense.DefenseEnemy(ref defensers);
     }
-    
-  
-    
 }

@@ -11,8 +11,13 @@ public class CardPrefab : MonoBehaviour
 
     [SerializeField] private Image _iconCard;
     [HideInInspector] public string currentZoneTag;
+    [SerializeField] private CardUI _cardUI;
+
+    [SerializeField] private bool haveDeathToken = false;
+    public bool _haveDeathToken => haveDeathToken;
     
     [SerializeField] private CardInfo cardInfo;
+    private CardZoneController _removeCardZoneController;
     public CardInfo _cardInfo => cardInfo;
     
     public string uniqueID;
@@ -28,6 +33,8 @@ public class CardPrefab : MonoBehaviour
     
     private void Awake()
     {
+        _removeCardZoneController = FindObjectOfType<CardZoneController>();
+        
         if (cardInfo != null)
         _iconCard.sprite = cardInfo.iconCard;
         
@@ -36,6 +43,8 @@ public class CardPrefab : MonoBehaviour
         _enemyBattlePhase = FindObjectOfType<EnemyBattlePhase>();
 
         currentHitPoint = cardInfo.hitPoint;
+        
+        _cardUI.UpdateHpAndDamageUI();
     }
 
     public void SetZoneTag(string zone)
@@ -52,7 +61,15 @@ public class CardPrefab : MonoBehaviour
     {
         int hpDefenser = currentHitPoint;
         currentHitPoint -= summaAttack;
-        
         summaAttack -= hpDefenser;
+
+        if (currentHitPoint > 0)
+        {
+            _cardUI.UpdateHpAndDamageUI(); 
+        }
+        else if (currentHitPoint < 0)
+        {
+            _removeCardZoneController.RemoveCardFromBattleZone(uniqueID);
+        }
     }
 }

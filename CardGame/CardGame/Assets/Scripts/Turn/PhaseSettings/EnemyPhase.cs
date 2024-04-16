@@ -11,7 +11,7 @@ public class EnemyPhase : MonoBehaviour
      private EnemyBattlePhase _enemyBattlePhase;
      private PlayerPhase _playerPhase;
      private TurnController _turnController;
-     private DropCardInPanel _cardZoneController;
+     private CardZoneController _cardZoneController;
      private EnemyStateSettings enemyStateSettings = new EnemyStateSettings();
 
      #region boolPhase
@@ -45,7 +45,7 @@ public class EnemyPhase : MonoBehaviour
          _enemyBattlePhase = FindObjectOfType<EnemyBattlePhase>();
          _playerPhase = GetComponent<PlayerPhase>();
          _turnController =FindObjectOfType<TurnController>();
-         _cardZoneController = FindObjectOfType<DropCardInPanel>();
+         _cardZoneController = FindObjectOfType<CardZoneController>();
          
          UpdateBoolAction();
      }
@@ -55,10 +55,15 @@ public class EnemyPhase : MonoBehaviour
      public void EnemyPreparationPhase()
      {
          _playerPhase.ChangePhase(ref isAttackPhase, ref isPreparationPhase, "Wait turnPlayer", "Preparation enemy phase" );
-         AssigningDefense.ClearDictionaryDefensers();
+         _enemyBattlePhase.BeginTurnEnemy();
+         
+         StartCoroutine(DelayChangePhase());
+     }
+
+     private void SelecteActionEnemy()
+     {
          enemyStateSettings.SelectEnemyAction(ref isAttack, ref isBuff, ref isDefense);
          UpdateBoolAction();
-         StartCoroutine(DelayChangePhase());
          ActionSelection();
      }
      
@@ -83,17 +88,20 @@ public class EnemyPhase : MonoBehaviour
          }
      }
      
-     private IEnumerator DelayChangePhase()
-     {
-         yield return new WaitForSeconds(3f);
-     }
-     
      private void UpdateBoolAction()
      {
          isAttackAction = isAttack && !isDefense && !isBuff;
          isBuffAction = isBuff && !isDefense && !isAttack;
          isDefenseAction = isDefense && !isBuff && !isAttack; 
      }
+     
+     private IEnumerator DelayChangePhase()
+     {
+         yield return new WaitForSeconds(3f);
+         SelecteActionEnemy();
+         //Тут будет проигрываться анимация (бафа, дефенса, подготовки к атаке)
+     }
+     
      #endregion
 
      #region AssingDefensePhase

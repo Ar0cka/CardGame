@@ -23,7 +23,7 @@ public class HandlerCardsFromBattleZone : AbstractHandler, IBeginDragHandler, ID
         _canvas = GetComponentInParent<Canvas>();
         cardPrefab = GetComponent<CardPrefab>();
         
-        _dropCard = FindObjectOfType<DropCardInPanel>();
+        Card = FindObjectOfType<CardZoneController>();
 
         #region BoolCards
 
@@ -64,7 +64,7 @@ public class HandlerCardsFromBattleZone : AbstractHandler, IBeginDragHandler, ID
         cardPrefab.SetZoneTag("BattleZone");
         
         _gameCardEmpety = Instantiate(gameObject, _settingsEmpetyCard);
-        _gameCardEmpety.transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag)); 
+        _gameCardEmpety.transform.SetParent(Card.ReturnCurrentZone(cardPrefab.currentZoneTag)); 
         _gameCardEmpety.transform.SetSiblingIndex(originalIndex);
         SetColorSettingsInFakeGameObject(_gameCardEmpety);
     }
@@ -84,7 +84,7 @@ public class HandlerCardsFromBattleZone : AbstractHandler, IBeginDragHandler, ID
     
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (_dropCard._countHandler >= 2)
+        if (Card._countHandler >= 2)
         {
             eventData.pointerDrag = null;
             eventData.dragging = false;
@@ -95,7 +95,7 @@ public class HandlerCardsFromBattleZone : AbstractHandler, IBeginDragHandler, ID
         CreateFakeGameObject();
         
         if (cardsTypes)
-            transform.SetParent(_dropCard._hendlerZone.transform);
+            transform.SetParent(Card._hendlerZone.transform);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -109,11 +109,11 @@ public class HandlerCardsFromBattleZone : AbstractHandler, IBeginDragHandler, ID
         {
             if (zoneTag == "MiliArmy" && cardsTypes)
             {
-                _dropCard.ChangeLane(zoneTag, cardPrefab);
-                transform.SetParent(_dropCard.miliArmyZone.transform);
+                Card.ChangeLane(zoneTag, cardPrefab);
+                transform.SetParent(Card.miliArmyZone.transform);
                 cardPrefab.SetZoneTag(zoneTag);
 
-                _dropCard.ChangeCountHandler();
+                Card.ChangeCountHandler();
                 
                 _handlerController.OnSwitchHandler();
                 
@@ -121,14 +121,14 @@ public class HandlerCardsFromBattleZone : AbstractHandler, IBeginDragHandler, ID
             }
             else
             {
-                transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag));
+                transform.SetParent(Card.ReturnCurrentZone(cardPrefab.currentZoneTag));
                 gameObject.transform.SetSiblingIndex(_gameCardEmpety.transform.GetSiblingIndex());
                 Destroy(_gameCardEmpety);
             }
         }
         else
         {
-            transform.SetParent(_dropCard.ReturnCurrentZone(cardPrefab.currentZoneTag));
+            transform.SetParent(Card.ReturnCurrentZone(cardPrefab.currentZoneTag));
             gameObject.transform.SetSiblingIndex(_gameCardEmpety.transform.GetSiblingIndex());
             Destroy(_gameCardEmpety);
         }

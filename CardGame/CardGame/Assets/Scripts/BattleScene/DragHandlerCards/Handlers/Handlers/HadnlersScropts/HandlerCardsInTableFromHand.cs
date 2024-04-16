@@ -23,7 +23,7 @@ public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, I
         _hendlerCardsInTableFromHand = GetComponent<HandlerCardsInTableFromHand>();
         _abilityActivated = GetComponent<AbilityActivated>();
         
-        _dropCard = FindObjectOfType<DropCardInPanel>();
+        Card = FindObjectOfType<CardZoneController>();
         _objectToPool = FindObjectOfType<InitializeObjectToPool>();
         _player = FindObjectOfType<PlayerBattleScene>();
     }
@@ -36,7 +36,7 @@ public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, I
     public void OnBeginDrag(PointerEventData eventData)
     {
         isBeginDrag = true;
-        transform.SetParent(_dropCard._hendlerZone.transform);
+        transform.SetParent(Card._hendlerZone.transform);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -56,10 +56,10 @@ public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, I
                      if (typeCard == CardInfo.SubtypeCard.AttackHuman && _player.manaHuman >= cardPrefab._cardInfo.cost 
                          || typeCard == CardInfo.SubtypeCard.DefenseBuild && _player.manaBuild >= cardPrefab._cardInfo.cost)
                      {
-                         _dropCard.DropNewCardInPanel( cardPrefab, zoneTag);
+                         Card.DropNewCardInPanel( cardPrefab, zoneTag);
                          _hendlerCardsInTableFromHand.enabled = false;
                          
-                         transform.SetParent(_dropCard.miliArmyZone.transform);
+                         transform.SetParent(Card.miliArmyZone.transform);
                          _handlerController.CardInTable();
                          
                          if (_abilityActivated != null)
@@ -74,9 +74,9 @@ public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, I
                  case "RangeSolder":
                      if (typeCard == CardInfo.SubtypeCard.AttackRangeHuman && _player.manaHuman >= cardPrefab._cardInfo.cost)
                      {
-                         _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
+                         Card.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCardsInTableFromHand.enabled = false;
-                         transform.SetParent(_dropCard.rangeArmyZone.transform);
+                         transform.SetParent(Card.rangeArmyZone.transform);
                          _handlerController.CardInTable();
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
@@ -90,9 +90,9 @@ public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, I
                  case "RangeBuild":
                      if (typeCard == CardInfo.SubtypeCard.AttackRangeBuild || typeCard == CardInfo.SubtypeCard.AuxiliaryBuild && _player.manaBuild >= cardPrefab._cardInfo.cost)
                      { 
-                         _dropCard.DropNewCardInPanel(cardPrefab, zoneTag);
+                         Card.DropNewCardInPanel(cardPrefab, zoneTag);
                          _hendlerCardsInTableFromHand.enabled = false;
-                         transform.SetParent(_dropCard.rangeBuildZone.transform);
+                         transform.SetParent(Card.rangeBuildZone.transform);
                          _handlerController.CardInTable();
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();

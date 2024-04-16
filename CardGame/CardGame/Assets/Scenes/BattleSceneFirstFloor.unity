@@ -1411,6 +1411,10 @@ MonoBehaviour:
   - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
   - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
   - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
+  - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
+  - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
+  - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
+  - {fileID: 570762295, guid: 977fd38f8cb96b941a79c347480e914e, type: 3}
   _discardDeckList: []
   amountDeck: {fileID: 920344900}
   amountDiscardDeck: {fileID: 1658232235}

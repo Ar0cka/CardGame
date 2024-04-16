@@ -60,6 +60,10 @@ public class TurnController : MonoBehaviour, ITurn
             
             manaController.AddManaToPool();
         }
+        else
+        {
+            _deadMenu.SetActive(true);
+        }
     }
     
     public void TurnControllerPlayer()
@@ -93,6 +97,7 @@ public class TurnController : MonoBehaviour, ITurn
     
     public void TurnEnemy()
     {
+        _deckController.DiscardCardFromHand();
         SwapTurn();
         _enemyPhase.EnemyPreparationPhase();
     } 

@@ -26,7 +26,7 @@ public class PlayerPhase : MonoBehaviour
    [FormerlySerializedAs("_phaseText")] [SerializeField] private TextMeshProUGUI _phaseTextGUI;
    [SerializeField] private TextMeshProUGUI _buttonsEndPhase;
 
-   [SerializeField] private DropCardInPanel _zoneCards;
+   [SerializeField] private CardZoneController _zoneCards;
    [SerializeField] private HandCards _handCards;
 
    private HandlerController _handlerController;
@@ -66,8 +66,6 @@ public class PlayerPhase : MonoBehaviour
       SecondRepackList();
       
       _zoneCards.ResetCountHandler();
-      
-     
    }
    
    #region RepackListsInPenutationPhase
@@ -130,6 +128,13 @@ public class PlayerPhase : MonoBehaviour
 
       attackPhase = "Attack phase";
       ChangePhase(ref _beginBattleFase, ref _beginAttackPhase, "End attack phase", attackPhase);
+      StartCoroutine(DelayAttackUnits()); 
+      EndPhase();
+   }
+
+   private IEnumerator DelayAttackUnits()
+   {
+      yield return new WaitForSeconds(2f);
       AssigningAttackers.Attack();
    }
    

@@ -64,15 +64,16 @@ public class DeckController : MonoBehaviour
    {
       amountDiscardDeck.text = _discardList.Count.ToString();
    }
-   
-   public void DiscardCardFromHandToDiscardDeck()
-   {
-      _handCards.DiscardCard(_discardDeckList);
-   }
 
    public void DiscardCardFromBattleZone(CardPrefab cardPrefab)
    {
       _discardDeckList.Add(cardPrefab);
+      UpdateUIDiscardDeck(_discardDeckList);
+   }
+
+   public void DiscardCardFromHand()
+   {
+      _handCards.DiscardCard(_discardDeckList);
    }
 
    public void ReturnDeck()
