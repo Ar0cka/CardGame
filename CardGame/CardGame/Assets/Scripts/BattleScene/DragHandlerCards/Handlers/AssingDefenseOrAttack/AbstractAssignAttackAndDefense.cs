@@ -22,8 +22,6 @@ public class AbstractAssignAttackAndDefense : MonoBehaviour
             
             foreach (RaycastHit2D hit in hits)
             {
-                Debug.Log("Hit object: " + hit.collider.gameObject.name);
-                Debug.Log(zoneTag + "ZoneTag");
                 if (hit.collider != null)
                 {
                     zoneTag = hit.collider.tag;

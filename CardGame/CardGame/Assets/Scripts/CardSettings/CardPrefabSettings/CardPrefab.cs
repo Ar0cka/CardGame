@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
+
 public class CardPrefab : MonoBehaviour
 {
     #region Serialize
@@ -15,6 +16,10 @@ public class CardPrefab : MonoBehaviour
 
     [SerializeField] private bool haveDeathToken = false;
     public bool _haveDeathToken => haveDeathToken;
+    [SerializeField] private bool haveFearToken = false;
+    public bool _haveFearToken => haveFearToken;
+    [SerializeField] private bool haveLifeToken = false;
+    public bool _haveLifeToken => haveLifeToken;
     
     [SerializeField] private CardInfo cardInfo;
     private CardZoneController _removeCardZoneController;
@@ -26,10 +31,10 @@ public class CardPrefab : MonoBehaviour
     public int _currentHitPoint => currentHitPoint;
     
   
-    private EnemyBattlePhase _enemyBattlePhase;
-    public bool isBattleZone = false;
+    private EnemyBattlePhase _enemyBattlePhase; 
+    [HideInInspector]public bool isBattleZone = false;
 
-    #endregion
+    #endregion 
     
     private void Awake()
     {

@@ -28,10 +28,18 @@ public class PlayerPhase : MonoBehaviour
 
    [SerializeField] private CardZoneController _zoneCards;
    [SerializeField] private HandCards _handCards;
+   
+   private TokenEffectOnOpponent _tokenEffectOnOpponent = TokenEffectOnOpponent.Instance;
 
+   private EnemyBattlePhase _enemyBattle;
    private HandlerController _handlerController;
    private bool isFirstTurn;
-   
+
+   private void Awake()
+   {
+      _enemyBattle = FindObjectOfType<EnemyBattlePhase>();
+   }
+
    public void BeginBuildPhase()
    {
       if (!isFirstTurn)
@@ -134,8 +142,8 @@ public class PlayerPhase : MonoBehaviour
 
    private IEnumerator DelayAttackUnits()
    {
-      yield return new WaitForSeconds(2f);
-      AssigningAttackers.Attack();
+      yield return new WaitForSeconds(0f);
+      AssigningAttackers.Attack(_tokenEffectOnOpponent);
    }
    
    public void EndPhase()
@@ -148,7 +156,18 @@ public class PlayerPhase : MonoBehaviour
    public void BeginEnemyTurn()
    {
       _beginEndPhase = false;
+     
+      DealDamageFromTokensTheEndTurn();
    }
+
+   private void DealDamageFromTokensTheEndTurn()
+   {
+      if (_tokenEffectOnOpponent._deathTokenInEnemy.Count > 0)
+      {
+         _tokenEffectOnOpponent.DealDamageFromDeathToken();
+      }
+   }
+   
    #region ChangePhase
 
    public void ChangePhase(ref bool endPhase, ref bool beginPhase, string buttonText, string PhaseText)

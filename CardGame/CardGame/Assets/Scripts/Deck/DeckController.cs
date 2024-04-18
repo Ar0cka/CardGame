@@ -21,12 +21,12 @@ public class DeckController : MonoBehaviour
    [SerializeField] private InitializeObjectToPool _initializeObject;
    [SerializeField] private TurnController _turnController;
    
-   #region InitializeListDeckAndUI
+   #region InitializeListDeck
 
    [SerializeField] private List<CardPrefab> _deckList;
    [SerializeField] private List<CardPrefab> _discardDeckList;
-   
-   [SerializeField] private TextMeshProUGUI amountDeck, amountDiscardDeck;
+
+   [SerializeField] private DeckUI _deckUI;
    #endregion
     
    public void Initialize() // метод в которой будет происходить первичная инициализация
@@ -36,9 +36,8 @@ public class DeckController : MonoBehaviour
       
       _deckList.Clear();
       _deckList.AddRange(_initializeObject.poolHands.Select(obj => obj.GetComponent<CardPrefab>()));
-      _turnController.BeginTurnPlayer();
-      UpdateUIDeck(_deckList);
-      UpdateUIDiscardDeck(_discardDeckList);
+      _deckUI.UpdateUIDeck(_deckList);
+      _deckUI.UpdateUIDiscardDeck(_discardDeckList);
    }
 
    private void CreateObject()
@@ -54,21 +53,11 @@ public class DeckController : MonoBehaviour
    {
       _handCards.DrawCard(_deckList, _discardDeckList);
    }
-
-   public void UpdateUIDeck(List<CardPrefab> _deckList)
-   {
-      amountDeck.text = _deckList.Count.ToString();
-   }
    
-   public void UpdateUIDiscardDeck(List<CardPrefab> _discardList)
-   {
-      amountDiscardDeck.text = _discardList.Count.ToString();
-   }
-
    public void DiscardCardFromBattleZone(CardPrefab cardPrefab)
    {
       _discardDeckList.Add(cardPrefab);
-      UpdateUIDiscardDeck(_discardDeckList);
+      _deckUI.UpdateUIDiscardDeck(_discardDeckList);
    }
 
    public void DiscardCardFromHand()
@@ -83,8 +72,8 @@ public class DeckController : MonoBehaviour
          CardPrefab card = _discardDeckList[i];
          _deckList.Add(card);
          _discardDeckList.RemoveAt(i);
-         UpdateUIDiscardDeck(_discardDeckList);
-         UpdateUIDeck(_deckList);
+         _deckUI.UpdateUIDiscardDeck(_discardDeckList);
+         _deckUI.UpdateUIDeck(_deckList);
       }
       ShuffleDeckAndPool(_deckList, _initializeObject.poolHands);
    }

@@ -9,6 +9,7 @@ public class AssignAttackHandler : AbstractAssignAttackAndDefense, IPointerDownH
 {
     [SerializeField] private LineManager _lineManager;
     
+
     public void OffAssigningAttackers()
     {
         isAssigningAttackers = false;

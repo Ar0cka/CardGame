@@ -12,8 +12,8 @@ public class HandlerController : MonoBehaviour
     [SerializeField] private HandlerCardsInTableFromHand _handlerFromHand;
     [SerializeField] private HandlerCardsInBattleZone _handlerSwitchZone;
     [SerializeField] private HandlerCardsFromBattleZone _handlerCardsFromBattle;
-    [FormerlySerializedAs("assignAttackAndDefense")] [FormerlySerializedAs("_attackHandler")] [SerializeField] private AssignAttackHandler assignAttackHandlerAndDefense;
-    [FormerlySerializedAs("assingDefense")] [FormerlySerializedAs("assingDefenseAndDefense")] [FormerlySerializedAs("_assingDefenseHandler")] [SerializeField] private AssingDefenseHandler assingDefenseHandler;
+    [SerializeField] private AssignAttackHandler assignAttackHandlerAndDefense;
+    [SerializeField] private AssingDefenseHandler assingDefenseHandler;
 
     private CardPrefab _cardPrefab;
 

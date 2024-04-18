@@ -111,4 +111,15 @@ public class EnemyBattlePhase : MonoBehaviour
     {
         AssigningDefense.DefenseEnemy(ref defensers);
     }
+
+    public void TakeDamageFromDeathTokens(List<int> damageFromTokens)
+    {
+        if (damageFromTokens.Count > 0)
+        {
+            foreach (var damage in damageFromTokens)
+            {
+                _enemySettings._currentHitPointsEnemy -= damage;
+            }
+        }
+    }
 }

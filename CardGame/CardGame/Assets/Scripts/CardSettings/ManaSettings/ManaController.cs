@@ -31,7 +31,7 @@ public class ManaController : MonoBehaviour // Менеджер по добав�
 
    public void AddManaToPool()
    {
-      player.UpgradeMana(buildResurses.Count, humanResurses.Count);
+      player.UpgradeMana(humanResurses.Count, buildResurses.Count );
       _playerUI.UpgradeManaPool(player.manaBuild, player.manaHuman);
    }
 

@@ -20,7 +20,7 @@ public class TurnController : MonoBehaviour, ITurn
     private PlayerBattleScene _player;
 
     #region parametrs
-
+    
     private bool _isTurnPlayer = false;
     private bool _isTurnEnemy = false;
 
@@ -37,9 +37,8 @@ public class TurnController : MonoBehaviour, ITurn
     public void InitializeTurnConttoller() // процесс первоначальной инициализации при загрузке сцены.
     {
         endTurnButton.onClick.AddListener(OnClickButtonEndTurn);
-
+        BeginTurnPlayer();
         _player = FindObjectOfType<PlayerBattleScene>();
-
         turnUI.text = _turn.ToString();
     }
 
@@ -79,10 +78,6 @@ public class TurnController : MonoBehaviour, ITurn
         else if (_phaseController._isBattlePhase)
         {
             _phaseController.BeginAttackPhase();
-        }
-        else if (_phaseController._isAttackPhase)
-        {
-            _phaseController.EndPhase();
         }
         else if (_phaseController._isEndPhase)
         {

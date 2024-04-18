@@ -5,7 +5,7 @@ using UnityEngine;
 public static class AssigningAttackers
 {
      private static Dictionary <GameObject, GameObject> attackersAndTargetDictionary = new Dictionary<GameObject, GameObject>();
-
+     
      public static void AddAttackerAndTarget(GameObject attacker, GameObject target)
      {
           if (attackersAndTargetDictionary.ContainsKey(attacker))
@@ -19,7 +19,7 @@ public static class AssigningAttackers
           
      }
 
-     public static void Attack()
+     public static void Attack(TokenEffectOnOpponent tokenEffectOnOpponent)
      {
           foreach (var vCard in attackersAndTargetDictionary)
           {
@@ -27,12 +27,16 @@ public static class AssigningAttackers
                var TargetCreature = vCard.Value;
 
                CardPrefab cardPrefab = AttackCreature.GetComponent<CardPrefab>();
+               EnemyBattlePhase enemyBattlePhase = TargetCreature.GetComponent<EnemyBattlePhase>();
                AssignAttackHandler assignAttackHandler = cardPrefab.GetComponent<AssignAttackHandler>();
                
                if (cardPrefab != null)
                {
                     cardPrefab.DealDamage(TargetCreature);
                     assignAttackHandler.OffAssigningAttackers();
+                    
+                    tokenEffectOnOpponent.AddNewTokenEnemy(enemyBattlePhase, cardPrefab);
+                    Debug.Log("Add token");
                }
                else
                {
@@ -41,7 +45,7 @@ public static class AssigningAttackers
           }
           attackersAndTargetDictionary.Clear();
      }
-
+     
      public static void RemoveAttacker(GameObject attacker, GameObject target)
      {
           attackersAndTargetDictionary.Remove(attacker);

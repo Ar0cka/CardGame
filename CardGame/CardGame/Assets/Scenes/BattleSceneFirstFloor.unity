@@ -1477,6 +1477,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 1
@@ -3483,6 +3484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _zoneCards:
+  - {fileID: 7572587704688605338, guid: d6dd31b5054dbb4498567de158a44bf3, type: 3}
   - {fileID: 2666386241227845301, guid: d3fb1f5ebb7c7874e85dcfb08430071e, type: 3}
   - {fileID: 7572587704688605338, guid: d6dd31b5054dbb4498567de158a44bf3, type: 3}
   _transform: {fileID: 1629708151}

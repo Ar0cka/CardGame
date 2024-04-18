@@ -16,6 +16,7 @@ public class HandCards : MonoBehaviour
 {
     [SerializeField] private DeckController _deckController;
     [SerializeField] private InitializeObjectToPool _initializeObject;
+    [SerializeField] private DeckUI _deckUI;
     
     private List<CardPrefab> _cardInHand = new List<CardPrefab>();
     private List<GameObject> _objectPool = new List<GameObject>();
@@ -50,7 +51,7 @@ public class HandCards : MonoBehaviour
 
                 counterHandCards++;
                 
-                _deckController.UpdateUIDeck(_deckList);
+                _deckUI.UpdateUIDeck(_deckList);
             }
             else
                 _deckController.ReturnDeck();
@@ -86,7 +87,7 @@ public class HandCards : MonoBehaviour
             _cardInHand.RemoveAt(i);
             _objectPool.RemoveAt(i);
             
-            _deckController.UpdateUIDiscardDeck(_discardDeck);
+            _deckUI.UpdateUIDiscardDeck(_discardDeck);
         }
     }
 
