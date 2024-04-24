@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Deck.InitiallizeObjectPool.Interfase;
 using Deck.Shuffle;
 using UnityEngine;
@@ -22,11 +23,13 @@ public class DeckController : MonoBehaviour
    [Inject] private IShuffle _shuffle;
    [Inject] private ITakeObjectFromPool _takeObjectFromPool;
    [Inject] private ICreateNewObjectToPool _createNewObjectToPool;
+   [Inject] private IReturnObjectToPool _returnObjectToPool;
    
    #region InitializeListDeck
 
    [SerializeField] private List<CardPrefab> _deckList;
    [SerializeField] private List<CardPrefab> _discardDeckList;
+   private List<GameObject> poolGameObject;
    
    #endregion
     
@@ -34,7 +37,8 @@ public class DeckController : MonoBehaviour
    {
       _takeObjectFromPool.GetMaxSizePool(_deckList.Count);
       CreateObject();
-      
+      _deckList.Clear();
+      _deckList.AddRange(_returnObjectToPool.ReturnPoolHands().Select(obj => obj.GetComponent<CardPrefab>()));
       _deckUI.UpdateUIDeck(_deckList);
       _deckUI.UpdateUIDiscardDeck(_discardDeckList);
    }

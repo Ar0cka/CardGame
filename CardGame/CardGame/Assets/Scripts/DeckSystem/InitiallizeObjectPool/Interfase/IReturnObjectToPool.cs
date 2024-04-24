@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Deck.InitiallizeObjectPool.Interfase
@@ -6,5 +7,6 @@ namespace Deck.InitiallizeObjectPool.Interfase
     {
         void ReturnObjectInPool(GameObject objCard);
         void ReturnObjectToHandPool(CardPrefab cardPrefab);
+        List<GameObject> ReturnPoolHands();
     }
 }

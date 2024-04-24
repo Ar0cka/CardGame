@@ -46,7 +46,6 @@ public class InitializeObjectToPool : IReturnObjectToPool, ITakeObjectFromPool, 
     public GameObject GetObjectFromPool(GameObject card)
     {
         int index = poolHands.FindIndex(obj => obj.gameObject.GetComponent<CardPrefab>().uniqueID == card.GetComponent<CardPrefab>().uniqueID);
-        Debug.Log(index + "" + card.gameObject.GetComponent<CardPrefab>().name);
         
             card = poolHands[index];
             card.SetActive(true);
@@ -88,5 +87,10 @@ public class InitializeObjectToPool : IReturnObjectToPool, ITakeObjectFromPool, 
     public void ShufflePool(IShuffle _shuffle)
     {
        _shuffle.ShuffleDeckAndPool(poolHands);
+    }
+
+    public List<GameObject> ReturnPoolHands()
+    {
+        return poolHands;
     }
 }
