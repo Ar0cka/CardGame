@@ -11,7 +11,7 @@ public class ManaController : MonoBehaviour // Менеджер по добав�
    private PlayerBattleScene player;
        
    [SerializeField] private EnemyAndPlayerUI _playerUI;
-   
+
    public void InitializeManaManager()
    {
       player = FindObjectOfType<PlayerBattleScene>();

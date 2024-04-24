@@ -8,11 +8,9 @@ using UnityEngine.XR;
 
 public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private InitializeObjectToPool _objectToPool;
+    private RectTransform handTransform;
     private HandlerCardsInTableFromHand _hendlerCardsInTableFromHand;
-
     private AbilityActivated _abilityActivated;
-
     private PlayerBattleScene _player;
     
     private void Awake()
@@ -22,15 +20,10 @@ public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, I
         cardPrefab = GetComponent<CardPrefab>();
         _hendlerCardsInTableFromHand = GetComponent<HandlerCardsInTableFromHand>();
         _abilityActivated = GetComponent<AbilityActivated>();
+        handTransform = FindObjectOfType<HandCards>().GetComponent<RectTransform>();
         
         Card = FindObjectOfType<CardZoneController>();
-        _objectToPool = FindObjectOfType<InitializeObjectToPool>();
         _player = FindObjectOfType<PlayerBattleScene>();
-    }
-  
-    private void OnCollisionEnter(Collision other)
-    {
-        other.transform.SetParent(_objectToPool.handTransform.transform);
     }
     
     public void OnBeginDrag(PointerEventData eventData)
@@ -65,10 +58,6 @@ public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, I
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                      }
-                     else
-                     {
-                         transform.SetParent(_objectToPool.handTransform.transform);
-                     }
                      break;
             
                  case "RangeSolder":
@@ -81,10 +70,6 @@ public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, I
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }
-                     else
-                     {
-                         transform.SetParent(_objectToPool.handTransform.transform);
-                     }
                      break;
             
                  case "RangeBuild":
@@ -97,22 +82,23 @@ public class HandlerCardsInTableFromHand : AbstractHandler, IBeginDragHandler, I
                          if (_abilityActivated != null)
                         _abilityActivated.ActivateAbility();
                     }
-                     else
-                     {
-                         transform.SetParent(_objectToPool.handTransform.transform);
-                     } 
                      break;
                  default:
-                     transform.SetParent(_objectToPool.handTransform.transform);
+                     ReturnCardInHand();
                      break;
              }
         }
         else
         {
-            transform.SetParent(_objectToPool.handTransform.transform);
+            ReturnCardInHand();
         }
 
         isBeginDrag = false;
+    }
+
+    private void ReturnCardInHand()
+    {
+        transform.SetParent(handTransform.transform);
     }
 }
                                                                                             

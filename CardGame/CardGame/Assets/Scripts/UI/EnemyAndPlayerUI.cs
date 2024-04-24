@@ -14,11 +14,15 @@ public class EnemyAndPlayerUI : MonoBehaviour
      private EnemySettings enemySettings;
      private EnemyBattlePhase _enemyBattlePhase;
 
-     public void InitializeUI()
+     private void Awake()
      {
           _playerBattleScene = FindObjectOfType<PlayerBattleScene>();
           enemySettings = FindObjectOfType<EnemySettings>();
           _enemyBattlePhase = FindObjectOfType<EnemyBattlePhase>();
+     }
+
+     public void InitializeUI()
+     {
           #region ChangeHpBars
 
           UpgradeHPBardPlayer();
@@ -33,7 +37,7 @@ public class EnemyAndPlayerUI : MonoBehaviour
 
      public void UpgradeHPBarEnemy()
      {
-          hpBarEnemy.text = $"{enemySettings.name} hit points: {enemySettings._currentHitPointsEnemy.ToString()}";
+          hpBarEnemy.text = $"{enemySettings.nameEnemy} hit points: {enemySettings._currentHitPointsEnemy.ToString()}";
           defenseEnemy.text = $"Defense: {_enemyBattlePhase.defense.ToString()}";
      }
 

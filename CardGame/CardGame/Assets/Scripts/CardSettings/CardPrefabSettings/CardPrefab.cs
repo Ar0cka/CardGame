@@ -42,8 +42,6 @@ public class CardPrefab : MonoBehaviour
         
         if (cardInfo != null)
         _iconCard.sprite = cardInfo.iconCard;
-        
-        uniqueID = Guid.NewGuid().ToString();
 
         _enemyBattlePhase = FindObjectOfType<EnemyBattlePhase>();
 
@@ -52,6 +50,11 @@ public class CardPrefab : MonoBehaviour
         _cardUI.UpdateHpAndDamageUI();
     }
 
+    public void SetUniqCode()
+    {
+        uniqueID = Guid.NewGuid().ToString();
+    }
+    
     public void SetZoneTag(string zone)
     {
         currentZoneTag = zone;

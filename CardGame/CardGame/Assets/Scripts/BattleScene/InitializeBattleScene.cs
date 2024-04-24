@@ -11,16 +11,15 @@ public class InitializeBattleScene : MonoBehaviour
     [SerializeField] private EnemyAndPlayerUI _enemyAndPlayerUI;
     [SerializeField] private TurnController _turnController;
     [SerializeField] private ZoneDropBegin _zoneDropBegin;
-    [FormerlySerializedAs("_manager")] [SerializeField] private ManaController controller;
+    [FormerlySerializedAs("controller")] [SerializeField] private ManaController manaController;
     
     private void Awake()
     {
+        manaController.InitializeManaManager();
+        _deckController.Initialize();
         _zoneDropBegin.InitializeZoneDrop();
         enemySettings.InitializeEnemyController();
-        _turnController.InitializeTurnConttoller();
-        controller.InitializeManaManager();
-        _deckController.Initialize();
         _enemyAndPlayerUI.InitializeUI();
-        
+        _turnController.InitializeTurnConttoller();
     }
 }

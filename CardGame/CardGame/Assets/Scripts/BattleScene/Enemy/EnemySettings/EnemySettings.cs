@@ -15,7 +15,7 @@ public class EnemySettings : MonoBehaviour
     
     #region MonstersParametrs
     
-    private string _name;
+    private string _nameEnemy;
     private int _damage, _maxHitPoints,
         _defense, buff;
 
@@ -23,7 +23,7 @@ public class EnemySettings : MonoBehaviour
     
     public string uniqueID;
 
-    public string name => _name;
+    public string nameEnemy => _nameEnemy;
     public int damage => _damage;
     public int maxHitPoints => _maxHitPoints;
     public int defense => _defense;
@@ -45,7 +45,7 @@ public class EnemySettings : MonoBehaviour
         enemyInfo = _monstersTransit.LoadMonsterData();
         for (int i = 0; i < enemyInfo.Count; i++)
         {
-            _name = enemyInfo[i].nameEnemy;
+            _nameEnemy = enemyInfo[i].nameEnemy;
             _maxHitPoints = enemyInfo[i].hp;
             _damage = enemyInfo[i].damage;
             _defense = enemyInfo[i].defense;

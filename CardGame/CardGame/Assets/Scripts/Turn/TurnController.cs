@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -34,11 +35,15 @@ public class TurnController : MonoBehaviour, ITurn
     public int turn => turn;
     #endregion
 
+    private void Awake()
+    {
+        _player = FindObjectOfType<PlayerBattleScene>();
+    }
+
     public void InitializeTurnConttoller() // процесс первоначальной инициализации при загрузке сцены.
     {
         endTurnButton.onClick.AddListener(OnClickButtonEndTurn);
         BeginTurnPlayer();
-        _player = FindObjectOfType<PlayerBattleScene>();
         turnUI.text = _turn.ToString();
     }
 

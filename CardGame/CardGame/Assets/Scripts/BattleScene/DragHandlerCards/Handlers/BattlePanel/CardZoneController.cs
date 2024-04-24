@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using Deck.InitiallizeObjectPool.Interfase;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.Serialization;
+using Zenject;
 
 
 public class CardZoneController : MonoBehaviour
@@ -13,8 +15,10 @@ public class CardZoneController : MonoBehaviour
 
     [SerializeField] private DeckController _deckController;
     [SerializeField] private HandCards _handCards;
-    [SerializeField] private InitializeObjectToPool _initializeObject;
     [SerializeField] private ManaController manaController;
+    
+    [Inject] private ICreateNewObjectToPool _createNewObjectToPool;
+    [Inject] private IReturnObjectToPool _returnObjectToPool;
 
     private int countHandler = 0;
     public int _countHandler => countHandler;
@@ -43,7 +47,7 @@ public class CardZoneController : MonoBehaviour
                 break;
         }
         cardPrefab.SetZoneTag(zoneTag);
-        _initializeObject.CreateObjectToBattelZonePool(cardPrefab);
+        _createNewObjectToPool.CreateObjectToBattelZonePool(cardPrefab);
         _handCards.DropCardFromHand(cardPrefab, cardPrefab.uniqueID);
         manaController.TakingAwayManaWhenPlayingACard(cardPrefab._cardInfo);
     }
@@ -58,7 +62,7 @@ public class CardZoneController : MonoBehaviour
         if (index >= 0)
         {
             _deckController.DiscardCardFromBattleZone(cardInTable[index]);
-            _initializeObject.ReturnObjectToHandPool(cardInTable[index]);
+            _returnObjectToPool.ReturnObjectToHandPool(cardInTable[index]);
 
             switch (cardInTable[index].currentZoneTag)
             {
