@@ -1,17 +1,12 @@
 using System.Collections.Generic;
-using CardSettings.Tokens;
-using Turn.PhaseSettings.BattelPhase;
 using UnityEngine;
-using Zenject;
 
 
-public class AssigningAttackers : IAttack, IAddAttakerAndTarget
+public static class AssigningAttackers
 {
-     [Inject] private ITokenEffectOnOpponent tokenEffectOnOpponent;
+     private static Dictionary <GameObject, GameObject> attackersAndTargetDictionary = new Dictionary<GameObject, GameObject>();
      
-     private Dictionary <GameObject, GameObject> attackersAndTargetDictionary = new Dictionary<GameObject, GameObject>();
-     
-     public void AddAttackerAndTarget(GameObject attacker, GameObject target)
+     public static void AddAttackerAndTarget(GameObject attacker, GameObject target)
      {
           if (attackersAndTargetDictionary.ContainsKey(attacker))
           {
@@ -24,7 +19,7 @@ public class AssigningAttackers : IAttack, IAddAttakerAndTarget
           
      }
 
-     public void Attack()
+     public static void Attack(TokenEffectOnOpponent tokenEffectOnOpponent)
      {
           foreach (var vCard in attackersAndTargetDictionary)
           {
@@ -51,7 +46,7 @@ public class AssigningAttackers : IAttack, IAddAttakerAndTarget
           attackersAndTargetDictionary.Clear();
      }
      
-     public void RemoveAttacker(GameObject attacker, GameObject target)
+     public static void RemoveAttacker(GameObject attacker, GameObject target)
      {
           attackersAndTargetDictionary.Remove(attacker);
      }

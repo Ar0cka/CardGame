@@ -5,41 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/ITokenEffectOnOpponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/ITokenEffectOnOpponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers/IAddAttakerAndTarget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers/IAddAttakerAndTarget.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers/IAttack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers/IAttack.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/ChangePhaseFolder.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/ChangePhaseFolder/ChangePhaseController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/ChangePhaseFolder/ChangePhaseController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/ChangePhaseFolder/IBeginAttackUnits.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/ChangePhaseFolder/IBeginAttackUnits.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/ChangePhaseFolder/IChangePhase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/ChangePhaseFolder/IChangePhase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/IPlayerPhaseSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/IPlayerPhaseSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/IRepackLists.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/IRepackLists.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/PlayerPhaseSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/PlayerPhaseSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectAssigningAttakers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectAssigningAttakers.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectPlayerPhaseSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectPlayerPhaseSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectTokenEffectOnOpponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectTokenEffectOnOpponent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers/AssigningAttackers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/AssigningAttackers/AssigningAttackers.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/PlayerPhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/BattelPhase/PlayerPhase/PlayerPhase.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/InitializeObjectToPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/InitializeObjectToPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/Interfase/IReturnObjectToPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/Interfase/IReturnObjectToPool.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,10 +118,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="25388">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="25388" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -349,20 +318,7 @@
       <workItem from="1713308074609" duration="1538000" />
       <workItem from="1713319286469" duration="25737000" />
       <workItem from="1713439229186" duration="2344000" />
-      <workItem from="1713928538233" duration="13083000" />
-      <workItem from="1714222555960" duration="3540000" />
-      <workItem from="1714489017006" duration="1191000" />
-      <workItem from="1714520746834" duration="1962000" />
-      <workItem from="1714645029358" duration="1804000" />
-      <workItem from="1714729652229" duration="3584000" />
-      <workItem from="1714842470555" duration="602000" />
-      <workItem from="1715037175286" duration="5263000" />
-      <workItem from="1715286285140" duration="7487000" />
-      <workItem from="1715393868311" duration="602000" />
-      <workItem from="1715595443555" duration="895000" />
-      <workItem from="1715596662121" duration="389000" />
-      <workItem from="1716031038275" duration="970000" />
-      <workItem from="1716208669484" duration="603000" />
+      <workItem from="1713928538233" duration="12921000" />
     </task>
     <servers />
   </component>
@@ -397,13 +353,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs</url>
-          <line>24</line>
+          <line>31</line>
           <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Enemy\EnemyTakeTokens.cs" initialLine="17" containingFunctionPresentation="Method 'DealDamageFromToken'" />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs</url>
-          <line>15</line>
+          <line>22</line>
           <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Enemy\TokensSettings.cs" initialLine="22" containingFunctionPresentation="Method 'AddNewToken'" />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
