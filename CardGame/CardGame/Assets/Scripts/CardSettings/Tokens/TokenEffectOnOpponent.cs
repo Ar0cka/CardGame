@@ -1,22 +1,15 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using CardSettings.Tokens;
 using UnityEngine;
 
-public class TokenEffectOnOpponent
+public class TokenEffectOnOpponent : ITokenEffectOnOpponent
 {
-    private static TokenEffectOnOpponent _instance;
-    public static TokenEffectOnOpponent Instance => _instance ?? (_instance = new TokenEffectOnOpponent());
-    
     private Dictionary< CardPrefab, EnemyBattlePhase> deathTokenInEnemy = new Dictionary<CardPrefab, EnemyBattlePhase >();
     public Dictionary<CardPrefab, EnemyBattlePhase> _deathTokenInEnemy => deathTokenInEnemy;
 
     private EnemyBattlePhase _enemy;
-    
-    private TokenEffectOnOpponent()
-    {
-        
-    }
 
     public void AddNewTokenEnemy(EnemyBattlePhase enemyBattlePhase, CardPrefab cardWithTokenSystem) // После атаки будет добавляться токен на определенный таргет
     {

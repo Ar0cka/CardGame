@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Turn.PhaseSettings.BattelPhase.PlayerPhase;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Zenject;
 
 public class TurnController : MonoBehaviour, ITurn
 {
@@ -14,11 +16,13 @@ public class TurnController : MonoBehaviour, ITurn
     [SerializeField] private DeckController _deckController;
     
     [SerializeField] private GameObject _deadMenu;
-    [SerializeField] private PlayerPhase _phaseController;
-    [FormerlySerializedAs("_manaManager")] [SerializeField] private ManaController manaController;
+    [SerializeField] private PlayerPhase _phaseController; 
+    [SerializeField] private ManaController manaController;
     [SerializeField] private EnemyPhase _enemyPhase;
     
     private PlayerBattleScene _player;
+
+    [Inject] private PlayerPhaseSettings _playerPhaseSettings;
 
     #region parametrs
     
@@ -52,7 +56,7 @@ public class TurnController : MonoBehaviour, ITurn
         SwapTurn();
         if (_player.currentHp > 0)
         {
-            _phaseController.BeginBuildPhase();
+            _phaseController.TurnControllerPlayer();
             _deckController.TakeCardFromDeck();
             
             #region ChangeCountTurn
@@ -70,31 +74,6 @@ public class TurnController : MonoBehaviour, ITurn
         }
     }
     
-    public void TurnControllerPlayer()
-    {
-        if (_phaseController._isBuildPhase)
-        {
-            _phaseController.BeginPenutationPhase();
-        }
-        else if (_phaseController._isPenutationPhase)
-        {
-            _phaseController.BeginBattle();
-        }
-        else if (_phaseController._isBattlePhase)
-        {
-            _phaseController.BeginAttackPhase();
-        }
-        else if (_phaseController._isEndPhase)
-        {
-            _phaseController.BeginEnemyTurn();
-            TurnEnemy();
-        }
-        else if (_enemyPhase._isAssignDefense)
-        {
-           _enemyPhase.AttackEnemyPhase(); 
-        }
-    } // начало фазы перестановки
-    
     public void TurnEnemy()
     {
         _deckController.DiscardCardFromHand();
@@ -106,7 +85,7 @@ public class TurnController : MonoBehaviour, ITurn
     {
         if (_phaseController != null && _deckController != null)
         {
-            TurnControllerPlayer();
+            _phaseController.TurnControllerPlayer();
         }
     }
 
