@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenInCardSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenInCardSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/InitializeObjectToPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/InitializeObjectToPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/Interfase/IReturnObjectToPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/Interfase/IReturnObjectToPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssignAttackHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssignAttackHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/CardPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/CardPrefab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/EnemyPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/EnemyPhase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +44,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a7a68d74033849c295a86e87bd1510c33d400/b0/54c1d736/IEventSystemHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings/AuxiliaryBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/DeadMenu/ButtonsDeadMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/TurnInterfase/ITurn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
@@ -118,10 +123,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="25388">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="25388" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -319,6 +324,7 @@
       <workItem from="1713319286469" duration="25737000" />
       <workItem from="1713439229186" duration="2344000" />
       <workItem from="1713928538233" duration="12921000" />
+      <workItem from="1716209824629" duration="3927000" />
     </task>
     <servers />
   </component>
@@ -350,18 +356,6 @@
           <line>52</line>
           <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Enemy\EnemyBattlePhase.cs" initialLine="52" containingFunctionPresentation="Method 'AttackUnits'" />
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs</url>
-          <line>31</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Enemy\EnemyTakeTokens.cs" initialLine="17" containingFunctionPresentation="Method 'DealDamageFromToken'" />
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs</url>
-          <line>22</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\BattleScene\Enemy\TokensSettings.cs" initialLine="22" containingFunctionPresentation="Method 'AddNewToken'" />
-          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/DeckSystem/Hand/HandCards.cs</url>

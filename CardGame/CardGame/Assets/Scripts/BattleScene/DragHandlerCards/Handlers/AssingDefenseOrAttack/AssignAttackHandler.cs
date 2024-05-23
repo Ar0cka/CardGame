@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CardSettings.CardPrefabSettings;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,8 +9,8 @@ using UnityEngine.Serialization;
 public class AssignAttackHandler : AbstractAssignAttackAndDefense, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
 {
     [SerializeField] private LineManager _lineManager;
+    [SerializeField] private TokenInCardSystem _tokenInCardSystem;
     
-
     public void OffAssigningAttackers()
     {
         isAssigningAttackers = false;
@@ -27,7 +28,7 @@ public class AssignAttackHandler : AbstractAssignAttackAndDefense, IPointerDownH
     
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (!isAssigningAttackers)
+        if (!isAssigningAttackers && _tokenInCardSystem._canAttack)
         {
             isBeginLine = true;
             _lineManager.ShowIndication();

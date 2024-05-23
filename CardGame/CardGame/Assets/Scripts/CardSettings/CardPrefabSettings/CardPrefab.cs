@@ -11,9 +11,14 @@ public class CardPrefab : MonoBehaviour
     #region Serialize
 
     [SerializeField] private Image _iconCard;
-    [HideInInspector] public string currentZoneTag;
     [SerializeField] private CardUI _cardUI;
-
+    [SerializeField] private CardInfo cardInfo;
+    
+    private CardZoneController _removeCardZoneController;
+    private EnemyBattlePhase _enemyBattlePhase; 
+    
+    public CardInfo _cardInfo => cardInfo;
+    
     [SerializeField] private bool haveDeathToken = false;
     public bool _haveDeathToken => haveDeathToken;
     [SerializeField] private bool haveFearToken = false;
@@ -21,19 +26,14 @@ public class CardPrefab : MonoBehaviour
     [SerializeField] private bool haveLifeToken = false;
     public bool _haveLifeToken => haveLifeToken;
     
-    [SerializeField] private CardInfo cardInfo;
-    private CardZoneController _removeCardZoneController;
-    public CardInfo _cardInfo => cardInfo;
-    
-    public string uniqueID;
     
     private int currentHitPoint;
     public int _currentHitPoint => currentHitPoint;
     
-  
-    private EnemyBattlePhase _enemyBattlePhase; 
+    [HideInInspector] public string currentZoneTag;
     [HideInInspector]public bool isBattleZone = false;
-
+    
+    public string uniqueID;
     #endregion 
     
     private void Awake()
@@ -80,4 +80,6 @@ public class CardPrefab : MonoBehaviour
             _removeCardZoneController.RemoveCardFromBattleZone(uniqueID);
         }
     }
+
+    
 }

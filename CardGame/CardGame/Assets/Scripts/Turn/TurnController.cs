@@ -14,8 +14,8 @@ public class TurnController : MonoBehaviour, ITurn
     [SerializeField] private DeckController _deckController;
     
     [SerializeField] private GameObject _deadMenu;
-    [SerializeField] private PlayerPhase _phaseController;
-    [FormerlySerializedAs("_manaManager")] [SerializeField] private ManaController manaController;
+    [SerializeField] private PlayerPhase _phaseController; 
+    [SerializeField] private ManaController manaController;
     [SerializeField] private EnemyPhase _enemyPhase;
     
     private PlayerBattleScene _player;

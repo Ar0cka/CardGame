@@ -43,7 +43,7 @@ public class EnemyPhase : MonoBehaviour
      private void Awake()
      {
          _enemyBattlePhase = FindObjectOfType<EnemyBattlePhase>();
-         _playerPhase = GetComponent<PlayerPhase>();
+         _playerPhase = FindObjectOfType<PlayerPhase>();
          _turnController =FindObjectOfType<TurnController>();
          _cardZoneController = FindObjectOfType<CardZoneController>();
          
