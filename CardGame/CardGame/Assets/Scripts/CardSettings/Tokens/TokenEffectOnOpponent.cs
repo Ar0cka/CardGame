@@ -8,7 +8,7 @@ public class TokenEffectOnOpponent
     private static TokenEffectOnOpponent _instance;
     public static TokenEffectOnOpponent Instance => _instance ?? (_instance = new TokenEffectOnOpponent());
     
-    private Dictionary< CardPrefab, EnemyBattlePhase> deathTokenInEnemy = new Dictionary<CardPrefab, EnemyBattlePhase >();
+    private Dictionary<CardPrefab, EnemyBattlePhase> deathTokenInEnemy = new Dictionary<CardPrefab, EnemyBattlePhase >();
     public Dictionary<CardPrefab, EnemyBattlePhase> _deathTokenInEnemy => deathTokenInEnemy;
 
     private EnemyBattlePhase _enemy;

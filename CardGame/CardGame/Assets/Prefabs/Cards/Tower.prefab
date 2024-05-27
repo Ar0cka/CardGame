@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 5213544629674369330}
   - component: {fileID: 6467005456757775431}
   - component: {fileID: 7040978677525259395}
+  - component: {fileID: 4590135940545761099}
   m_Layer: 2
   m_Name: Tower
   m_TagString: Untagged
@@ -511,11 +512,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _iconCard: {fileID: 1128781769220490695}
-  currentZoneTag: 
   _cardUI: {fileID: 7040978677525259395}
   cardInfo: {fileID: 11400000, guid: 0c1e8b45d0d51064aa9470e9b62bc531, type: 2}
-  uniqueID: 
+  haveDeathToken: 0
+  haveFearToken: 0
+  haveLifeToken: 0
+  currentZoneTag: 
   isBattleZone: 0
+  uniqueID: 
 --- !u!114 &-8145471316848677512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,6 +591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lineManager: {fileID: 6554227211864215489}
+  _tokenInCardSystem: {fileID: 4590135940545761099}
 --- !u!114 &6467005456757775431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,3 +619,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hpAndDamageCard: {fileID: 7623632310853956936}
   _card: {fileID: 607128850502955106}
+--- !u!114 &4590135940545761099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790176645178801302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6f8ed92b66465390a6ad71b574f9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canAttack: 1

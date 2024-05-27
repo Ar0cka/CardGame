@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 6989939587375615464}
   - component: {fileID: 1257353838552548762}
   - component: {fileID: 5636999586097038121}
+  - component: {fileID: -1329971920281465107}
   m_Layer: 2
   m_Name: Ferma
   m_TagString: Untagged
@@ -96,10 +97,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _iconCard: {fileID: 6951324898934110733}
-  currentZoneTag: 
+  _cardUI: {fileID: 0}
   cardInfo: {fileID: 11400000, guid: 1a33685ad171abb41985a7a71a52930f, type: 2}
-  uniqueID: 
+  haveDeathToken: 0
+  haveFearToken: 0
+  haveLifeToken: 0
+  currentZoneTag: 
   isBattleZone: 0
+  uniqueID: 
 --- !u!114 &7113120657774953990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,8 +172,8 @@ MonoBehaviour:
   _handlerFromHand: {fileID: 7113120657774953990}
   _handlerSwitchZone: {fileID: 6517139848286585005}
   _handlerCardsFromBattle: {fileID: 6989939587375615464}
-  _attackHandler: {fileID: 1257353838552548762}
-  _assingDefenseHandler: {fileID: 0}
+  assignAttackHandlerAndDefense: {fileID: 0}
+  assingDefenseHandler: {fileID: 0}
 --- !u!114 &6989939587375615464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lineManager: {fileID: 0}
+  _tokenInCardSystem: {fileID: 0}
 --- !u!210 &5636999586097038121
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -207,6 +213,19 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
+--- !u!114 &-1329971920281465107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290215275279516508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6f8ed92b66465390a6ad71b574f9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canAttack: 0
 --- !u!1 &5290215275573792041
 GameObject:
   m_ObjectHideFlags: 0
