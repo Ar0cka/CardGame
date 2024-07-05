@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CardSettings.CardPrefabSettings
 {
-    public class TokenInCardSystem : MonoBehaviour
+    public class TokenInCardSystem : MonoBehaviour, ITokenInCardSystem
     {
         [SerializeField] private bool canAttack = false;
         

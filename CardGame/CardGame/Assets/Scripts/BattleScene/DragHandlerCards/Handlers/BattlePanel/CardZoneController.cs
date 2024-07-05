@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using Deck.InitiallizeObjectPool.Interfase;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-using UnityEngine.Serialization;
 using Zenject;
 
 
@@ -161,6 +159,14 @@ public class CardZoneController : MonoBehaviour
             list.Add(cards);
         }
         return list;
+    }
+
+    public int ReturnCountInCardOnTable()
+    {
+        List<CardPrefab> cardInTable = new List<CardPrefab>();
+        repackAllLists(cardInTable);
+
+        return cardInTable.Count;
     }
 
     public void CheakBattleZone(ref List<CardPrefab> list)

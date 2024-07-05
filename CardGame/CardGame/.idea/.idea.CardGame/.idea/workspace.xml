@@ -5,53 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Tokens.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Tokens/ActivateAppointToken.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Tokens/ActivateAppointToken.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint/AppointToken.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint/AppointToken.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/ITokenInCardSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/ITokenInCardSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectTokenCardEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectTokenCardEffect.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalFromBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalFromBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalFromBinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalFromBinder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalIdToBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalIdToBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalIdToBinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalIdToBinder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalToBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalToBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalToBinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalToBinder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/SignalCallbackWithLookupWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/SignalCallbackWithLookupWrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/SignalCallbackWithLookupWrapper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/SignalCallbackWithLookupWrapper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/SignalCallbackWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/SignalCallbackWrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/SignalCallbackWrapper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/SignalCallbackWrapper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalAsyncTickPriorityCopyBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalAsyncTickPriorityCopyBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalAsyncTickPriorityCopyBinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalAsyncTickPriorityCopyBinder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalIdRequireHandlerAsyncTickPriorityCopyBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalIdRequireHandlerAsyncTickPriorityCopyBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalIdRequireHandlerAsyncTickPriorityCopyBinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalIdRequireHandlerAsyncTickPriorityCopyBinder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalRequireHandlerAsyncTickPriorityCopyBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalRequireHandlerAsyncTickPriorityCopyBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalRequireHandlerAsyncTickPriorityCopyBinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/DeclareSignalRequireHandlerAsyncTickPriorityCopyBinder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/SignalBindingBindInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/SignalBindingBindInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/SignalBindingBindInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/SignalBindingBindInfo.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/SignalDeclarationBindInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/SignalDeclarationBindInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/SignalDeclarationBindInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/DeclareSignal/SignalDeclarationBindInfo.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalCopyBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalCopyBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalCopyBinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalCopyBinder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalExtensions.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalTickPriorityCopyBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalTickPriorityCopyBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalTickPriorityCopyBinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/SignalTickPriorityCopyBinder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalDeclaration.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalDeclaration.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscription.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscription.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscription.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscription.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscriptionId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscriptionId.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscriptionId.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscriptionId.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalBus.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalBus.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalBusInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalBusInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalBusInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalBusInstaller.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalDeclarationAsyncInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalDeclarationAsyncInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalDeclarationAsyncInitializer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalDeclarationAsyncInitializer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Binding/BindingUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Binding/BindingUtil.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/Ferma.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/Ferma.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/Tower.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/CardZoneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/CardZoneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/AppointToken.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/AppointToken.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenInCardSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/TokenInCardSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenInCardSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/TokenInCardSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnFriendlyCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnFriendlyCards.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +41,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3ea58dea2fc24b4b9943ac287526c61029400/29/94254ad8/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/583df70190f94511bd46f12943531dbc15b000/d0/40cba02a/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/583df70190f94511bd46f12943531dbc15b000/ed/1c438bc6/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5e070758c79418eabe25ce825046c4e1c200/7c/1775a024/ITokenEffectOnFriendlyCards.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings/AuxiliaryBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssignAttackHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenInCardSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnFriendlyCards.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/CardZoneController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/TokenInCardSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/DeadMenu/ButtonsDeadMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/TurnInterfase/ITurn.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,13 +65,16 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2WkBVzhDucVnYA7N71qRd06386a" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -99,6 +86,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.4813084&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Battle&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -109,9 +97,9 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;/home/arocka/.config/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
-      &quot;/home/arocka/.config/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
-      &quot;/home/arocka/.local/share/Symbols/src&quot;
+      &quot;C:\\Users\\vanos\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\vanos\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\vanos\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
@@ -125,7 +113,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Unity/Hub/Editor/2021.3.38f1/Editor/Unity" />
+      <option name="EXE_PATH" value="F:\Unity\Unity\2021.3.37f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath E:\Unity\CardGameMain\CardGame\CardGame -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\Unity\CardGameMain\CardGame\CardGame" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -133,7 +121,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Unity/Hub/Editor/2021.3.38f1/Editor/Unity" />
+      <option name="EXE_PATH" value="F:\Unity\Unity\2021.3.37f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath E:\Unity\CardGameMain\CardGame\CardGame -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\Unity\CardGameMain\CardGame\CardGame" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -356,6 +344,16 @@
       <workItem from="1716772652436" duration="11000" />
       <workItem from="1716772671233" duration="2458000" />
       <workItem from="1716790414969" duration="182000" />
+      <workItem from="1718630816861" duration="72000" />
+      <workItem from="1718630930331" duration="237000" />
+      <workItem from="1718631207552" duration="1200000" />
+      <workItem from="1718641106917" duration="181000" />
+      <workItem from="1718881062723" duration="2546000" />
+      <workItem from="1719134079694" duration="48000" />
+      <workItem from="1719731836113" duration="216000" />
+      <workItem from="1719974608460" duration="942000" />
+      <workItem from="1720066078048" duration="6016000" />
+      <workItem from="1720180283994" duration="1326000" />
     </task>
     <servers />
   </component>
