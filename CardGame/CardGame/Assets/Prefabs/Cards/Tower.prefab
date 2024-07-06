@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5634968849493022907}
   - component: {fileID: 5444166257337076192}
   - component: {fileID: 1128781769220490695}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: IconCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 533938482672994753}
   - component: {fileID: 871475856769660677}
   - component: {fileID: 7623632310853956936}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: HpAndDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 8904943286543094845}
   - component: {fileID: 6554227211864215489}
   - component: {fileID: 8075577166154333594}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: OutLineCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,13 +465,16 @@ GameObject:
   - component: {fileID: 607128850502955106}
   - component: {fileID: -8145471316848677512}
   - component: {fileID: 8875794167571437748}
+  - component: {fileID: -5100418811065464889}
   - component: {fileID: 4521175566533057882}
   - component: {fileID: 8767069130117268514}
   - component: {fileID: 5213544629674369330}
   - component: {fileID: 6467005456757775431}
   - component: {fileID: 7040978677525259395}
   - component: {fileID: 4590135940545761099}
-  m_Layer: 2
+  - component: {fileID: -7974139283743576206}
+  - component: {fileID: -3577228091791399234}
+  m_Layer: 7
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +518,7 @@ MonoBehaviour:
   _cardUI: {fileID: 7040978677525259395}
   cardInfo: {fileID: 11400000, guid: 0c1e8b45d0d51064aa9470e9b62bc531, type: 2}
   haveDeathToken: 0
-  haveFearToken: 0
+  haveFearToken: 1
   haveLifeToken: 0
   currentZoneTag: 
   isBattleZone: 0
@@ -547,6 +550,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handlerController: {fileID: 4521175566533057882}
   _settingsEmpetyCard: {fileID: 2790176645178801301}
+--- !u!114 &-5100418811065464889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790176645178801302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f104c1c04fc34b66b01e3a6702df11a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 607128850502955106}
+  appointToken: {fileID: -5100418811065464889}
+  friendlyCard: Card
 --- !u!114 &4521175566533057882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,3 +650,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canAttack: 1
+--- !u!114 &-7974139283743576206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790176645178801302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8bff4e6fee4265973c5ba510361021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _appointToken: {fileID: -5100418811065464889}
+--- !u!114 &-3577228091791399234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790176645178801302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740cf28d2319a8e42b51218607b840aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsAbility: {fileID: -7974139283743576206}

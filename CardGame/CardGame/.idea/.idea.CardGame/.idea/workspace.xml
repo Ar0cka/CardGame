@@ -5,31 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Tokens.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Tokens/ActivateAppointToken.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Tokens/ActivateAppointToken.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint/AppointToken.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint/AppointToken.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/ITokenInCardSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/ITokenInCardSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectTokenCardEffect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectTokenCardEffect.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Settings/ITokenEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Settings/ITokenEffect.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/CardZoneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/CardZoneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/AppointToken.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/AppointToken.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenInCardSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/TokenInCardSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenInCardSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/TokenInCardSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnFriendlyCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnFriendlyCards.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/TokenEffectOnOpponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/DarkSolder.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/Ferma.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/Ferma.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cards/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cards/Tower.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/AbstractHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/AbstractHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsFromBattleZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScripts/HandlerCardsFromBattleZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsFromBattleZone.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScripts/HandlerCardsFromBattleZone.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsInBattleZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScripts/HandlerCardsInBattleZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsInBattleZone.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScripts/HandlerCardsInBattleZone.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsInTableFromHand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScripts/HandlerCardsInTableFromHand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScropts/HandlerCardsInTableFromHand.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/Handlers/HadnlersScripts/HandlerCardsInTableFromHand.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/AbilityActivated.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/AbilityActivated.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Tokens/ActivateAppointToken.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/AbilityFolder/Tokens/ActivateAppointToken.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint/AppointToken.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint/AppointToken.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/InitializeObjectToPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/InitializeObjectToPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/Interfase/ICreateNewObjectToPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/InitiallizeObjectPool/Interfase/ICreateNewObjectToPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectTokenCardEffect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Zenject/InjectTokenCardEffect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +81,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -354,6 +355,9 @@
       <workItem from="1719974608460" duration="942000" />
       <workItem from="1720066078048" duration="6016000" />
       <workItem from="1720180283994" duration="1326000" />
+      <workItem from="1720222559737" duration="2131000" />
+      <workItem from="1720226785244" duration="4098000" />
+      <workItem from="1720235008099" duration="966000" />
     </task>
     <servers />
   </component>
@@ -392,10 +396,17 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/DeckSystem/Hand/HandCards.cs</url>
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint/AppointToken.cs</url>
           <line>45</line>
-          <properties documentPath="E:\Unity\CardGameMain\CardGame\CardGame\Assets\Scripts\DeckSystem\Hand\HandCards.cs" containingFunctionPresentation="Method 'DrawNextCard'" />
-          <option name="timeStamp" value="56" />
+          <properties documentPath="F:\Repositors\CardGame\CardGame\CardGame\Assets\Scripts\CardSettings\Appoint\AppointToken.cs" containingFunctionPresentation="Method 'FindCard'">
+            <startOffsets>
+              <option value="1251" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1252" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CardSettings.AbilityFolder.Settings;
 using UnityEngine;
 
 public class AbilityActivated : MonoBehaviour
@@ -17,6 +18,11 @@ public class AbilityActivated : MonoBehaviour
         if (scriptsAbility is IAbility)
         {
             (scriptsAbility as IAbility).ActivatedAbility(_cardPref._cardInfo);
+        }
+
+        if (scriptsAbility is ITokenEffect)
+        {
+            (scriptsAbility as ITokenEffect).ActivatingAppoint();
         }
     }
 }

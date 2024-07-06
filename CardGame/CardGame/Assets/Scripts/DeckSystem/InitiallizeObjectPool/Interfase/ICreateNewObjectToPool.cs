@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace Deck.InitiallizeObjectPool.Interfase
 {

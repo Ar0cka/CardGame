@@ -1,3 +1,4 @@
+using System;
 using CardSettings.Tokens.EffectOnFriendlyCards;
 using UnityEngine;
 using UnityEngine.Windows.WebCam;
@@ -7,7 +8,7 @@ namespace CardSettings.Appoint
 {
     public class AppointToken : MonoBehaviour
     {
-        [Inject] private IEffectOnFriendlyCard _tokenEffectOnFriendlyCard;
+        private IEffectOnFriendlyCard _tokenEffectOnFriendlyCard = new TokenEffectOnFriendlyCards();
         
         [SerializeField] private CardPrefab cardPrefab;
         [SerializeField] private AppointToken appointToken;
@@ -21,7 +22,6 @@ namespace CardSettings.Appoint
         private void Awake()
         {
             _cardZone = FindObjectOfType<CardZoneController>();
-            _cardCountInTable = _cardZone.ReturnCountInCardOnTable();
 
             if (cardPrefab._haveFearToken || cardPrefab._haveLifeToken)
             {
@@ -47,13 +47,16 @@ namespace CardSettings.Appoint
                     Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero);
 
-                    foreach (RaycastHit2D hit in hits)
+                    foreach (RaycastHit2D hit in hits )
                     {
                         if (hit.collider != null)
                         {
+                            Debug.Log(hit.collider);
+                            
                             var target = hit.collider.gameObject;
                             var card = target.GetComponent<CardPrefab>();
                             
+                            if(card != null)
                             AddNewToken(card);
                         }
                     }
@@ -63,6 +66,10 @@ namespace CardSettings.Appoint
 
         public void BeginAppointToken()
         {
+            if(_tokenEffectOnFriendlyCard == null)
+                Debug.LogError("token effect == null");
+            
+            _cardCountInTable = _cardZone.ReturnCountInCardOnTable();
             _theRaycastCanWork = true;
             Time.timeScale = 0f;
         }

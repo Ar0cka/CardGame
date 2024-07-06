@@ -38,7 +38,9 @@ public class InitializeObjectToPool : IReturnObjectToPool, ITakeObjectFromPool, 
         if (poolHands.Count < maxSizePool)
         {
             card = GameObject.Instantiate(cardPref.gameObject, handTransform.position, handTransform.rotation, handTransform);
+            Debug.Log("Card create");
             card.SetActive(false);
+            
             poolHands.Add(card);
         }
     }

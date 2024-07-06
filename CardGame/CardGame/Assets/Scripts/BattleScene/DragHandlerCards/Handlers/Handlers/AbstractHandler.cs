@@ -25,7 +25,7 @@ public class AbstractHandler : MonoBehaviour
             List<RaycastResult> results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(pointerEventData, results);
         
-            int ignoreLayerMask = 1 << LayerMask.NameToLayer("Ignore Raycast");
+            int ignoreLayerMask = 1 << LayerMask.NameToLayer("Cards");
             int allLayersExceptIgnore = ~ignoreLayerMask;
 
             foreach (RaycastResult result in results)
