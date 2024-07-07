@@ -79,6 +79,7 @@ namespace CardSettings.Appoint
             if (_tokenEffectOnFriendlyCard != null)
             {
                 _tokenEffectOnFriendlyCard.AddNewTokenInFriendCard(_targetCardPrefab);
+                _tokenEffectOnFriendlyCard.ActionFearToken();
             }
             else
             {

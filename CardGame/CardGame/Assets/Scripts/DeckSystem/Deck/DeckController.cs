@@ -23,7 +23,6 @@ public class DeckController : MonoBehaviour
    [SerializeField] private DeckUI _deckUI;
    
    [Inject] private IShuffle _shuffle;
-   [Inject] private IEffectOnFriendlyCard _tokenEffectOnFriendlyCard;
    [Inject] private ITakeObjectFromPool _takeObjectFromPool;
    [Inject] private ICreateNewObjectToPool _createNewObjectToPool;
    [Inject] private IReturnObjectToPool _returnObjectToPool;
@@ -48,8 +47,6 @@ public class DeckController : MonoBehaviour
    
    private void CreateObject()
    {
-      if (_tokenEffectOnFriendlyCard != null)
-         Debug.Log("token effect != null");
       
       for (int i = 0; i < _deckList.Count; i++)
       {
