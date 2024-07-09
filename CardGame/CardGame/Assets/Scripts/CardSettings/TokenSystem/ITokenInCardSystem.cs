@@ -2,7 +2,7 @@ namespace CardSettings.CardPrefabSettings
 {
     public interface ITokenInCardSystem
     {
-        bool _canAttack { get; }
+        bool canAttack { get; }
         
         void CardHaveFearToken();
         void DeleteFearToken();

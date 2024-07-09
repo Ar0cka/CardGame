@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CardSettings.CardPrefabSettings;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -165,6 +166,21 @@ public class PlayerPhase : MonoBehaviour
       if (_tokenEffectOnOpponent._deathTokenInEnemy.Count > 0)
       {
          _tokenEffectOnOpponent.DealDamageFromDeathToken();
+      }
+   }
+
+   private void DeleteTokenFromFriendlyCard(List<CardPrefab> _cardsFromBattleZone)
+   {
+      
+      
+      foreach (var card in _cardsFromBattleZone)
+      {
+         var tokenSystem = card.GetComponent<TokenInCardSystem>();
+
+         if (tokenSystem.canAttack == true)
+         {
+            
+         }
       }
    }
    

@@ -28,7 +28,7 @@ public class AssignAttackHandler : AbstractAssignAttackAndDefense, IPointerDownH
     
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (!isAssigningAttackers && _tokenInCardSystem._canAttack)
+        if (!isAssigningAttackers && _tokenInCardSystem.canAttack)
         {
             isBeginLine = true;
             _lineManager.ShowIndication();

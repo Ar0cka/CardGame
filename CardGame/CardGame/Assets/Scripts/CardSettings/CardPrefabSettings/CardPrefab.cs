@@ -18,22 +18,44 @@ public class CardPrefab : MonoBehaviour
     private EnemyBattlePhase _enemyBattlePhase; 
     
     public CardInfo _cardInfo => cardInfo;
-    
+
+    #region tokens
+
     [SerializeField] private bool haveDeathToken = false;
     public bool _haveDeathToken => haveDeathToken;
     [SerializeField] private bool haveFearToken = false;
     public bool _haveFearToken => haveFearToken;
     [SerializeField] private bool haveLifeToken = false;
     public bool _haveLifeToken => haveLifeToken;
+
+    private bool _isDeletedTokenFromCard = false;
+    public bool isDeletedTokenFromCard => _isDeletedTokenFromCard;
     
-    
+    #endregion
+
+    #region Heath
+
     private int currentHitPoint;
     public int _currentHitPoint => currentHitPoint;
+
+    #endregion
+
+    #region BattleActive
+
+    private string _currentZoneTag;
+    public string currentZoneTag => _currentZoneTag;
     
-    [HideInInspector] public string currentZoneTag;
-    [HideInInspector]public bool isBattleZone = false;
+    [HideInInspector] public bool isBattleZone = false;
+
+    #endregion
     
-    public string uniqueID;
+    #region CardID
+
+    private string _uniqueID;
+    public string uniqueID => _uniqueID;
+
+    #endregion
+   
     #endregion 
     
     private void Awake()
@@ -50,15 +72,22 @@ public class CardPrefab : MonoBehaviour
         _cardUI.UpdateHpAndDamageUI();
     }
 
+    #region SetSettings
+
     public void SetUniqCode()
     {
-        uniqueID = Guid.NewGuid().ToString();
+        _uniqueID = Guid.NewGuid().ToString();
     }
     
     public void SetZoneTag(string zone)
     {
-        currentZoneTag = zone;
+        _currentZoneTag = zone;
     }
+
+
+    #endregion
+
+    #region ActionDamage
 
     public void DealDamage(GameObject target)
     {
@@ -81,5 +110,16 @@ public class CardPrefab : MonoBehaviour
         }
     }
 
-    
+    #endregion
+
+    public void DeletedTokenFromCard()
+    {
+        _isDeletedTokenFromCard = true;
+    }
+
+    public void ClearIsDeletedTokenFromCard()
+    {
+        _isDeletedTokenFromCard = false;
+    }
+   
 }

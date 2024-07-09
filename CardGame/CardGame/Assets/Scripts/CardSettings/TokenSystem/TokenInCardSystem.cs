@@ -1,23 +1,24 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CardSettings.CardPrefabSettings
 {
     public class TokenInCardSystem : MonoBehaviour, ITokenInCardSystem
     {
-        [SerializeField] private bool canAttack = false;
+        [SerializeField] private bool _canAttack = false;
         
         #region FearTokenSettings
         
-        public bool _canAttack => canAttack;
+        public bool canAttack => _canAttack;
         
         public void CardHaveFearToken()
         {
-            canAttack = false;
+            _canAttack = false;
         }
 
         public void DeleteFearToken()
         {
-            canAttack = true;
+            _canAttack = true;
         }
 
         #endregion

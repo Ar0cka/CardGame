@@ -8,6 +8,7 @@ using UnityEngine;
 public class TokenEffectOnFriendlyCards : IEffectOnFriendlyCard
 {
     private List<CardPrefab> _fearTokens = new List<CardPrefab>();
+    public List<CardPrefab> fearTokens => _fearTokens; 
 
     public void AddNewTokenInFriendCard(CardPrefab tokenAffectedCard)
     {
@@ -27,6 +28,7 @@ public class TokenEffectOnFriendlyCards : IEffectOnFriendlyCard
     
     public void RemoveFearTokensFromTarget(CardPrefab targetCard)
     {
-        _fearTokens.RemoveAt(0);
+        int index = _fearTokens.FindIndex(obj => obj.uniqueID == targetCard.uniqueID);
+        _fearTokens.RemoveAt(index);
     }
 }
