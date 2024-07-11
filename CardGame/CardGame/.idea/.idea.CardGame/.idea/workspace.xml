@@ -6,15 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Appoint/AppointToken.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Appoint/AppointToken.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,15 +17,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3ea58dea2fc24b4b9943ac287526c61029400/29/94254ad8/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/583df70190f94511bd46f12943531dbc15b000/68/fdc4fc4a/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/583df70190f94511bd46f12943531dbc15b000/d0/40cba02a/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/583df70190f94511bd46f12943531dbc15b000/ed/1c438bc6/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/80e08c2cc04049bf931fc9038d04f39746ac00/ec/7a8cf6b9/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5e070758c79418eabe25ce825046c4e1c200/7c/1775a024/ITokenEffectOnFriendlyCards.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObject/Scripts/CardInfoSettings/AuxiliaryBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssignAttackHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/BattlePanel/CardZoneController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/TokenInCardSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/DeadMenu/ButtonsDeadMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turn/TurnInterfase/ITurn.cs" root0="FORCE_HIGHLIGHTING" />
@@ -123,10 +113,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1692">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13076">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="1692" />
+      <option name="pid" value="13076" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -389,6 +379,19 @@
           <line>45</line>
           <properties documentPath="F:\Repositors\CardGame\CardGame\CardGame\Assets\Scripts\CardSettings\Appoint\AppointToken.cs" containingFunctionPresentation="Method 'FindCard'" />
           <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs</url>
+          <line>52</line>
+          <properties documentPath="F:\Repositors\CardGame\CardGame\CardGame\Assets\Scripts\DeckSystem\Deck\DeckController.cs" containingFunctionPresentation="Method 'CreateObject'">
+            <startOffsets>
+              <option value="1720" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1795" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
