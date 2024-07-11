@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using CardSettings.Tokens.EffectOnFriendlyCards;
 using Deck.InitiallizeObjectPool.Interfase;
 using Deck.Shuffle;
 using UnityEditor.SearchService;

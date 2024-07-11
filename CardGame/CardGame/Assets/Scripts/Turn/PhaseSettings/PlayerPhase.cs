@@ -1,36 +1,35 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using CardSettings.CardPrefabSettings;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class PlayerPhase : MonoBehaviour
 {
-   private string buildPhase, permutationPhase, battlePhase, attackPhase, _endPhase;
+   private string _buildPhase, _permutationPhase, _battlePhase, _attackPhase, _endPhase;
    
-   private bool beginBuildPhase, beginPenutationFase, _beginBattleFase, _beginAttackPhase, _beginEndPhase;
+   private bool _beginBuildPhase, _beginPermutationPhase, _beginBattlePhase, _beginAttackPhase, _beginEndPhase;
 
-   private bool Monster, Player;
+   private bool _monster, _player;
 
-   public bool _isBuildPhase => beginBuildPhase;
-   public bool _isPenutationPhase => beginPenutationFase;
-   public bool _isBattlePhase => _beginBattleFase;
-   public bool _isEndPhase => _beginEndPhase;
-   public bool _isAttackPhase => _beginAttackPhase;
+   public bool IsBuildPhase => _beginBuildPhase;
+   public bool IsPermutationPhase => _beginPermutationPhase;
+   public bool IsBattlePhase => _beginBattlePhase;
+   public bool IsEndPhase => _beginEndPhase;
+   public bool IsAttackPhase => _beginAttackPhase;
 
-   List<CardPrefab> cardsZone = new List<CardPrefab>();
-   List<CardPrefab> cardsHand = new List<CardPrefab>();
+   List<CardPrefab> _cardsZone = new List<CardPrefab>();
+   List<CardPrefab> _cardsHand = new List<CardPrefab>();
 
-   [FormerlySerializedAs("_phaseText")] [SerializeField] private TextMeshProUGUI _phaseTextGUI;
+   [SerializeField] private TextMeshProUGUI _phaseTextGUI;
    [SerializeField] private TextMeshProUGUI _buttonsEndPhase;
 
    [SerializeField] private CardZoneController _zoneCards;
    [SerializeField] private HandCards _handCards;
    
    private TokenEffectOnOpponent _tokenEffectOnOpponent = TokenEffectOnOpponent.Instance;
+   private TokenEffectOnFriendlyCards _tokenEffectOnFriendlyCards = TokenEffectOnFriendlyCards.Instance;
 
    private EnemyBattlePhase _enemyBattle;
    private HandlerController _handlerController;
@@ -45,31 +44,31 @@ public class PlayerPhase : MonoBehaviour
    {
       if (!isFirstTurn)
       {
-         foreach (var vCard in cardsHand)
+         foreach (var vCard in _cardsHand)
          {
             _handlerController = vCard.GetComponent<HandlerController>();
-            _handlerController.SettingsHandlersFromHand(_isBuildPhase);
+            _handlerController.SettingsHandlersFromHand(IsBuildPhase);
          }
-         cardsZone.Clear();
+         _cardsZone.Clear();
       }
-      buildPhase = "Build phase";
+      _buildPhase = "Build phase";
       #region BuildFase
 
       if (_beginEndPhase)
       {
-         ChangePhase(ref _beginEndPhase, ref beginBuildPhase, "End build phase", buildPhase);
+         ChangePhase(ref _beginEndPhase, ref _beginBuildPhase, "End build phase", _buildPhase);
       }
       else
       {
-         ChangePhase(ref beginBuildPhase, "End build phase", buildPhase);
+         ChangePhase(ref _beginBuildPhase, "End build phase", _buildPhase);
       }
       #endregion
    }
 
    public void BeginPenutationPhase()
    {
-      permutationPhase = "Permutation phase";
-      ChangePhase(ref beginBuildPhase, ref beginPenutationFase, "End permutation phase", permutationPhase);
+      _permutationPhase = "Permutation phase";
+      ChangePhase(ref _beginBuildPhase, ref _beginPermutationPhase, "End permutation phase", _permutationPhase);
       
       FirstRepackList();
       SecondRepackList();
@@ -81,8 +80,8 @@ public class PlayerPhase : MonoBehaviour
 
    private void FirstRepackList()
    {
-      _zoneCards.repackAllLists(cardsZone);
-      foreach (var vCard in cardsZone)
+      _zoneCards.repackAllLists(_cardsZone);
+      foreach (var vCard in _cardsZone)
       {
          if (vCard._cardInfo.subtype != CardInfo.SubtypeCard.AuxiliaryBuild &&
              vCard._cardInfo.subtype != CardInfo.SubtypeCard.AttackRangeBuild)
@@ -104,11 +103,11 @@ public class PlayerPhase : MonoBehaviour
 
    private void SecondRepackList()
    {
-      _handCards.repackHandList(cardsHand);
-      foreach (var vCard in cardsHand)
+      _handCards.repackHandList(_cardsHand);
+      foreach (var vCard in _cardsHand)
       {
          _handlerController = vCard.GetComponent<HandlerController>();
-         _handlerController.SettingsHandlersFromHand(_isBuildPhase);
+         _handlerController.SettingsHandlersFromHand(IsBuildPhase);
       }
    }
 
@@ -116,28 +115,29 @@ public class PlayerPhase : MonoBehaviour
    
    public void BeginBattle()
    {
-      foreach (var vCard in cardsZone)
+      foreach (var vCard in _cardsZone)
       {
          _handlerController = vCard.GetComponent<HandlerController>();
          _handlerController.BeginBattleFase();
       }
       #region ChangeFase
-      battlePhase = "Battle phase";
-      ChangePhase(ref beginPenutationFase, ref _beginBattleFase, "End battle phase", battlePhase);
+      _battlePhase = "Battle phase";
+      ChangePhase(ref _beginPermutationPhase, ref _beginBattlePhase, "End battle phase", _battlePhase);
       #endregion
    }
 
    public void BeginAttackPhase()
    {
-      foreach (var vCard in cardsZone)
+      foreach (var vCard in _cardsZone)
       {
          _handlerController = vCard.GetComponent<HandlerController>();
          _handlerController.BeginAttackPhase();
       }
 
-      attackPhase = "Attack phase";
-      ChangePhase(ref _beginBattleFase, ref _beginAttackPhase, "End attack phase", attackPhase);
+      _attackPhase = "Attack phase";
+      ChangePhase(ref _beginBattlePhase, ref _beginAttackPhase, "End attack phase", _attackPhase);
       StartCoroutine(DelayAttackUnits()); 
+      
       EndPhase();
    }
 
@@ -151,13 +151,15 @@ public class PlayerPhase : MonoBehaviour
    {
       _endPhase = "End phase";
       ChangePhase(ref _beginAttackPhase, ref _beginEndPhase, "End turn", _endPhase);
+      DeleteTokenFromFriendlyCard(_cardsZone);
       isFirstTurn = false;
    }
 
    public void BeginEnemyTurn()
    {
       _beginEndPhase = false;
-     
+      
+      ClearIsDeleted();
       DealDamageFromTokensTheEndTurn();
    }
 
@@ -169,17 +171,26 @@ public class PlayerPhase : MonoBehaviour
       }
    }
 
+   private void ClearIsDeleted()
+   {
+      foreach (var card in _cardsZone)
+      {
+         if (card.isDeletedTokenFromCard)
+         {
+            card.ClearIsDeletedTokenFromCard();
+         }
+      }
+   }
+   
    private void DeleteTokenFromFriendlyCard(List<CardPrefab> _cardsFromBattleZone)
    {
-      
-      
       foreach (var card in _cardsFromBattleZone)
       {
          var tokenSystem = card.GetComponent<TokenInCardSystem>();
 
-         if (tokenSystem.canAttack == true)
+         if (tokenSystem.canAttack == false)
          {
-            
+            _tokenEffectOnFriendlyCards.RemoveFearTokensFromTarget(card);
          }
       }
    }

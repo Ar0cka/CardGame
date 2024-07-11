@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CardSettings.CardPrefabSettings;
-using CardSettings.Tokens.EffectOnFriendlyCards;
 using UnityEngine;
 
-public class TokenEffectOnFriendlyCards : IEffectOnFriendlyCard
+public class TokenEffectOnFriendlyCards
 {
+    private static TokenEffectOnFriendlyCards _instance;
+    
+    public static TokenEffectOnFriendlyCards Instance => _instance ?? (_instance = new TokenEffectOnFriendlyCards ());
+    
     private List<CardPrefab> _fearTokens = new List<CardPrefab>();
     public List<CardPrefab> fearTokens => _fearTokens; 
 
@@ -30,5 +33,6 @@ public class TokenEffectOnFriendlyCards : IEffectOnFriendlyCard
     {
         int index = _fearTokens.FindIndex(obj => obj.uniqueID == targetCard.uniqueID);
         _fearTokens.RemoveAt(index);
+        targetCard.DeletedTokenFromCard();
     }
 }

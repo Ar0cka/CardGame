@@ -7,30 +7,13 @@
     <list default="true" id="82d41758-16a9-4917-96fe-8e065e54e2ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleSceneFirstFloor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssignAttackHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleScene/DragHandlerCards/Handlers/AssingDefenseOrAttack/AssignAttackHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Appoint.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint/AppointToken.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Appoint/AppointToken.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Appoint/AppointToken.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Appoint/AppointToken.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/CardPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/CardPrefab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/ITokenInCardSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/ITokenInCardSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/ITokenInCardSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/ITokenInCardSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/TokenInCardSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/TokenInCardSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/CardPrefabSettings/TokenSystem/TokenInCardSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/TokenInCardSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/DifTokens.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/DifTokens.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/DifTokens/DeathToken.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/DifTokens/DeathToken.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/DifTokens/DeathToken.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/DifTokens/DeathToken.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnOpponent.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnOpponent/TokenEffectOnOpponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Appoint/AppointToken.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Appoint/AppointToken.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/IEffectOnFriendlyCard.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Tokens/EffectOnFriendlyCards/TokenEffectOnFriendlyCards.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeckSystem/Deck/DeckController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/PhaseSettings/PlayerPhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turn/TurnController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +70,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.4813084&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TokenSystem&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -140,10 +123,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1692">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1692" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -362,6 +345,8 @@
       <workItem from="1720341771224" duration="2026000" />
       <workItem from="1720484995350" duration="370000" />
       <workItem from="1720487249118" duration="1849000" />
+      <workItem from="1720661919811" duration="553000" />
+      <workItem from="1720662487976" duration="2516000" />
     </task>
     <servers />
   </component>
@@ -402,14 +387,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/CardSettings/TokenSystem/Appoint/AppointToken.cs</url>
           <line>45</line>
-          <properties documentPath="F:\Repositors\CardGame\CardGame\CardGame\Assets\Scripts\CardSettings\Appoint\AppointToken.cs" containingFunctionPresentation="Method 'FindCard'">
-            <startOffsets>
-              <option value="1251" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1252" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="F:\Repositors\CardGame\CardGame\CardGame\Assets\Scripts\CardSettings\Appoint\AppointToken.cs" containingFunctionPresentation="Method 'FindCard'" />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>

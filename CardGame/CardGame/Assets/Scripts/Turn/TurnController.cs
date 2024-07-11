@@ -72,19 +72,19 @@ public class TurnController : MonoBehaviour, ITurn
     
     public void TurnControllerPlayer()
     {
-        if (_phaseController._isBuildPhase)
+        if (_phaseController.IsBuildPhase)
         {
             _phaseController.BeginPenutationPhase();
         }
-        else if (_phaseController._isPenutationPhase)
+        else if (_phaseController.IsPermutationPhase)
         {
             _phaseController.BeginBattle();
         }
-        else if (_phaseController._isBattlePhase)
+        else if (_phaseController.IsBattlePhase)
         {
             _phaseController.BeginAttackPhase();
         }
-        else if (_phaseController._isEndPhase)
+        else if (_phaseController.IsEndPhase)
         {
             _phaseController.BeginEnemyTurn();
             TurnEnemy();

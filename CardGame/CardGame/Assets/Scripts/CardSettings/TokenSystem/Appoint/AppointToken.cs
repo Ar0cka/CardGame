@@ -1,5 +1,4 @@
 using System;
-using CardSettings.Tokens.EffectOnFriendlyCards;
 using UnityEngine;
 using UnityEngine.Windows.WebCam;
 using Zenject;
@@ -8,12 +7,12 @@ namespace CardSettings.Appoint
 {
     public class AppointToken : MonoBehaviour
     {
-        private IEffectOnFriendlyCard _tokenEffectOnFriendlyCard = new TokenEffectOnFriendlyCards();
-        
         [SerializeField] private CardPrefab cardPrefab;
         [SerializeField] private AppointToken appointToken;
 
         private CardZoneController _cardZone;
+        private TokenEffectOnFriendlyCards _tokenEffectOnFriendlyCards = TokenEffectOnFriendlyCards.Instance;
+        
         [SerializeField] private string friendlyCard = "Card";
 
         private bool _theRaycastCanWork = false;
@@ -65,10 +64,7 @@ namespace CardSettings.Appoint
         }
 
         public void BeginAppointToken()
-        {
-            if(_tokenEffectOnFriendlyCard == null)
-                Debug.LogError("token effect == null");
-            
+        { 
             _cardCountInTable = _cardZone.ReturnCountInCardOnTable();
             _theRaycastCanWork = true;
             Time.timeScale = 0f;
@@ -76,17 +72,18 @@ namespace CardSettings.Appoint
         
         private void AddNewToken(CardPrefab _targetCardPrefab)
         {
-            if (_tokenEffectOnFriendlyCard != null)
-            {
-                _tokenEffectOnFriendlyCard.AddNewTokenInFriendCard(_targetCardPrefab);
-                _tokenEffectOnFriendlyCard.ActionFearToken();
+            try
+            { 
+                _tokenEffectOnFriendlyCards.AddNewTokenInFriendCard(_targetCardPrefab);
+                _tokenEffectOnFriendlyCards.ActionFearToken();
+                
+                _theRaycastCanWork = false;
+                Time.timeScale = 1f;
             }
-            else
-            {
-                Debug.LogError("_tokenEffectOnFriendlyCard = null");
+            catch (Exception e)
+            { 
+                Debug.LogError(e);
             }
-            _theRaycastCanWork = false;
-            Time.timeScale = 1f;
         }
     }
 }
