@@ -49,7 +49,6 @@ public class DeckController : MonoBehaviour
       
       for (int i = 0; i < _deckList.Count; i++)
       {
-         _deckList[i].SetUniqCode();
          _createNewObjectToPool.CreateNewObjectToPool(_deckList[i], _handTransform);
       }
       _shuffle.ShuffleDeckAndPool(_deckList);

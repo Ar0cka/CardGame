@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using CardSettings.CardPrefabSettings;
@@ -188,9 +189,19 @@ public class PlayerPhase : MonoBehaviour
       {
          var tokenSystem = card.GetComponent<TokenInCardSystem>();
 
-         if (tokenSystem.canAttack == false)
+         if (_tokenEffectOnFriendlyCards.fearTokens.Count > 0)
          {
-            _tokenEffectOnFriendlyCards.RemoveFearTokensFromTarget(card);
+            try
+            {
+               if (tokenSystem.canAttack == false)
+               {
+                  _tokenEffectOnFriendlyCards.RemoveFearTokensFromTarget(card);
+               }
+            }
+            catch (Exception e)
+            {
+               Debug.LogError(e);
+            }
          }
       }
    }

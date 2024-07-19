@@ -520,9 +520,7 @@ MonoBehaviour:
   haveDeathToken: 0
   haveFearToken: 1
   haveLifeToken: 0
-  currentZoneTag: 
   isBattleZone: 0
-  uniqueID: 
 --- !u!114 &-8145471316848677512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6f8ed92b66465390a6ad71b574f9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canAttack: 1
+  _canAttack: 1
 --- !u!114 &-7974139283743576206
 MonoBehaviour:
   m_ObjectHideFlags: 0

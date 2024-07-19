@@ -32,7 +32,28 @@ public class TokenEffectOnFriendlyCards
     public void RemoveFearTokensFromTarget(CardPrefab targetCard)
     {
         int index = _fearTokens.FindIndex(obj => obj.uniqueID == targetCard.uniqueID);
-        _fearTokens.RemoveAt(index);
-        targetCard.DeletedTokenFromCard();
+        
+        try
+        {
+            _fearTokens.RemoveAt(index);
+            targetCard.DeletedTokenFromCard();
+            
+            var countCard = _fearTokens.FindAll(obj => obj.uniqueID == targetCard.uniqueID);
+
+            int qualityCard = countCard.Count;
+            
+            if (qualityCard == 0 || _fearTokens.Count == 0)
+            {
+                targetCard.GetComponent<TokenInCardSystem>().DeleteFearToken();
+            }
+            
+            
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+       
     }
 }
